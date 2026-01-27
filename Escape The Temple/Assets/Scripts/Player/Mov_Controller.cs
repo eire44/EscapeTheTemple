@@ -14,6 +14,16 @@ public class Mov_Controller : MonoBehaviour
     private Vector3 velocity;
     private CharacterController controller;
 
+
+    public float crouchHeight = 1.0f;
+    public float standHeight = 1.8f;
+    public float crouchSpeed = 2.5f;
+    public float standSpeed = 5f;
+
+    public float crouchCameraY = 0.9f;
+    public float standCameraY = 1.6f;
+    public float crouchTransitionSpeed = 8f;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -33,6 +43,7 @@ public class Mov_Controller : MonoBehaviour
         }
         Move();
         Look();
+        HandleCrouch();
     }
 
     void Move()
@@ -60,5 +71,23 @@ public class Mov_Controller : MonoBehaviour
 
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
+    }
+
+    void HandleCrouch()
+    {
+        bool isCrouching = Input.GetKey(KeyCode.LeftControl);
+
+        float targetHeight = isCrouching ? crouchHeight : standHeight;
+        float targetCamY = isCrouching ? crouchCameraY : standCameraY;
+        float targetSpeed = isCrouching ? crouchSpeed : standSpeed;
+
+        controller.height = Mathf.Lerp(controller.height, targetHeight, Time.deltaTime * crouchTransitionSpeed);
+        controller.center = new Vector3(0, controller.height / 2f, 0);
+
+        moveSpeed = targetSpeed;
+
+        Vector3 camPos = cameraTransform.localPosition;
+        camPos.y = Mathf.Lerp(camPos.y, targetCamY, Time.deltaTime * crouchTransitionSpeed);
+        cameraTransform.localPosition = camPos;
     }
 }
