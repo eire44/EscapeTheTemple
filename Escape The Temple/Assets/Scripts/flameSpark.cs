@@ -15,7 +15,7 @@ public class flameSpark : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        light.intensity = baseIntensity + Mathf.Sin(Time.time * 8f) * 0.2f;
+        light.intensity = baseIntensity + Mathf.Sin(Time.time * 2f) * 0.1f;
         
     }
 }

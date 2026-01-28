@@ -28,8 +28,6 @@ public class Mov_Controller : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     void Update()

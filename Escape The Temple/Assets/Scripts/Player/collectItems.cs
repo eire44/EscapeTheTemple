@@ -19,16 +19,20 @@ public class collectItems : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Items"))
         {
-            interactionText.gameObject.SetActive(true);
-        }
-
-        if(other.gameObject.CompareTag("Candles"))
-        {
-
+            if (other.gameObject.CompareTag("Candles"))
+            {
+                if (FindObjectOfType<candlesPuzzleSolution>().candlesPuzzleSolved == false)
+                {
+                    interactionText.gameObject.SetActive(true);
+                }
+            } else
+            {
+                interactionText.gameObject.SetActive(true);
+            }
         }
     }
 
