@@ -21,7 +21,7 @@ public class collectItems : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Items"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Items") || other.gameObject.layer == LayerMask.NameToLayer("CollectableItems"))
         {
             if (other.gameObject.CompareTag("Candles"))
             {
@@ -38,7 +38,7 @@ public class collectItems : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Items"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Items") || other.gameObject.layer == LayerMask.NameToLayer("CollectableItems"))
         {
             interactionText.gameObject.SetActive(false);
         }

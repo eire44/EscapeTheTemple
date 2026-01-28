@@ -1,0 +1,90 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class grabItem : MonoBehaviour
+{
+    public GameObject posHand;
+    SphereCollider sC;
+    Rigidbody rb;
+    bool playerIn = false;
+    [HideInInspector] public bool pickUpItem = false;
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        sC = GetComponent<SphereCollider>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (playerIn)
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                pickUpItem = !pickUpItem;
+
+                //if (pickUpItem)
+                //{
+                //    transform.SetParent(posHand.transform, false);
+                //    transform.position = posHand.transform.position;
+                //    rb.isKinematic = true;
+                //    rb.useGravity = false;
+                //    sC.enabled = false;
+                //    FindObjectOfType<collectItems>().interactionText.gameObject.SetActive(false);
+                //} else
+                //{
+                //    Debug.Log("SOLTAR");
+                //    transform.SetParent(null, true);
+                //    rb.isKinematic = false;
+                //    rb.useGravity = true;
+                //    sC.enabled = true;
+                //}
+                if (pickUpItem)
+                {
+                    // TOMAR
+                    transform.SetParent(posHand.transform, true);
+                    transform.localPosition = Vector3.zero;
+                    transform.localRotation = Quaternion.identity;
+
+                    rb.isKinematic = true;
+                    rb.useGravity = false;
+
+                    sC.enabled = false;
+
+                    FindObjectOfType<collectItems>().interactionText.gameObject.SetActive(false);
+                }
+                else
+                {
+                    // SOLTAR
+                    transform.SetParent(null, true);
+
+                    // empujoncito para evitar intersección
+                    transform.position += posHand.transform.forward * 0.3f;
+
+                    rb.isKinematic = false;
+                    rb.useGravity = true;
+
+                    sC.enabled = true;
+                }
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            playerIn = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerIn = false;
+        }
+    }
+}
