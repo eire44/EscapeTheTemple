@@ -8,6 +8,11 @@ TagManager:
   - Candles
   - Paper
   - Incense Burner
+  - Pine
+  - Cinnamon
+  - DriedLotus
+  - Sagebrush
+  - Sandalwood
   layers:
   - Default
   - TransparentFX

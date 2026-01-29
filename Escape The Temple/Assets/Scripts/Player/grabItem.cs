@@ -42,6 +42,8 @@ public class grabItem : MonoBehaviour
                     rb.useGravity = true;
                     sC.enabled = true;
                 }
+
+                FindObjectOfType<incenseBurnerController>().grabbedItem(pickUpItem, gameObject);
             }
         }
     }
