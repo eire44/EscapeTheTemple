@@ -21,7 +21,7 @@ public class grabItem : MonoBehaviour
     {
         if (playerIn)
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKeyDown(KeyCode.R))
             {
                 pickUpItem = !pickUpItem;
 
@@ -32,7 +32,7 @@ public class grabItem : MonoBehaviour
                     rb.isKinematic = true;
                     rb.useGravity = false;
                     sC.enabled = false;
-                    FindObjectOfType<collectItems>().interactionText.gameObject.SetActive(false);
+                    FindObjectOfType<collectItems>().collectItemText.gameObject.SetActive(false);
                 }
                 else
                 {
