@@ -26,7 +26,6 @@ public class collectItems : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Candles"))
             {
-                Debug.Log("1");
                 if (!FindObjectOfType<candlesPuzzleSolution>().candlesPuzzleSolved)
                 {
                     interactionText.gameObject.SetActive(true);
@@ -36,13 +35,11 @@ public class collectItems : MonoBehaviour
             {
                 if (!FindObjectOfType<incensePuzzleSolution>().incensePuzzleSolved)
                 {
-                    Debug.Log("3");
                     interactionText.gameObject.SetActive(true);
                 }
             }
             else
             {
-                Debug.Log("4");
                 interactionText.gameObject.SetActive(true);
             }
         } else if(other.gameObject.layer == LayerMask.NameToLayer("CollectableItems"))
