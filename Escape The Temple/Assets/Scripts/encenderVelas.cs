@@ -16,7 +16,7 @@ public class encenderVelas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(FindObjectOfType<candlesPuzzleSolution>().candlesPuzzleSolved == false)
+        if(!FindObjectOfType<candlesPuzzleSolution>().candlesPuzzleSolved)
         {
             if (Input.GetKeyDown(KeyCode.E) && jugadorCerca)
             {

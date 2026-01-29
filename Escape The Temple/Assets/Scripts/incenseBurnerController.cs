@@ -17,93 +17,96 @@ public class incenseBurnerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerIn)
+        if (!FindObjectOfType<incensePuzzleSolution>().incensePuzzleSolved)
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if (playerIn)
             {
-                if (FindObjectOfType<incensePuzzleSolution>().herbPicked)
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    Transform humoNormal = transform.Find("GraySmoke");
-                    humoNormal.localScale = Vector3.one;
-                    if (herbNeeded == "Pine")
+                    if (FindObjectOfType<incensePuzzleSolution>().herbPicked)
                     {
-                        if (FindObjectOfType<incensePuzzleSolution>().pinePicked)
+                        Transform humoNormal = transform.Find("GraySmoke");
+                        humoNormal.localScale = Vector3.one;
+                        if (herbNeeded == "Pine")
                         {
-                            coloredIncense.SetActive(true);
-                            humoNormal.gameObject.SetActive(false);
-                            FindObjectOfType<incensePuzzleSolution>().pineIncenseLit = true;
+                            if (FindObjectOfType<incensePuzzleSolution>().pinePicked)
+                            {
+                                coloredIncense.SetActive(true);
+                                humoNormal.gameObject.SetActive(false);
+                                FindObjectOfType<incensePuzzleSolution>().pineIncenseLit = true;
+                            }
+                            else
+                            {
+                                humoNormal.gameObject.SetActive(true);
+                                coloredIncense.SetActive(false);
+                                FindObjectOfType<incensePuzzleSolution>().pineIncenseLit = false;
+                            }
                         }
-                        else
+                        else if (herbNeeded == "Cinnamon")
                         {
-                            Debug.Log("MAL");
-                            humoNormal.gameObject.SetActive(true);
-                            coloredIncense.SetActive(false);
-                            FindObjectOfType<incensePuzzleSolution>().pineIncenseLit = false;
-                        }
-                    }
-                    else if (herbNeeded == "Cinnamon")
-                    {
-                        if (FindObjectOfType<incensePuzzleSolution>().cinnamonPicked)
-                        {
-                            coloredIncense.SetActive(true);
-                            humoNormal.gameObject.SetActive(false);
-                            FindObjectOfType<incensePuzzleSolution>().cinnamonIncenseLit = true;
-                        }
-                        else
-                        {
+                            if (FindObjectOfType<incensePuzzleSolution>().cinnamonPicked)
+                            {
+                                coloredIncense.SetActive(true);
+                                humoNormal.gameObject.SetActive(false);
+                                FindObjectOfType<incensePuzzleSolution>().cinnamonIncenseLit = true;
+                            }
+                            else
+                            {
 
-                            coloredIncense.SetActive(false);
-                            humoNormal.gameObject.SetActive(true);
-                            FindObjectOfType<incensePuzzleSolution>().cinnamonIncenseLit = false;
+                                coloredIncense.SetActive(false);
+                                humoNormal.gameObject.SetActive(true);
+                                FindObjectOfType<incensePuzzleSolution>().cinnamonIncenseLit = false;
+                            }
                         }
-                    }
-                    else if (herbNeeded == "Dried Lotus")
-                    {
-                        if (FindObjectOfType<incensePuzzleSolution>().lotusPicked)
+                        else if (herbNeeded == "Dried Lotus")
                         {
-                            coloredIncense.SetActive(true);
-                            humoNormal.gameObject.SetActive(false);
-                            FindObjectOfType<incensePuzzleSolution>().lotusIncenseLit = true;
+                            if (FindObjectOfType<incensePuzzleSolution>().lotusPicked)
+                            {
+                                coloredIncense.SetActive(true);
+                                humoNormal.gameObject.SetActive(false);
+                                FindObjectOfType<incensePuzzleSolution>().lotusIncenseLit = true;
+                            }
+                            else
+                            {
+                                coloredIncense.SetActive(false);
+                                humoNormal.gameObject.SetActive(true);
+                                FindObjectOfType<incensePuzzleSolution>().lotusIncenseLit = false;
+                            }
                         }
-                        else
+                        else if (herbNeeded == "Sagebrush")
                         {
-                            coloredIncense.SetActive(false);
-                            humoNormal.gameObject.SetActive(true);
-                            FindObjectOfType<incensePuzzleSolution>().lotusIncenseLit = false;
+                            if (FindObjectOfType<incensePuzzleSolution>().sagebrushPicked)
+                            {
+                                coloredIncense.SetActive(true);
+                                humoNormal.gameObject.SetActive(false);
+                                FindObjectOfType<incensePuzzleSolution>().sagebrushIncenseLit = true;
+                            }
+                            else
+                            {
+                                coloredIncense.SetActive(false);
+                                humoNormal.gameObject.SetActive(true);
+                                FindObjectOfType<incensePuzzleSolution>().sagebrushIncenseLit = false;
+                            }
                         }
-                    }
-                    else if (herbNeeded == "Sagebrush")
-                    {
-                        if (FindObjectOfType<incensePuzzleSolution>().sagebrushPicked)
+                        else if (herbNeeded == "Sandalwood")
                         {
-                            coloredIncense.SetActive(true);
-                            humoNormal.gameObject.SetActive(false);
-                            FindObjectOfType<incensePuzzleSolution>().sagebrushIncenseLit = true;
-                        }
-                        else
-                        {
-                            coloredIncense.SetActive(false);
-                            humoNormal.gameObject.SetActive(true);
-                            FindObjectOfType<incensePuzzleSolution>().sagebrushIncenseLit = false;
-                        }
-                    }
-                    else if (herbNeeded == "Sandalwood")
-                    {
-                        if (FindObjectOfType<incensePuzzleSolution>().sandalwoodPicked)
-                        {
-                            coloredIncense.SetActive(true);
-                            humoNormal.gameObject.SetActive(false);
-                            FindObjectOfType<incensePuzzleSolution>().sandalwoodIncenseLit = true;
-                        }
-                        else
-                        {
-                            coloredIncense.SetActive(false);
-                            humoNormal.gameObject.SetActive(true);
-                            FindObjectOfType<incensePuzzleSolution>().sandalwoodIncenseLit = false;
+                            if (FindObjectOfType<incensePuzzleSolution>().sandalwoodPicked)
+                            {
+                                coloredIncense.SetActive(true);
+                                humoNormal.gameObject.SetActive(false);
+                                FindObjectOfType<incensePuzzleSolution>().sandalwoodIncenseLit = true;
+                            }
+                            else
+                            {
+                                coloredIncense.SetActive(false);
+                                humoNormal.gameObject.SetActive(true);
+                                FindObjectOfType<incensePuzzleSolution>().sandalwoodIncenseLit = false;
+                            }
                         }
                     }
                 }
             }
+        
         }
     }
 

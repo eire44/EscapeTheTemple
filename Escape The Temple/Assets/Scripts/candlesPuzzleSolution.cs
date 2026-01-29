@@ -20,7 +20,6 @@ public class candlesPuzzleSolution : MonoBehaviour
             && !llamas[4].activeInHierarchy && !llamas[5].activeInHierarchy && llamas[6].activeInHierarchy && !llamas[7].activeInHierarchy
              && !llamas[8].activeInHierarchy && llamas[9].activeInHierarchy)
         {
-            Debug.Log("PUZZLE RESUELTO");
             candlesPuzzleSolved = true;
             if (flagHideText)
             {

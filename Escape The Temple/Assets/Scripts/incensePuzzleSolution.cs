@@ -19,6 +19,8 @@ public class incensePuzzleSolution : MonoBehaviour
     [HideInInspector] public bool sagebrushPicked = false;
     [HideInInspector] public bool sandalwoodPicked = false;
     [HideInInspector] public bool herbPicked = false;
+
+    bool flagHideText = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,9 +33,12 @@ public class incensePuzzleSolution : MonoBehaviour
         if(pineIncenseLit && cinnamonIncenseLit && lotusIncenseLit && sagebrushIncenseLit && sandalwoodIncenseLit)
         {
             incensePuzzleSolved = true;
-        } else
-        {
-            incensePuzzleSolved = false;
+            Debug.Log(incensePuzzleSolved);
+            if (flagHideText)
+            {
+                FindObjectOfType<collectItems>().interactionText.gameObject.SetActive(false);
+                flagHideText = false;
+            }
         }
     }
 
@@ -44,7 +49,7 @@ public class incensePuzzleSolution : MonoBehaviour
         lotusPicked = false;
         sagebrushPicked = false;
         sandalwoodPicked = false;
-        Debug.Log(picked);
+        
         if (picked)
         {
             if (item.CompareTag("Pine"))

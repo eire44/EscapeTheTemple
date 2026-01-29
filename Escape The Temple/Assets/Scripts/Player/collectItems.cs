@@ -26,24 +26,23 @@ public class collectItems : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Candles"))
             {
-                if (FindObjectOfType<candlesPuzzleSolution>().candlesPuzzleSolved == false)
+                Debug.Log("1");
+                if (!FindObjectOfType<candlesPuzzleSolution>().candlesPuzzleSolved)
                 {
                     interactionText.gameObject.SetActive(true);
                 }
-            } else
+            } 
+            else if (other.gameObject.CompareTag("Incense Burner"))
             {
-                interactionText.gameObject.SetActive(true);
-            }
-
-            if (other.gameObject.CompareTag("Incense Burner"))
-            {
-                if (FindObjectOfType<incensePuzzleSolution>().incensePuzzleSolved == false)
+                if (!FindObjectOfType<incensePuzzleSolution>().incensePuzzleSolved)
                 {
+                    Debug.Log("3");
                     interactionText.gameObject.SetActive(true);
                 }
             }
             else
             {
+                Debug.Log("4");
                 interactionText.gameObject.SetActive(true);
             }
         } else if(other.gameObject.layer == LayerMask.NameToLayer("CollectableItems"))
