@@ -467,12 +467,53 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.1356, y: 7.1356034, z: 30.896198}
   m_Center: {x: -0.0000038146973, y: 0.0000025033967, z: 15.448097}
+--- !u!1 &103182160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6893039820077180455, guid: 948007e90251bfc4eb47cc6cb1171cbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 2003185544}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &103182161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3640960886745016292, guid: 948007e90251bfc4eb47cc6cb1171cbb,
     type: 3}
   m_PrefabInstance: {fileID: 2003185544}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &103182162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103182160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6785662cf3f1044b43aa11f82d5c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  herbNeeded: Cinnamon
+  coloredIncense: {fileID: 646383058}
+--- !u!135 &103182163
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103182160}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0.07, z: 0}
 --- !u!1 &103620508
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +525,7 @@ GameObject:
   - component: {fileID: 103620509}
   - component: {fileID: 103620511}
   - component: {fileID: 103620510}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GraySmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5575,6 +5616,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2773669021588754965, guid: 6acd7cc1af45ef04aa99b22ecc0a0271,
+        type: 3}
+      propertyPath: m_TagString
+      value: Incense Burner
+      objectReference: {fileID: 0}
     - target: {fileID: 5072569173596565411, guid: 6acd7cc1af45ef04aa99b22ecc0a0271,
         type: 3}
       propertyPath: m_Name
@@ -5594,6 +5640,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539133547305676297, guid: 6acd7cc1af45ef04aa99b22ecc0a0271,
+        type: 3}
+      propertyPath: m_TagString
+      value: Incense Burner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5920,12 +5971,53 @@ Transform:
   - {fileID: 1258925650}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &262514610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5343479170838559616, guid: 5b2198b89b3470b47b40726addf7820a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2097381814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &262514611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1938988708162598087, guid: 5b2198b89b3470b47b40726addf7820a,
     type: 3}
   m_PrefabInstance: {fileID: 2097381814}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &262514612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262514610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6785662cf3f1044b43aa11f82d5c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  herbNeeded: Sagebrush
+  coloredIncense: {fileID: 1424638687}
+--- !u!135 &262514613
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262514610}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &299968498 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6379563874508120666, guid: 43d8c8beb7e91434587cc64363b35726,
@@ -23035,7 +23127,7 @@ GameObject:
   - component: {fileID: 646383059}
   - component: {fileID: 646383061}
   - component: {fileID: 646383060}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CinnamonSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39619,6 +39711,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 859154199}
     m_Modifications:
+    - target: {fileID: 630513807030462960, guid: cfdde07dc4af2aa4c93c180db0fe9a1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 630513807030462960, guid: cfdde07dc4af2aa4c93c180db0fe9a1b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Incense Burner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881962445822700218, guid: cfdde07dc4af2aa4c93c180db0fe9a1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881962445822700218, guid: cfdde07dc4af2aa4c93c180db0fe9a1b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Incense Burner
+      objectReference: {fileID: 0}
     - target: {fileID: 7544219084545540469, guid: cfdde07dc4af2aa4c93c180db0fe9a1b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -39689,6 +39801,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_095_Incense_BurnerSet
       objectReference: {fileID: 0}
+    - target: {fileID: 7593818900117271038, guid: cfdde07dc4af2aa4c93c180db0fe9a1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593818900117271038, guid: cfdde07dc4af2aa4c93c180db0fe9a1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593818900117271038, guid: cfdde07dc4af2aa4c93c180db0fe9a1b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Incense Burner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -39700,7 +39827,15 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1234745952}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7593818900117271038, guid: cfdde07dc4af2aa4c93c180db0fe9a1b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1705433707}
+    - targetCorrespondingSourceObject: {fileID: 7593818900117271038, guid: cfdde07dc4af2aa4c93c180db0fe9a1b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1705433708}
   m_SourcePrefab: {fileID: 100100000, guid: cfdde07dc4af2aa4c93c180db0fe9a1b, type: 3}
 --- !u!4 &983970025 stripped
 Transform:
@@ -46073,7 +46208,7 @@ GameObject:
   - component: {fileID: 1199231029}
   - component: {fileID: 1199231031}
   - component: {fileID: 1199231030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GraySmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51249,7 +51384,7 @@ GameObject:
   - component: {fileID: 1234745952}
   - component: {fileID: 1234745954}
   - component: {fileID: 1234745953}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LotusSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56152,6 +56287,12 @@ MonoBehaviour:
   sagebrushIncenseLit: 0
   sandalwoodIncenseLit: 0
   incensePuzzleSolved: 0
+  pinePicked: 0
+  cinnamonPicked: 0
+  lotusPicked: 0
+  sagebrushPicked: 0
+  sandalwoodPicked: 0
+  herbPicked: 0
 --- !u!1 &1242470236 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2314813669179315093, guid: 0296d72fe6808264dae719411cbd7098,
@@ -76375,7 +76516,7 @@ GameObject:
   - component: {fileID: 1424638688}
   - component: {fileID: 1424638690}
   - component: {fileID: 1424638689}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SagebrushSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82927,6 +83068,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef605a5eaac412b40a71cce1fee6b6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1705433706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7593818900117271038, guid: cfdde07dc4af2aa4c93c180db0fe9a1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 983970024}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1705433707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705433706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6785662cf3f1044b43aa11f82d5c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  herbNeeded: Dried Lotus
+  coloredIncense: {fileID: 1234745951}
+--- !u!135 &1705433708
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705433706}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &1733069673 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6900700839621274626, guid: bb636b2cb5b48b2419f378153a43e5c7,
@@ -83636,6 +83818,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 859154199}
     m_Modifications:
+    - target: {fileID: 2537926018045162367, guid: d410d47ffddbc3a4f841ece15b5f8334,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2537926018045162367, guid: d410d47ffddbc3a4f841ece15b5f8334,
+        type: 3}
+      propertyPath: m_TagString
+      value: Incense Burner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914768941651716549, guid: d410d47ffddbc3a4f841ece15b5f8334,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914768941651716549, guid: d410d47ffddbc3a4f841ece15b5f8334,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3367878166402949755, guid: d410d47ffddbc3a4f841ece15b5f8334,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -83654,7 +83856,7 @@ PrefabInstance:
     - target: {fileID: 3367878166402949755, guid: d410d47ffddbc3a4f841ece15b5f8334,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -845.9
+      value: -544.6
       objectReference: {fileID: 0}
     - target: {fileID: 3367878166402949755, guid: d410d47ffddbc3a4f841ece15b5f8334,
         type: 3}
@@ -83664,7 +83866,7 @@ PrefabInstance:
     - target: {fileID: 3367878166402949755, guid: d410d47ffddbc3a4f841ece15b5f8334,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 91.8
+      value: -34.6
       objectReference: {fileID: 0}
     - target: {fileID: 3367878166402949755, guid: d410d47ffddbc3a4f841ece15b5f8334,
         type: 3}
@@ -83706,6 +83908,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_099_Incense_BurnerSet
       objectReference: {fileID: 0}
+    - target: {fileID: 5852324962696541895, guid: d410d47ffddbc3a4f841ece15b5f8334,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852324962696541895, guid: d410d47ffddbc3a4f841ece15b5f8334,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852324962696541895, guid: d410d47ffddbc3a4f841ece15b5f8334,
+        type: 3}
+      propertyPath: m_TagString
+      value: Incense Burner
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442115409744629375, guid: d410d47ffddbc3a4f841ece15b5f8334,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442115409744629375, guid: d410d47ffddbc3a4f841ece15b5f8334,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107329099631580357, guid: d410d47ffddbc3a4f841ece15b5f8334,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107329099631580357, guid: d410d47ffddbc3a4f841ece15b5f8334,
+        type: 3}
+      propertyPath: m_TagString
+      value: Incense Burner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -83717,7 +83954,15 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1883796739}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5852324962696541895, guid: d410d47ffddbc3a4f841ece15b5f8334,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1836072623}
+    - targetCorrespondingSourceObject: {fileID: 5852324962696541895, guid: d410d47ffddbc3a4f841ece15b5f8334,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1836072624}
   m_SourcePrefab: {fileID: 100100000, guid: d410d47ffddbc3a4f841ece15b5f8334, type: 3}
 --- !u!4 &1836072621 stripped
 Transform:
@@ -83725,6 +83970,47 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1836072620}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1836072622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5852324962696541895, guid: d410d47ffddbc3a4f841ece15b5f8334,
+    type: 3}
+  m_PrefabInstance: {fileID: 1836072620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1836072623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836072622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6785662cf3f1044b43aa11f82d5c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  herbNeeded: Sandalwood
+  coloredIncense: {fileID: 1883796738}
+--- !u!135 &1836072624
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836072622}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1001 &1840219884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84148,7 +84434,7 @@ GameObject:
   - component: {fileID: 1883796739}
   - component: {fileID: 1883796741}
   - component: {fileID: 1883796740}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SandalwoodSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84164,7 +84450,7 @@ Transform:
   m_GameObject: {fileID: 1883796738}
   serializedVersion: 2
   m_LocalRotation: {x: -0.20853046, y: 0.675659, z: 0.20853052, w: 0.67565894}
-  m_LocalPosition: {x: 2.8682, y: 0.1679, z: -1.0859}
+  m_LocalPosition: {x: -0.03749, y: 0.1688, z: -0.00215}
   m_LocalScale: {x: 1.4531747, y: 1.784208, z: 1.2341651}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -94157,7 +94443,7 @@ GameObject:
   - component: {fileID: 1939880243}
   - component: {fileID: 1939880245}
   - component: {fileID: 1939880244}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GraySmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94173,7 +94459,7 @@ Transform:
   m_GameObject: {fileID: 1939880242}
   serializedVersion: 2
   m_LocalRotation: {x: -0.68342686, y: 0.025448479, z: 0.18146008, w: 0.7066487}
-  m_LocalPosition: {x: 2.8701, y: 0.1642, z: -1.0859}
+  m_LocalPosition: {x: -0.0339, y: 0.1654, z: -0.0011}
   m_LocalScale: {x: 2.1664784, y: 2.1890256, z: 1.0439867}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -99419,6 +99705,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 859154199}
     m_Modifications:
+    - target: {fileID: 2487057749051702633, guid: 948007e90251bfc4eb47cc6cb1171cbb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487057749051702633, guid: 948007e90251bfc4eb47cc6cb1171cbb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Incense Burner
+      objectReference: {fileID: 0}
     - target: {fileID: 3640960886745016292, guid: 948007e90251bfc4eb47cc6cb1171cbb,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -99489,6 +99785,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_088_Incense_BurnerSet
       objectReference: {fileID: 0}
+    - target: {fileID: 6893039820077180455, guid: 948007e90251bfc4eb47cc6cb1171cbb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893039820077180455, guid: 948007e90251bfc4eb47cc6cb1171cbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893039820077180455, guid: 948007e90251bfc4eb47cc6cb1171cbb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Incense Burner
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328729479383599819, guid: 948007e90251bfc4eb47cc6cb1171cbb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328729479383599819, guid: 948007e90251bfc4eb47cc6cb1171cbb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Incense Burner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -99500,7 +99821,15 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 646383059}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6893039820077180455, guid: 948007e90251bfc4eb47cc6cb1171cbb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 103182162}
+    - targetCorrespondingSourceObject: {fileID: 6893039820077180455, guid: 948007e90251bfc4eb47cc6cb1171cbb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 103182163}
   m_SourcePrefab: {fileID: 100100000, guid: 948007e90251bfc4eb47cc6cb1171cbb, type: 3}
 --- !u!1 &2015853909
 GameObject:
@@ -99513,7 +99842,7 @@ GameObject:
   - component: {fileID: 2015853910}
   - component: {fileID: 2015853912}
   - component: {fileID: 2015853911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GraySmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104698,6 +105027,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 859154199}
     m_Modifications:
+    - target: {fileID: 1482565034593624368, guid: 5b2198b89b3470b47b40726addf7820a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482565034593624368, guid: 5b2198b89b3470b47b40726addf7820a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Incense Burner
+      objectReference: {fileID: 0}
     - target: {fileID: 1938988708162598087, guid: 5b2198b89b3470b47b40726addf7820a,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -104763,10 +105102,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3405202261018096112, guid: 5b2198b89b3470b47b40726addf7820a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405202261018096112, guid: 5b2198b89b3470b47b40726addf7820a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Incense Burner
+      objectReference: {fileID: 0}
     - target: {fileID: 5343479170838559616, guid: 5b2198b89b3470b47b40726addf7820a,
         type: 3}
       propertyPath: m_Name
       value: SM_097_Incense_BurnerSet
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343479170838559616, guid: 5b2198b89b3470b47b40726addf7820a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343479170838559616, guid: 5b2198b89b3470b47b40726addf7820a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343479170838559616, guid: 5b2198b89b3470b47b40726addf7820a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Incense Burner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -104779,7 +105143,15 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1424638688}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5343479170838559616, guid: 5b2198b89b3470b47b40726addf7820a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 262514612}
+    - targetCorrespondingSourceObject: {fileID: 5343479170838559616, guid: 5b2198b89b3470b47b40726addf7820a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 262514613}
   m_SourcePrefab: {fileID: 100100000, guid: 5b2198b89b3470b47b40726addf7820a, type: 3}
 --- !u!1001 &2105245789
 PrefabInstance:
@@ -109889,6 +110261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   herbNeeded: Pine
+  coloredIncense: {fileID: 828571152}
 --- !u!135 &2141369656
 SphereCollider:
   m_ObjectHideFlags: 0

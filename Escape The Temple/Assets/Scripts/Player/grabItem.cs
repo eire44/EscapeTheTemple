@@ -43,7 +43,7 @@ public class grabItem : MonoBehaviour
                     sC.enabled = true;
                 }
 
-                FindObjectOfType<incenseBurnerController>().grabbedItem(pickUpItem, gameObject);
+                FindObjectOfType<incensePuzzleSolution>().grabbedItem(pickUpItem, gameObject);
             }
         }
     }

@@ -11,6 +11,14 @@ public class incensePuzzleSolution : MonoBehaviour
     [HideInInspector] public bool sandalwoodIncenseLit = false;
 
     [HideInInspector] public bool incensePuzzleSolved = false;
+
+
+    [HideInInspector] public bool pinePicked = false;
+    [HideInInspector] public bool cinnamonPicked = false;
+    [HideInInspector] public bool lotusPicked = false;
+    [HideInInspector] public bool sagebrushPicked = false;
+    [HideInInspector] public bool sandalwoodPicked = false;
+    [HideInInspector] public bool herbPicked = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +34,52 @@ public class incensePuzzleSolution : MonoBehaviour
         } else
         {
             incensePuzzleSolved = false;
+        }
+    }
+
+    public void grabbedItem(bool picked, GameObject item)
+    {
+        pinePicked = false;
+        cinnamonPicked = false;
+        lotusPicked = false;
+        sagebrushPicked = false;
+        sandalwoodPicked = false;
+        Debug.Log(picked);
+        if (picked)
+        {
+            if (item.CompareTag("Pine"))
+            {
+                pinePicked = true;
+                herbPicked = true;
+            }
+            else if (item.CompareTag("Cinnamon"))
+            {
+                cinnamonPicked = true;
+                herbPicked = true;
+            }
+            else if (item.CompareTag("DriedLotus"))
+            {
+                lotusPicked = true;
+                herbPicked = true;
+            }
+            else if (item.CompareTag("Sagebrush"))
+            {
+                sagebrushPicked = true;
+                herbPicked = true;
+            }
+            else if (item.CompareTag("Sandalwood"))
+            {
+                sandalwoodPicked = true;
+                herbPicked = true;
+            }
+            else
+            {
+                herbPicked = false;
+            }
+        }
+        else
+        {
+            herbPicked = false;
         }
     }
 }

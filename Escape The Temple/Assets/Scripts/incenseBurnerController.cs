@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class incenseBurnerController : MonoBehaviour
 {
-    bool pinePicked = false;
-    bool cinnamonPicked = false;
-    bool lotusPicked = false;
-    bool sagebrushPicked = false;
-    bool sandalwoodPicked = false;
-
     bool playerIn = false;
-    bool herbPicked = false;
 
     public string herbNeeded;
+    public GameObject coloredIncense;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,66 +21,83 @@ public class incenseBurnerController : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
-                if(herbPicked)
+                if (FindObjectOfType<incensePuzzleSolution>().herbPicked)
                 {
                     Transform humoNormal = transform.Find("GraySmoke");
                     humoNormal.localScale = Vector3.one;
                     if (herbNeeded == "Pine")
                     {
-                        if (pinePicked)
+                        if (FindObjectOfType<incensePuzzleSolution>().pinePicked)
                         {
+                            coloredIncense.SetActive(true);
+                            humoNormal.gameObject.SetActive(false);
                             FindObjectOfType<incensePuzzleSolution>().pineIncenseLit = true;
                         }
                         else
                         {
+                            Debug.Log("MAL");
                             humoNormal.gameObject.SetActive(true);
+                            coloredIncense.SetActive(false);
                             FindObjectOfType<incensePuzzleSolution>().pineIncenseLit = false;
                         }
                     }
                     else if (herbNeeded == "Cinnamon")
                     {
-                        if (cinnamonPicked)
+                        if (FindObjectOfType<incensePuzzleSolution>().cinnamonPicked)
                         {
+                            coloredIncense.SetActive(true);
+                            humoNormal.gameObject.SetActive(false);
                             FindObjectOfType<incensePuzzleSolution>().cinnamonIncenseLit = true;
                         }
                         else
                         {
+
+                            coloredIncense.SetActive(false);
                             humoNormal.gameObject.SetActive(true);
                             FindObjectOfType<incensePuzzleSolution>().cinnamonIncenseLit = false;
                         }
                     }
                     else if (herbNeeded == "Dried Lotus")
                     {
-                        if (lotusPicked)
+                        if (FindObjectOfType<incensePuzzleSolution>().lotusPicked)
                         {
+                            coloredIncense.SetActive(true);
+                            humoNormal.gameObject.SetActive(false);
                             FindObjectOfType<incensePuzzleSolution>().lotusIncenseLit = true;
                         }
                         else
                         {
+                            coloredIncense.SetActive(false);
                             humoNormal.gameObject.SetActive(true);
                             FindObjectOfType<incensePuzzleSolution>().lotusIncenseLit = false;
                         }
                     }
                     else if (herbNeeded == "Sagebrush")
                     {
-                        if (sagebrushPicked)
+                        if (FindObjectOfType<incensePuzzleSolution>().sagebrushPicked)
                         {
+                            coloredIncense.SetActive(true);
+                            humoNormal.gameObject.SetActive(false);
                             FindObjectOfType<incensePuzzleSolution>().sagebrushIncenseLit = true;
                         }
                         else
                         {
+                            coloredIncense.SetActive(false);
                             humoNormal.gameObject.SetActive(true);
                             FindObjectOfType<incensePuzzleSolution>().sagebrushIncenseLit = false;
                         }
                     }
                     else if (herbNeeded == "Sandalwood")
                     {
-                        if (sandalwoodPicked)
+                        if (FindObjectOfType<incensePuzzleSolution>().sandalwoodPicked)
                         {
+                            coloredIncense.SetActive(true);
+                            humoNormal.gameObject.SetActive(false);
                             FindObjectOfType<incensePuzzleSolution>().sandalwoodIncenseLit = true;
                         }
                         else
                         {
+                            coloredIncense.SetActive(false);
                             humoNormal.gameObject.SetActive(true);
                             FindObjectOfType<incensePuzzleSolution>().sandalwoodIncenseLit = false;
                         }
@@ -111,48 +122,5 @@ public class incenseBurnerController : MonoBehaviour
         }
     }
 
-    public void grabbedItem(bool picked, GameObject item)
-    {
-        pinePicked = false;
-        cinnamonPicked = false;
-        lotusPicked = false;
-        sagebrushPicked = false;
-        sandalwoodPicked = false;
-
-        if (picked)
-        {
-            if (item.CompareTag("Pine"))
-            {
-                pinePicked = true;
-                herbPicked = true;
-            }
-            else if (item.CompareTag("Cinnamon"))
-            {
-                cinnamonPicked = true;
-                herbPicked = true;
-            }
-            else if (item.CompareTag("DriedLotus"))
-            {
-                lotusPicked = true;
-                herbPicked = true;
-            }
-            else if (item.CompareTag("Sagebrush"))
-            {
-                sagebrushPicked = true;
-                herbPicked = true;
-            }
-            else if (item.CompareTag("Sandalwood"))
-            {
-                sandalwoodPicked = true;
-                herbPicked = true;
-            } else
-            {
-                herbPicked = false;
-            }
-        }
-        else
-        {
-            herbPicked = false;
-        }
-    }
+    
 }
