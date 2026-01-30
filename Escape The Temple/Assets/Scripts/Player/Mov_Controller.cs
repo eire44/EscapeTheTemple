@@ -88,4 +88,9 @@ public class Mov_Controller : MonoBehaviour
         camPos.y = Mathf.Lerp(camPos.y, targetCamY, Time.deltaTime * crouchTransitionSpeed);
         cameraTransform.localPosition = camPos;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject.name);
+    }
 }
