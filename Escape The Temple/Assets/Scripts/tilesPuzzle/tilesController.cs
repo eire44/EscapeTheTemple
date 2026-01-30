@@ -5,6 +5,7 @@ using UnityEngine;
 public class tilesController : MonoBehaviour
 {
     [HideInInspector] public Transform pattern;
+    public int tileNumber;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,21 +20,17 @@ public class tilesController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if (!FindObjectOfType<tilesPuzzleController>().tilesPuzzleSolved)
         {
-            if(!pattern.gameObject.activeInHierarchy)
+            if (other.gameObject.CompareTag("Player"))
             {
-                FindObjectOfType<tilesPuzzleController>().addPattern();
-                pattern.gameObject.SetActive(true);
+                if (!pattern.gameObject.activeInHierarchy)
+                {
+                    pattern.gameObject.SetActive(true);
+                    FindObjectOfType<tilesPuzzleController>().addPattern(tileNumber);
+                    Debug.Log("ON");
+                }
             }
         }
     }
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("Player"))
-    //    {
-    //        pattern.gameObject.SetActive(false);
-    //    }
-    //}
 }
