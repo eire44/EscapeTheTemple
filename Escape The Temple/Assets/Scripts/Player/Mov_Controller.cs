@@ -42,7 +42,6 @@ public class Mov_Controller : MonoBehaviour
         Move();
         Look();
         HandleCrouch();
-        Debug.Log(mouseSensitivity);
     }
 
     void Move()
