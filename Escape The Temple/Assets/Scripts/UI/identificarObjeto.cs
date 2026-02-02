@@ -9,6 +9,7 @@ public class identificarObjeto : MonoBehaviour
     public Camera playerCamera;
     public float distance = 4f;
     public TMP_Text nombreObjeto;
+    public TMP_Text txtIdentificacionTablas;
     // Start is called before the first frame update
     void Start()
     {

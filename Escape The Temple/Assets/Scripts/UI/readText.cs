@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
+using System.Numerics;
 
 public class readText : MonoBehaviour
 {
@@ -20,10 +22,11 @@ public class readText : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, distance))
         {
-            if (hit.collider.name.Contains("Papel"))
+            if (hit.collider.name.Contains("PapelFraseIluminados"))
             {
                 mostrarTexto("Those who attain enlightenment continue to shine beyond time.");
-            } else
+            }
+            else
             {
                 textoTranscripcion.gameObject.SetActive(false);
             }
