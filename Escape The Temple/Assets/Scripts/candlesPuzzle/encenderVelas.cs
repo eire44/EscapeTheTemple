@@ -10,6 +10,7 @@ public class encenderVelas : MonoBehaviour
     public ParticleSystem llama;
     public string nombreTabla;
     TMP_Text txtNombres;
+    bool flagUnaVez = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,13 @@ public class encenderVelas : MonoBehaviour
                     llama.gameObject.SetActive(true);
                 }
 
+            }
+        } else
+        {
+            if(flagUnaVez)
+            {
+                flagUnaVez = false;
+                gameObject.layer = LayerMask.NameToLayer("Default");
             }
         }
     }

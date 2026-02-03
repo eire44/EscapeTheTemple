@@ -37,7 +37,6 @@ public class grabItem : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("SOLTAR");
                     playerIn = false;
                     transform.SetParent(null, true);
                     rb.isKinematic = false;
@@ -48,38 +47,6 @@ public class grabItem : MonoBehaviour
                 FindObjectOfType<incensePuzzleSolution>().grabbedItem(pickUpItem, gameObject);
             }
         }
-        //if (!playerIn) return;
-
-        //if (Input.GetKeyDown(KeyCode.R))
-        //{
-        //    if (currentGrabbedItem != null && currentGrabbedItem != gameObject)
-        //    {
-        //        currentGrabbedItem.GetComponent<grabItem>().Drop();
-        //        currentGrabbedItem = null;
-        //    }
-
-        //    pickUpItem = !pickUpItem;
-
-        //    if (pickUpItem)
-        //    {
-        //        currentGrabbedItem = gameObject;
-
-        //        transform.SetParent(posHand.transform, false);
-        //        transform.position = posHand.transform.position;
-        //        rb.isKinematic = true;
-        //        rb.useGravity = false;
-        //        sC.enabled = false;
-
-        //        FindObjectOfType<collectItems>().collectItemText.gameObject.SetActive(false);
-        //    }
-        //    else
-        //    {
-        //        currentGrabbedItem = null;
-        //        Drop();
-        //    }
-
-        //    FindObjectOfType<incensePuzzleSolution>().grabbedItem(pickUpItem, gameObject);
-        //}
     }
 
     private void OnTriggerStay(Collider other)
@@ -87,7 +54,6 @@ public class grabItem : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             playerIn = true;
-            Debug.Log(gameObject.name + " " + playerIn);
         }
     }
 
@@ -96,17 +62,6 @@ public class grabItem : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerIn = false;
-            Debug.Log(gameObject.name + " " + playerIn);
         }
-    }
-
-    void Drop()
-    {
-        pickUpItem = false;
-
-        transform.SetParent(null, true);
-        rb.isKinematic = false;
-        rb.useGravity = true;
-        sC.enabled = true;
     }
 }

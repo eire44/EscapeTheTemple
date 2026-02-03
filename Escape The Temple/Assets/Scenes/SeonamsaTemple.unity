@@ -54643,7 +54643,7 @@ Transform:
   m_GameObject: {fileID: 1193756322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.93, y: 0.994, z: 0}
+  m_LocalPosition: {x: 1.93, y: 0.994, z: -33.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -65059,7 +65059,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1237910459}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Planks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93738,7 +93738,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5707531, y: 0.35349545, z: 0.3251266}
   m_Center: {x: -0.004477501, y: 0.00068721175, z: 0.000000074505806}
@@ -98472,7 +98472,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.6748924, y: 0.38221344, z: 0.33593556}
   m_Center: {x: -0.021169662, y: -0.0049552023, z: 0.00000008940697}
@@ -103883,7 +103883,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5777607, y: 0.7360179, z: 0.3643511}
   m_Center: {x: -0.04692936, y: 0.020710409, z: 0.000000044703484}

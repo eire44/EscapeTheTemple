@@ -28,6 +28,7 @@ public class collectItems : MonoBehaviour
             {
                 if (!FindObjectOfType<candlesPuzzleSolution>().candlesPuzzleSolved)
                 {
+                    Debug.Log("MUESTRA");
                     interactionText.gameObject.SetActive(true);
                 }
             } 
