@@ -13,6 +13,7 @@ TagManager:
   - DriedLotus
   - Sagebrush
   - Sandalwood
+  - Fire
   layers:
   - Default
   - TransparentFX
