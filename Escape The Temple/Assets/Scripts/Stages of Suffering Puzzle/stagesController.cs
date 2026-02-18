@@ -14,18 +14,12 @@ public class stagesController : MonoBehaviour
 
     int currentRowIndex = 0;
     public TextMeshPro[] boards;
-    //public GameObject[] bowls;
-    // Start is called before the first frame update
+
     void Start()
     {
         nextRow(currentRowIndex);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     bool checkConfiguration(int bowlIndex, string symbol)
     {
@@ -49,11 +43,7 @@ public class stagesController : MonoBehaviour
             Debug.Log("CORRECT");
             currentRowIndex++;
             nextRow(currentRowIndex);
-        } 
-        //else
-        //{
-
-        //}
+        }
     }
 
 
