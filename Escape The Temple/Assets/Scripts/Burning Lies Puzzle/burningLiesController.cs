@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class burningLiesController : MonoBehaviour
 {
@@ -10,10 +11,25 @@ public class burningLiesController : MonoBehaviour
 
     public phrasesController[] papers;
 
+
+    public ParticleSystem[] fuegos;
+    public float duracionApagadoFuego = 1.5f;
+    float[] ratesOriginales;
+
     void Start()
     {
         currentSetIndex = Random.Range(0, sets.Length);
         LoadSet(currentSetIndex);
+
+        ratesOriginales = new float[fuegos.Length];
+
+        for (int i = 0; i < fuegos.Length; i++)
+        {
+            if (fuegos[i] != null)
+            {
+                ratesOriginales[i] = fuegos[i].emission.rateOverTime.constant;
+            }
+        }
     }
 
     void LoadSet(int newIndex)
@@ -53,6 +69,68 @@ public class burningLiesController : MonoBehaviour
     void PuzzleCompleted()
     {
         Debug.Log("Puzzle completado");
-        // activar puerta, animación, etc.
+        StartCoroutine(TransicionApagar());
+    }
+
+
+    private IEnumerator TransicionApagar()
+    {
+        //float volumenInicial = audioSource.volume;
+
+        float[] ratesIniciales = new float[fuegos.Length];
+
+        for (int i = 0; i < fuegos.Length; i++)
+        {
+            if (fuegos[i] != null)
+            {
+                ratesIniciales[i] = ratesOriginales[i];
+            }
+        }
+
+        float tiempo = 0f;
+
+        while (tiempo < Mathf.Max(duracionApagadoFuego))
+        {
+            tiempo += Time.deltaTime;
+
+            // Fade de audio
+            //if (tiempo < duracionFadeAudio)
+            //{
+            //    audioSource.volume = Mathf.Lerp(volumenInicial, 0f, tiempo / duracionFadeAudio);
+            //}
+
+            // Apagado de todos los fuegos
+            for (int i = 0; i < fuegos.Length; i++)
+            {
+                if (fuegos[i] == null) continue;
+
+                var emission = fuegos[i].emission;
+
+                if (tiempo < duracionApagadoFuego)
+                {
+                    float nuevoRate = Mathf.Lerp(
+                        ratesIniciales[i],
+                        0f,
+                        tiempo / duracionApagadoFuego
+                    );
+
+                    emission.rateOverTime = nuevoRate;
+                }
+            }
+
+            yield return null;
+        }
+
+        //audioSource.volume = 0f;
+
+        for (int i = 0; i < fuegos.Length; i++)
+        {
+            if (fuegos[i] == null) continue;
+
+            var emission = fuegos[i].emission;
+            emission.rateOverTime = 0f;
+
+            fuegos[i].Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        }
     }
 }

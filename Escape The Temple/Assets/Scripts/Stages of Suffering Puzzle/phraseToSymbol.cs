@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class phraseSet
+public class phraseToSymbol
 {
     [TextArea(3, 10)]
-    public string[] phrases = new string[3];
-    public int wrongPhraseIndex;
+    public string phrase;
+    public string correctSymbol;
 }
