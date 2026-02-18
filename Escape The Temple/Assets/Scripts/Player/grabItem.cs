@@ -20,31 +20,48 @@ public class grabItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerIn)
+        if(pickUpItem)
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
                 pickUpItem = !pickUpItem;
 
-                if (pickUpItem)
-                {
-                    transform.SetParent(posHand.transform, false);
-                    transform.position = posHand.transform.position;
-                    rb.isKinematic = true;
-                    rb.useGravity = false;
-                    sC.enabled = false;
-                    FindObjectOfType<collectItems>().collectItemText.gameObject.SetActive(false);
-                }
-                else
-                {
-                    playerIn = false;
-                    transform.SetParent(null, true);
-                    rb.isKinematic = false;
-                    rb.useGravity = true;
-                    sC.enabled = true;
-                }
+                playerIn = false;
+                transform.SetParent(null, true);
+                rb.isKinematic = false;
+                rb.useGravity = true;
+                sC.enabled = true;
 
                 FindObjectOfType<incensePuzzleSolution>().grabbedItem(pickUpItem, gameObject);
+            }
+        } else
+        {
+            if (playerIn)
+            {
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    pickUpItem = !pickUpItem;
+
+                    if (pickUpItem)
+                    {
+                        transform.SetParent(posHand.transform, false);
+                        transform.position = posHand.transform.position;
+                        rb.isKinematic = true;
+                        rb.useGravity = false;
+                        sC.enabled = false;
+                        FindObjectOfType<collectItems>().collectItemText.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        //playerIn = false;
+                        //transform.SetParent(null, true);
+                        //rb.isKinematic = false;
+                        //rb.useGravity = true;
+                        //sC.enabled = true;
+                    }
+
+                    FindObjectOfType<incensePuzzleSolution>().grabbedItem(pickUpItem, gameObject);
+                }
             }
         }
     }
