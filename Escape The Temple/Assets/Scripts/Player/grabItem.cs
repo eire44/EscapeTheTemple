@@ -51,14 +51,14 @@ public class grabItem : MonoBehaviour
                         sC.enabled = false;
                         FindObjectOfType<collectItems>().collectItemText.gameObject.SetActive(false);
                     }
-                    else
-                    {
+                    //else
+                    //{
                         //playerIn = false;
                         //transform.SetParent(null, true);
                         //rb.isKinematic = false;
                         //rb.useGravity = true;
                         //sC.enabled = true;
-                    }
+                    //}
 
                     FindObjectOfType<incensePuzzleSolution>().grabbedItem(pickUpItem, gameObject);
                 }
