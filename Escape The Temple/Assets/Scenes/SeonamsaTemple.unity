@@ -103885,9 +103885,9 @@ MonoBehaviour:
     wrongPhraseIndex: 0
   - phrases:
     - "Lo que nace, \nmuere."
-    - "El sufrimiento\n nace."
     - "Lo que nace \nno puede \nmorir."
-    wrongPhraseIndex: 2
+    - "El sufrimiento\n nace."
+    wrongPhraseIndex: 1
   - phrases:
     - "Cuando deseo, \nhay inquietud."
     - "Cuando el deseo \ncesa, hay calma."
