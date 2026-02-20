@@ -12,7 +12,10 @@ public class ABL_balanceSidesController : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("A Balanced Life Puzzle Pieces"))
         {
-            collision.transform.SetParent(transform);
+            //collision.transform.SetParent(transform);
+            //collision.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+            //collision.transform.localScale = collision.gameObject.GetComponent<placeableObjectController>().objectSize;
+            collision.gameObject.GetComponent<placeableObjectController>().placed = true;
             currentWeight += collision.gameObject.GetComponent<placeableObjectController>().weightValue;
             FindObjectOfType<ABL_PuzzleController>().saveWeightPlaced(sideIndex, currentWeight);
         }
@@ -22,7 +25,9 @@ public class ABL_balanceSidesController : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("A Balanced Life Puzzle Pieces"))
         {
-            collision.transform.SetParent(null);
+            //collision.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+            //collision.transform.SetParent(null);
+            collision.gameObject.GetComponent<placeableObjectController>().placed = false;
             currentWeight -= collision.gameObject.GetComponent<placeableObjectController>().weightValue;
             FindObjectOfType<ABL_PuzzleController>().saveWeightPlaced(sideIndex, currentWeight);
         }
