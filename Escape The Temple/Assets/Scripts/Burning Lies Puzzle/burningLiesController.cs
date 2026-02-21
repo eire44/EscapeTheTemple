@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class burningLiesController : MonoBehaviour
 {
+    public GameObject puzzle5_Piece;
     public phraseSet[] sets;
     private int currentSetIndex = 0;
 
@@ -69,6 +70,8 @@ public class burningLiesController : MonoBehaviour
     void PuzzleCompleted()
     {
         Debug.Log("Puzzle completado");
+        puzzle5_Piece.SetActive(true);
+        puzzle5_Piece.GetComponent<fadeIn_PuzzlePieces>().StartFade();
         StartCoroutine(TransicionApagar());
     }
 

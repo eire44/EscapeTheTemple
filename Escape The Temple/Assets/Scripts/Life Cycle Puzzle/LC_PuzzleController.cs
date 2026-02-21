@@ -27,6 +27,12 @@ public class LC_PuzzleController : MonoBehaviour
             }
         }
 
+        foreach (var item in FindObjectsOfType<LC_PiecesController>())
+        {
+            item.gameObject.layer = LayerMask.NameToLayer("Default");
+            item.GetComponent<LC_PiecesController>().enabled = false;
+        }
+
         return true;
     }
 }
