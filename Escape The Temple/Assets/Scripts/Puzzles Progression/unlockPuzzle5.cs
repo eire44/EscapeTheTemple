@@ -14,6 +14,7 @@ public class unlockPuzzle5 : MonoBehaviour
         {
             if(!item.GetComponent<keyPieceHolder_Controller>().keyPlaced)
             {
+                Debug.Log("PIEZA: " + item.name + "SIN COLOCAR");
                 return false;
             }
         }
