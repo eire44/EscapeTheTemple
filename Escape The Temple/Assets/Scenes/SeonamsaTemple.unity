@@ -49255,6 +49255,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 875984546}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &877256407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5556130857644518554, guid: 0296d72fe6808264dae719411cbd7098,
+    type: 3}
+  m_PrefabInstance: {fileID: 1070721618}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &877256411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877256407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ae94cc5f92cee4b97b97133da9b54c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 2
 --- !u!1 &893226523 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6182817285758528838, guid: bb636b2cb5b48b2419f378153a43e5c7,
@@ -52588,7 +52607,7 @@ PrefabInstance:
     - target: {fileID: 5556130857644518554, guid: 0296d72fe6808264dae719411cbd7098,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8105356147726916969, guid: 0296d72fe6808264dae719411cbd7098,
         type: 3}
@@ -52729,6 +52748,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1060154854}
+    - targetCorrespondingSourceObject: {fileID: 5556130857644518554, guid: 0296d72fe6808264dae719411cbd7098,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 877256411}
     - targetCorrespondingSourceObject: {fileID: 953903137497576549, guid: 0296d72fe6808264dae719411cbd7098,
         type: 3}
       insertIndex: -1
@@ -58065,6 +58088,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weightValue: 1.5
+  placed: 0
+  objectSize: {x: 0, y: 0, z: 0}
 --- !u!1 &1099997057 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4482350634803295493, guid: 0296d72fe6808264dae719411cbd7098,
@@ -64957,6 +64982,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weightValue: 2
+  placed: 0
+  objectSize: {x: 0, y: 0, z: 0}
 --- !u!1 &1211526766 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8583420553471467511, guid: 938ca171084b251408df30266d645eae,
@@ -112039,6 +112066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weightValue: 1
+  placed: 0
+  objectSize: {x: 0, y: 0, z: 0}
 --- !u!4 &1886572721 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 563680831921187161, guid: 6b9dea93b7a8cdb4eb0f0ca704f1bac1,
@@ -135499,6 +135528,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weightValue: 0.5
+  placed: 0
+  objectSize: {x: 0, y: 0, z: 0}
 --- !u!1 &2130363915 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4012797550031112029, guid: 0296d72fe6808264dae719411cbd7098,

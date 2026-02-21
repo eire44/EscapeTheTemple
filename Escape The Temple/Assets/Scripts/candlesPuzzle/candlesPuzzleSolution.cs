@@ -24,9 +24,15 @@ public class candlesPuzzleSolution : MonoBehaviour
             if (flagHideText)
             {
                 FindObjectOfType<collectItems>().interactionText.gameObject.SetActive(false);
+                unlockRoom2();
                 flagHideText = false;
             }
             
         }
+    }
+
+    void unlockRoom2()
+    {
+        FindObjectOfType<fadeRoom2Door>().StartFade();
     }
 }
