@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ABL_PuzzleController : MonoBehaviour
 {
+    public GameObject room3_Door;
     public Transform balance;
     public float maxTiltAngle = 20f;
     public float tiltSpeed = 5f;
@@ -59,6 +60,7 @@ public class ABL_PuzzleController : MonoBehaviour
             {
                 item.GetComponent<grabItem>().enabled = false;
             }
+            unlockRoom3();
             Debug.Log("BALANZA EQUILIBRADA");
         }
         
@@ -80,5 +82,10 @@ public class ABL_PuzzleController : MonoBehaviour
         {
             return false;
         }
+    }
+
+    void unlockRoom3()
+    {
+        room3_Door.GetComponent<fadeRoomDoor>().StartFade();
     }
 }

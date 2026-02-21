@@ -7,6 +7,7 @@ public class candlesPuzzleSolution : MonoBehaviour
     public List<GameObject> llamas = new List<GameObject>();
     [HideInInspector] public bool candlesPuzzleSolved = false;
     bool flagHideText = true;
+    public GameObject room2_Door;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,6 @@ public class candlesPuzzleSolution : MonoBehaviour
 
     void unlockRoom2()
     {
-        FindObjectOfType<fadeRoom2Door>().StartFade();
+        room2_Door.GetComponent<fadeRoomDoor>().StartFade();
     }
 }

@@ -24,8 +24,12 @@ public class Mov_Controller : MonoBehaviour
     public float standCameraY = 1.6f;
     public float crouchTransitionSpeed = 8f;
 
+    Vector3 startPosition;
+    public float fallLimit = -10f;
+
     void Start()
     {
+        startPosition = transform.position;
         controller = GetComponent<CharacterController>();
         mouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", 100f);
     }
@@ -39,6 +43,12 @@ public class Mov_Controller : MonoBehaviour
         {
             moveSpeed = 8f;
         }
+
+        if (transform.position.y < fallLimit)
+        {
+            Respawn();
+        }
+
         Move();
         Look();
         HandleCrouch();
@@ -92,5 +102,18 @@ public class Mov_Controller : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
+    }
+
+    void Respawn()
+    {
+        CharacterController cc = GetComponent<CharacterController>();
+
+        if (cc != null)
+            cc.enabled = false;
+
+        transform.position = startPosition;
+
+        if (cc != null)
+            cc.enabled = true;
     }
 }

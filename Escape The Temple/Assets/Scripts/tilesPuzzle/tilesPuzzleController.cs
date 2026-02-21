@@ -5,21 +5,12 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public class tilesPuzzleController : MonoBehaviour
 {
+    public GameObject secretAreaWall;
     int[] correctOrder = { 2, 5, 4, 7, 8, 9 };
     int[] currentOrder = { 0, 0, 0, 0, 0, 0 };
     int tileIndex = 0;
     [HideInInspector] public bool tilesPuzzleSolved = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void addPattern(int tileNumber)
     {
@@ -38,6 +29,7 @@ public class tilesPuzzleController : MonoBehaviour
     void PuzzleSolved()
     {
         tilesPuzzleSolved = true;
+        secretAreaWall.GetComponent<fadeRoomDoor>().StartFade();
         Debug.Log("LOGRADO");
     }
 

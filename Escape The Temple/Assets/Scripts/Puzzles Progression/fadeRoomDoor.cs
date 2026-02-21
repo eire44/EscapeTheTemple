@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fadeRoom2Door : MonoBehaviour
+public class fadeRoomDoor : MonoBehaviour
 {
     public float fadeDuration = 2f;
 
