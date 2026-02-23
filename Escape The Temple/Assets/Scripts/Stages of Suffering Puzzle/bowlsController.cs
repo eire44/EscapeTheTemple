@@ -10,4 +10,9 @@ public class bowlsController : MonoBehaviour
     {
         FindObjectOfType<stagesController>().callForCheckConfiguration(bowlIndex, other.gameObject.tag);
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        FindObjectOfType<stagesController>().callForCheckConfiguration(bowlIndex, "");
+    }
 }

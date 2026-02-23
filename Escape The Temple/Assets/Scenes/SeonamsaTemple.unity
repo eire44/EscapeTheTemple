@@ -9348,7 +9348,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -20351,6 +20351,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 549092847}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 739827448b002cf4c91bd4b99cee645b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 549092850}
   m_SourcePrefab: {fileID: 100100000, guid: 739827448b002cf4c91bd4b99cee645b, type: 3}
 --- !u!4 &549092845 stripped
 Transform:
@@ -20385,6 +20389,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.02, y: 0.019999996, z: 0.019999994}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &549092850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549092846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ae94cc5f92cee4b97b97133da9b54c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 2
 --- !u!1001 &552688796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30786,7 +30803,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -52275,7 +52292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &914684099
 Transform:
   m_ObjectHideFlags: 0
@@ -52284,13 +52301,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914684098}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.81, y: 0.06, z: -13.03}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 21.262, y: 2.051, z: -11.452}
   m_LocalScale: {x: 0.5564788, y: 0.0329555, z: 0.5564788}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1397418834}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1670357880}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!23 &914684101
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63108,7 +63125,7 @@ Transform:
   m_GameObject: {fileID: 1193756322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.21, y: 0.994, z: -9.34}
+  m_LocalPosition: {x: 1.27, y: 0.994, z: -12.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -97195,7 +97212,6 @@ Transform:
   - {fileID: 2116647943}
   - {fileID: 614831343}
   - {fileID: 1852229525}
-  - {fileID: 914684099}
   m_Father: {fileID: 933827159}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1398877685
@@ -106727,7 +106743,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -107655,6 +107671,7 @@ Transform:
   - {fileID: 1497732301}
   - {fileID: 846618419}
   - {fileID: 634154004}
+  - {fileID: 914684099}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1670357881
@@ -107680,16 +107697,16 @@ MonoBehaviour:
     - phrase: "\u201CJealousy and \ninsecurity are \nconsuming me.\u201D"
       correctSymbol: Suffering
   - pairs:
-    - phrase: "\u201CI want to \nappear enlightened.\u201D"
+    - phrase: "\u201CI want to \nappear \nenlightened.\u201D"
       correctSymbol: Desire
     - phrase: "\u201CI need to hold \nonto this image.\u201D"
       correctSymbol: Attachment
     - phrase: '""'
       correctSymbol: Suffering
-    - phrase: "\u201CBeing \u2018spiritual\u2019 \nmakes me superior.\u201D"
+    - phrase: "\u201CBeing \u2018spiritual\u2019 \nmakes me \nsuperior.\u201D"
       correctSymbol: Ignorance
   - pairs:
-    - phrase: "\u201CI am dissatisfied \nwith what I have.\u201D"
+    - phrase: "\u201CI am dissatisfied \nwith what \nI have.\u201D"
       correctSymbol: Suffering
     - phrase: "\u201CHaving money \ngives security.\u201D"
       correctSymbol: Ignorance
@@ -107702,6 +107719,13 @@ MonoBehaviour:
   - {fileID: 1510899247}
   - {fileID: 150104020}
   - {fileID: 698891679}
+  pieces:
+  - {fileID: 997432066}
+  - {fileID: 637075665}
+  - {fileID: 805028471}
+  - {fileID: 688180613}
+  fourthBoard: {fileID: 549092846}
+  keyPiece: {fileID: 914684098}
 --- !u!1001 &1674427077
 PrefabInstance:
   m_ObjectHideFlags: 0

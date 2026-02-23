@@ -12,8 +12,11 @@ public class stagesController : MonoBehaviour
     
     string[] playerConfiguration = {"", "", "", ""};
 
-    int currentRowIndex = 0;
+    int currentRowIndex = 2;
     public TextMeshPro[] boards;
+    public GameObject[] pieces;
+    public GameObject fourthBoard;
+    public GameObject keyPiece;
 
     void Start()
     {
@@ -52,6 +55,15 @@ public class stagesController : MonoBehaviour
         if (roundIndex >= rounds.Length)
         {
             Debug.Log("Puzzle completo");
+            foreach (var item in pieces)
+            {
+                item.GetComponent<grabItem>().enabled = false;
+                item.gameObject.layer = LayerMask.NameToLayer("Default");
+            }
+            
+            fourthBoard.GetComponent<fadeRoomDoor>().StartFade();
+            keyPiece.SetActive(true);
+            keyPiece.GetComponent<fadeIn_PuzzlePieces>().StartFade();
             return;
         }
 
