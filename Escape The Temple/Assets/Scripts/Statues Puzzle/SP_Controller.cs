@@ -51,13 +51,9 @@ public class SP_Controller : MonoBehaviour
 
         Ray ray = new Ray(camera.transform.position, camera.transform.forward);
         RaycastHit hit;
-        //Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red, 2f);
-        //Debug.Log("Origin: " + ray.origin);
-        //Debug.Log("Direction: " + ray.direction);
+
         if (Physics.Raycast(ray, out hit, 100f, pieceLayer))
         {
-
-            Debug.Log("HIT");
             SP_PiecesController pieceController = hit.collider.GetComponent<SP_PiecesController>();
 
             if (pieceController != null)
@@ -67,19 +63,22 @@ public class SP_Controller : MonoBehaviour
 
                 if (IsAdjacent(piecePos, emptyPos))
                 {
-                    StartCoroutine(MovePieceCoroutine(pieceController, piecePos, emptyPos));
+                    int index = emptyPos.x * board.GetLength(1) + emptyPos.y; //fila * cantidadColumnas + columna
+                    Vector3 targetPos = cellPositions[index].position;
+                    StartCoroutine(MovePieceCoroutine(pieceController, piecePos, emptyPos, targetPos));
+                    FindObjectOfType<SP_StatuesMovement>().moveStatue(pieceController.id, index);
                 }
             }
         }
     }
 
-    IEnumerator MovePieceCoroutine(SP_PiecesController piece, Vector2Int piecePos, Vector2Int emptyPos)
+    IEnumerator MovePieceCoroutine(SP_PiecesController piece, Vector2Int piecePos, Vector2Int emptyPos, Vector3 targetPos)
     {
         isMoving = true;
         Vector3 startPos = piece.transform.position;
 
-        int index = emptyPos.x * board.GetLength(1) + emptyPos.y; //fila * cantidadColumnas + columna
-        Vector3 targetPos = cellPositions[index].position;
+        //int index = emptyPos.x * board.GetLength(1) + emptyPos.y; //fila * cantidadColumnas + columna
+        //Vector3 targetPos = cellPositions[index].position;
 
         float duration = 0.2f;
         float time = 0f;
@@ -94,7 +93,7 @@ public class SP_Controller : MonoBehaviour
         piece.transform.position = targetPos;
 
         Swap(piecePos, emptyPos);
-        CheckSolution();
+        //CheckSolution();
         isMoving = false;
     }
 
