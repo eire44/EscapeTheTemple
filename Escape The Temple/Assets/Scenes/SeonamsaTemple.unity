@@ -6775,7 +6775,7 @@ MonoBehaviour:
     bellSound: {fileID: 8300000, guid: 950c1a3e3a507544aa06bb869dab3bbc, type: 3}
   - drumSound: {fileID: 8300000, guid: 24fddf09398a5f341b16518df230bd92, type: 3}
     bellSound: {fileID: 8300000, guid: 8b0aa80118adfb64ab84aa655156a8e7, type: 3}
-  room4_Door: {fileID: 0}
+  room4_Door: {fileID: 2022817467}
 --- !u!1001 &119555307
 PrefabInstance:
   m_ObjectHideFlags: 0

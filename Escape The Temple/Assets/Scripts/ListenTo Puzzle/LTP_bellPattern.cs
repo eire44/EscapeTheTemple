@@ -41,8 +41,9 @@ public class LTP_bellPattern : MonoBehaviour
         {
             foreach (AudioClip clip in bellsSequence)
             {
-                audioSource.clip = clip;
-                audioSource.Play();
+                audioSource.PlayOneShot(clip);
+                //audioSource.clip = clip;
+                //audioSource.Play();
                 yield return new WaitForSeconds(clip.length + delayBetweenSounds);
             }
 
