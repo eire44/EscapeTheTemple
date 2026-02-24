@@ -22,12 +22,15 @@ public class LTP_Controller : MonoBehaviour
         if(soundPairs[clip] == FindObjectOfType<LTP_bellPattern>().bellsSequence[soundIndex])
         {
             soundIndex++;
+            Debug.Log("BIEN");
         } else
         {
             soundIndex = 0;
+            Debug.Log("MAL");
         }
+        Debug.Log("INDICE: " + soundIndex);
 
-        if(soundIndex > FindObjectOfType<LTP_bellPattern>().bellsSequence.Count)
+        if(soundIndex >= FindObjectOfType<LTP_bellPattern>().bellsSequence.Count)
         {
             Debug.Log("SECUENCIA PERFECTA");
         }
