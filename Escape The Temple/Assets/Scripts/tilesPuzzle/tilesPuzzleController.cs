@@ -30,6 +30,7 @@ public class tilesPuzzleController : MonoBehaviour
     {
         tilesPuzzleSolved = true;
         secretAreaWall.GetComponent<fadeRoomDoor>().StartFade();
+        FindObjectOfType<LTP_bellPattern>().startBellSoundsPattern();
         Debug.Log("LOGRADO");
     }
 

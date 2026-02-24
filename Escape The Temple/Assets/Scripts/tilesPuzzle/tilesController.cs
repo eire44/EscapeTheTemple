@@ -28,7 +28,6 @@ public class tilesController : MonoBehaviour
                 {
                     pattern.gameObject.SetActive(true);
                     FindObjectOfType<tilesPuzzleController>().addPattern(tileNumber);
-                    Debug.Log("ON");
                 }
             }
         }
