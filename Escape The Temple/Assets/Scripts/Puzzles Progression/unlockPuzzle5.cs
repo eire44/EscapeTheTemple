@@ -22,8 +22,9 @@ public class unlockPuzzle5 : MonoBehaviour
         foreach (var item in keyPieces)
         {
             item.gameObject.layer = LayerMask.NameToLayer("Default");
-            item.GetComponent<Rigidbody>().useGravity = false;
-            item.GetComponent<Rigidbody>().isKinematic = true;
+            //item.GetComponent<Rigidbody>().useGravity = false;
+            //item.GetComponent<Rigidbody>().isKinematic = true;
+            //item.transform.SetParent(puzzle5_Architecture.transform, false);
         }
         spawnPuzzle5();
     }

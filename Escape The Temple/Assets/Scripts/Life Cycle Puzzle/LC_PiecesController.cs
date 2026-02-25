@@ -38,7 +38,7 @@ public class LC_PiecesController : MonoBehaviour
             }
         }
 
-        Debug.Log(string.Join(", ", FindObjectOfType<LC_PuzzleController>().currentOrder));
+        //Debug.Log(string.Join(", ", FindObjectOfType<LC_PuzzleController>().currentOrder));
         if (FindObjectOfType<LC_PuzzleController>().checkOrder())
         {
             Debug.Log("WIIIIIIIIIIIIIIIIIIIII");
