@@ -27,6 +27,7 @@ TagManager:
   - Character2
   - Character3
   - Character4
+  - ESP_ListenAgain
   layers:
   - Default
   - TransparentFX

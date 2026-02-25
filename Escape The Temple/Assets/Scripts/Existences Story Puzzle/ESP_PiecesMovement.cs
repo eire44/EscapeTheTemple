@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using static ESP_Controller;
 
 public class ESP_PiecesMovement : MonoBehaviour
 {
-    public void movePieces(Vector3 newPosition, Transform character)
+    public void movePieces(Vector3 newPosition_CurrentCharacter, Transform character, Transform affectedCharacter, Vector3 newPosition_AffectedCharacter)
     {
-        StartCoroutine(MoveScreenPiece(newPosition, character));
+        StartCoroutine(MoveScreenPiece(newPosition_CurrentCharacter, character)); 
+        if(affectedCharacter != null )
+        {
+            StartCoroutine(MoveScreenPiece(newPosition_AffectedCharacter, affectedCharacter));
+        }
     }
 
     IEnumerator MoveScreenPiece(Vector3 newPosition, Transform character)

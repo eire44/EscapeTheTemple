@@ -100,6 +100,10 @@ public class ESP_Controller : MonoBehaviour
                     FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
                     callForMovePieces();
                 }
+                else if (hit.collider.CompareTag("ESP_ListenAgain"))
+                {
+                    FindObjectOfType<ESP_AudioClueController>().playAudioClue();
+                }
             }
         }
     }
@@ -107,20 +111,48 @@ public class ESP_Controller : MonoBehaviour
 
     void callForMovePieces()
     {
-        Vector3 newPosition = charactersCorrelation[currentCharacter].position;
+        Vector3 newPosition_CurrentCharacter = charactersCorrelation[currentCharacter].position;
+        Transform affectedCharacter = null;
+
+        if (currentCharacter == characters.Character1)
+        {
+            affectedCharacter = charactersCorrelation[characters.Character3];
+        }
+        else if (currentCharacter == characters.Character2)
+        {
+            affectedCharacter = charactersCorrelation[characters.Character4];
+        }
+        else if (currentCharacter == characters.Character3)
+        {
+            affectedCharacter = charactersCorrelation[characters.Character2];
+        }
+        else if (currentCharacter == characters.Character4)
+        {
+            affectedCharacter = charactersCorrelation[characters.Character3];
+        }
+        Vector3 newPosition_AffectedCharacter = affectedCharacter.position;
+
         if (newDirection == directions.Up)
         {
-            newPosition.y += 0.5f;
-        } else if (newDirection == directions.Down)
-        {
-            newPosition.y -= 0.5f;
-        } else if(newDirection == directions.Left)
-        {
-            newPosition.z -= 0.5f;
-        } else if(newDirection == directions.Right)
-        {
-            newPosition.z += 0.5f;
+            newPosition_CurrentCharacter.y += 0.5f;
+            newPosition_AffectedCharacter.y -= 0.5f;
         }
-        FindObjectOfType<ESP_PiecesMovement>().movePieces(newPosition, charactersCorrelation[currentCharacter]);
+        else if (newDirection == directions.Down)
+        {
+            newPosition_CurrentCharacter.y -= 0.5f;
+            newPosition_AffectedCharacter.y += 0.5f;
+        }
+        else if (newDirection == directions.Left)
+        {
+            newPosition_CurrentCharacter.z -= 0.5f;
+            newPosition_AffectedCharacter.z += 0.5f;
+        }
+        else if (newDirection == directions.Right)
+        {
+            newPosition_CurrentCharacter.z += 0.5f;
+            newPosition_AffectedCharacter.z -= 0.5f;
+        }
+
+        FindObjectOfType<ESP_PiecesMovement>().movePieces(newPosition_CurrentCharacter, charactersCorrelation[currentCharacter], affectedCharacter, newPosition_AffectedCharacter);
     }
 }
