@@ -28,6 +28,10 @@ TagManager:
   - Character3
   - Character4
   - ESP_ListenAgain
+  - Character1_Button
+  - Character2_Button
+  - Character3_Button
+  - Character4_Button
   layers:
   - Default
   - TransparentFX
@@ -41,7 +45,7 @@ TagManager:
   - Life Cycle Puzzle Containers
   - A Balanced Life Puzzle Pieces
   - Statues Puzzle Pieces
-  - 
+  - ESP_Characters
   - 
   - 
   - 

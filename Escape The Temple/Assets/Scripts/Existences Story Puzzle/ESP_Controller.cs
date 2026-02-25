@@ -6,6 +6,7 @@ using static ESP_Controller;
 
 public class ESP_Controller : MonoBehaviour
 {
+    public Transform screenAreasContainer;
     public Transform[] screenPieces;
     public Transform[] leverPositions;
     public Material[] materials;
@@ -56,22 +57,22 @@ public class ESP_Controller : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (hit.collider.CompareTag("Character1"))
+                if (hit.collider.CompareTag("Character1_Button"))
                 {
                     currentCharacter = characters.Character1;
                     FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[0]);
                 }
-                else if (hit.collider.CompareTag("Character2"))
+                else if (hit.collider.CompareTag("Character2_Button"))
                 {
                     currentCharacter = characters.Character2;
                     FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[1]);
                 }
-                else if (hit.collider.CompareTag("Character3"))
+                else if (hit.collider.CompareTag("Character3_Button"))
                 {
                     currentCharacter = characters.Character3;
                     FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[2]);
                 }
-                else if (hit.collider.CompareTag("Character4"))
+                else if (hit.collider.CompareTag("Character4_Button"))
                 {
                     currentCharacter = characters.Character4;
                     FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[3]);
@@ -154,5 +155,28 @@ public class ESP_Controller : MonoBehaviour
         }
 
         FindObjectOfType<ESP_PiecesMovement>().movePieces(newPosition_CurrentCharacter, charactersCorrelation[currentCharacter], affectedCharacter, newPosition_AffectedCharacter);
+    }
+
+
+    public void checkCharactersPositions()
+    {
+        foreach (Transform item in screenAreasContainer)
+        {
+            if (item.GetComponent<ESP_AreasController>().collidedCharacters.Count != 1)
+            {
+                return;
+            }
+
+            foreach (var obj in item.GetComponent<ESP_AreasController>().collidedCharacters)
+            {
+                if(!obj.CompareTag(item.GetComponent<ESP_AreasController>().correctCharacterTag))
+                {
+                    return;
+                }
+            }
+
+        }
+
+        Debug.Log("JUEGO TERMINADO");
     }
 }

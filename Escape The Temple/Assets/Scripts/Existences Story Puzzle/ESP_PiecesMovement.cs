@@ -34,5 +34,6 @@ public class ESP_PiecesMovement : MonoBehaviour
         character.transform.position = newPosition;
 
         //isMoving = false;
+        FindObjectOfType<ESP_Controller>().checkCharactersPositions();
     }
 }
