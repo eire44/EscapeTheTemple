@@ -93,7 +93,6 @@ public class SP_Controller : MonoBehaviour
         piece.transform.position = targetPos;
 
         Swap(piecePos, emptyPos);
-        //CheckSolution();
         isMoving = false;
     }
 
@@ -131,27 +130,21 @@ public class SP_Controller : MonoBehaviour
         board[b.x, b.y] = temp;
     }
 
-    void CheckSolution()
+    public void checkStatuesPositions(GameObject[] statues)
     {
-        int expected = 1;
-
-        for (int x = 0; x < 3; x++)
+        foreach (var statue in statues)
         {
-            for (int y = 0; y < 3; y++)
+            if(statue.GetComponent<SP_StatuesController>().currentPos != statue.GetComponent<SP_StatuesController>().correctPos)
             {
-                if (x == 2 && y == 2)
-                {
-                    if (board[x, y] != 0)
-                        return;
-                }
-                else
-                {
-                    if (board[x, y] != expected++)
-                        return;
-                }
+                return;
             }
         }
 
-        Debug.Log("Puzzle Resuelto");
+        SP_PiecesController[] pieces = FindObjectsOfType<SP_PiecesController>();
+        foreach (var piece in pieces)
+        {
+            piece.gameObject.layer = LayerMask.NameToLayer("Default");
+        }
+        Debug.Log("PUZZLE 9 LOGRADO");
     }
 }

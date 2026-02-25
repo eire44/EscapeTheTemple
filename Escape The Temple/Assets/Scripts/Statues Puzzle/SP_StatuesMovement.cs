@@ -25,6 +25,7 @@ public class SP_StatuesMovement : MonoBehaviour
             if(pieceID == statue.GetComponent<SP_StatuesController>().id)
             {
                 Vector3 targetPos = pieceToStatue_Dictionary[cellIndex].position;
+                statue.GetComponent<SP_StatuesController>().currentPos = cellIndex;
                 StartCoroutine(MovePieceCoroutine(statue, targetPos));
             }
         }
@@ -46,5 +47,7 @@ public class SP_StatuesMovement : MonoBehaviour
         }
 
         statue.transform.position = newPosition;
+
+        FindObjectOfType<SP_Controller>().checkStatuesPositions(statues);
     }
 }
