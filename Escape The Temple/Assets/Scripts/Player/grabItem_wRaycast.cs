@@ -33,8 +33,11 @@ public class grabItem_wRaycast : MonoBehaviour
                     currentGrabbedItem.transform.SetParent(posHand.transform);
                     currentGrabbedItem.transform.position = posHand.transform.position;
 
-                    rb.isKinematic = true;
-                    rb.useGravity = false;
+                    if(rb != null)
+                    {
+                        rb.isKinematic = true;
+                        rb.useGravity = false;
+                    }
                 } 
                 else
                 {
@@ -43,11 +46,15 @@ public class grabItem_wRaycast : MonoBehaviour
                     //currentGrabbedItem.transform.position = hit.transform.position;
                     //currentGrabbedItem.transform.rotation = hit.transform.rotation;
 
-                    rb.isKinematic = false;
-                    rb.useGravity = true;
-
+                    if(rb != null)
+                    {
+                        rb.isKinematic = false;
+                        rb.useGravity = true;
+                        rb = null;
+                    }
+                    
                     currentGrabbedItem = null;
-                    rb = null;
+                    
 
                     currentGrabbedItem = hit.collider.gameObject;
                     rb = currentGrabbedItem.GetComponent<Rigidbody>();
@@ -55,8 +62,12 @@ public class grabItem_wRaycast : MonoBehaviour
                     currentGrabbedItem.transform.SetParent(posHand.transform);
                     currentGrabbedItem.transform.position = posHand.transform.position;
 
-                    rb.isKinematic = true;
-                    rb.useGravity = false;
+
+                    if (rb != null)
+                    {
+                        rb.isKinematic = true;
+                        rb.useGravity = false;
+                    }
                 }
             } else if (Physics.Raycast(ray, out hit, distance, placeLayer))
             {
@@ -67,11 +78,15 @@ public class grabItem_wRaycast : MonoBehaviour
                     currentGrabbedItem.transform.position = hit.transform.position;
                     currentGrabbedItem.transform.rotation = hit.transform.rotation;
 
-                    rb.isKinematic = false;
-                    rb.useGravity = true;
+                    if(rb != null)
+                    {
+                        rb.isKinematic = false;
+                        rb.useGravity = true;
+                        rb = null;
+                    }
+                    
 
                     currentGrabbedItem = null;
-                    rb = null;
 
                     //if(FindObjectOfType<LC_PuzzleController>().checkOrder())
                     //{

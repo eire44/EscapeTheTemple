@@ -12,7 +12,7 @@ public class stagesController : MonoBehaviour
     
     string[] playerConfiguration = {"", "", "", ""};
 
-    int currentRowIndex = 2;
+    int currentRowIndex = 0;
     public TextMeshPro[] boards;
     public GameObject[] pieces;
     public GameObject fourthBoard;

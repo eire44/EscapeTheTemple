@@ -27,6 +27,9 @@ public class ESP_Controller : MonoBehaviour
 
     Dictionary<directions, Transform> directionsCorrelation = new Dictionary<directions, Transform>();
     Dictionary<characters, Transform> charactersCorrelation = new Dictionary<characters, Transform>();
+
+    [HideInInspector] public bool enablePuzzle = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,61 +52,64 @@ public class ESP_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 3f))
+        if (enablePuzzle)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 3f))
             {
-                if (hit.collider.CompareTag("Character1_Button"))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    currentCharacter = characters.Character1;
-                    FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[0]);
-                }
-                else if (hit.collider.CompareTag("Character2_Button"))
-                {
-                    currentCharacter = characters.Character2;
-                    FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[1]);
-                }
-                else if (hit.collider.CompareTag("Character3_Button"))
-                {
-                    currentCharacter = characters.Character3;
-                    FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[2]);
-                }
-                else if (hit.collider.CompareTag("Character4_Button"))
-                {
-                    currentCharacter = characters.Character4;
-                    FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[3]);
-                }
-                else if (hit.collider.CompareTag("ESP_Up"))
-                {
-                    newDirection = directions.Up;
-                    FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
-                    callForMovePieces();
-                }
-                else if (hit.collider.CompareTag("ESP_Down"))
-                {
-                    newDirection = directions.Down;
-                    FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
-                    callForMovePieces();
-                }
-                else if (hit.collider.CompareTag("ESP_Left"))
-                {
-                    newDirection = directions.Left;
-                    FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
-                    callForMovePieces();
-                }
-                else if (hit.collider.CompareTag("ESP_Right"))
-                {
-                    newDirection = directions.Right;
-                    FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
-                    callForMovePieces();
-                }
-                else if (hit.collider.CompareTag("ESP_ListenAgain"))
-                {
-                    FindObjectOfType<ESP_AudioClueController>().playAudioClue();
+                    if (hit.collider.CompareTag("Character1_Button"))
+                    {
+                        currentCharacter = characters.Character1;
+                        FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[0]);
+                    }
+                    else if (hit.collider.CompareTag("Character2_Button"))
+                    {
+                        currentCharacter = characters.Character2;
+                        FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[1]);
+                    }
+                    else if (hit.collider.CompareTag("Character3_Button"))
+                    {
+                        currentCharacter = characters.Character3;
+                        FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[2]);
+                    }
+                    else if (hit.collider.CompareTag("Character4_Button"))
+                    {
+                        currentCharacter = characters.Character4;
+                        FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[3]);
+                    }
+                    else if (hit.collider.CompareTag("ESP_Up"))
+                    {
+                        newDirection = directions.Up;
+                        FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
+                        callForMovePieces();
+                    }
+                    else if (hit.collider.CompareTag("ESP_Down"))
+                    {
+                        newDirection = directions.Down;
+                        FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
+                        callForMovePieces();
+                    }
+                    else if (hit.collider.CompareTag("ESP_Left"))
+                    {
+                        newDirection = directions.Left;
+                        FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
+                        callForMovePieces();
+                    }
+                    else if (hit.collider.CompareTag("ESP_Right"))
+                    {
+                        newDirection = directions.Right;
+                        FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
+                        callForMovePieces();
+                    }
+                    else if (hit.collider.CompareTag("ESP_ListenAgain"))
+                    {
+                        FindObjectOfType<ESP_AudioClueController>().playAudioClue();
+                    }
                 }
             }
         }
@@ -145,13 +151,13 @@ public class ESP_Controller : MonoBehaviour
         }
         else if (newDirection == directions.Left)
         {
-            newPosition_CurrentCharacter.z -= 0.5f;
-            newPosition_AffectedCharacter.z += 0.5f;
+            newPosition_CurrentCharacter.x -= 0.5f;
+            newPosition_AffectedCharacter.x += 0.5f;
         }
         else if (newDirection == directions.Right)
         {
-            newPosition_CurrentCharacter.z += 0.5f;
-            newPosition_AffectedCharacter.z -= 0.5f;
+            newPosition_CurrentCharacter.x += 0.5f;
+            newPosition_AffectedCharacter.x -= 0.5f;
         }
 
         FindObjectOfType<ESP_PiecesMovement>().movePieces(newPosition_CurrentCharacter, charactersCorrelation[currentCharacter], affectedCharacter, newPosition_AffectedCharacter);

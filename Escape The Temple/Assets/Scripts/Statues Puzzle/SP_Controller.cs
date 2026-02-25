@@ -9,7 +9,7 @@ public class SP_Controller : MonoBehaviour
     int[,] board;
     public Transform[] cellPositions;
     bool isMoving = false;
-
+    public GameObject lever;
     private void Start()
     {
         //board = new int[3, 3];
@@ -145,6 +145,9 @@ public class SP_Controller : MonoBehaviour
         {
             piece.gameObject.layer = LayerMask.NameToLayer("Default");
         }
+
+        lever.SetActive(true);
+        lever.GetComponent<fadeIn_PuzzlePieces>().StartFade();
         Debug.Log("PUZZLE 9 LOGRADO");
     }
 }

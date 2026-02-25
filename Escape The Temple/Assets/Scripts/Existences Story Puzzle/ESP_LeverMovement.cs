@@ -60,4 +60,14 @@ public class ESP_LeverMovement : MonoBehaviour
 
         leverIsMoving = false;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject == center.gameObject)
+        {
+            gameObject.layer = LayerMask.NameToLayer("Default");
+            center.gameObject.layer = LayerMask.NameToLayer("Default");
+            FindObjectOfType<ESP_Controller>().enablePuzzle = true;
+        }
+    }
 }
