@@ -11,11 +11,9 @@ public class keyPieceHolder_Controller : MonoBehaviour
         if(other.gameObject.CompareTag("KeyPiece"))
         {
             keyPlaced = true;
-            if(FindObjectOfType<unlockPuzzle5>().checkPlaces())
-            {
-                Debug.Log("SPAWNEAR PUZZLE 5");
-            }
-            
+            gameObject.layer = LayerMask.NameToLayer("Default");
+            other.gameObject.layer = LayerMask.NameToLayer("Default");
+            FindObjectOfType<unlockPuzzle5>().checkPlaces();
         }
     }
 
@@ -24,6 +22,8 @@ public class keyPieceHolder_Controller : MonoBehaviour
         if (other.gameObject.CompareTag("KeyPiece"))
         {
             keyPlaced = false;
+            gameObject.layer = LayerMask.NameToLayer("Life Cycle Puzzle Containers");
+            other.gameObject.layer = LayerMask.NameToLayer("Life Cycle Puzzle Pieces");
         }
     }
 }

@@ -8,7 +8,7 @@ public class burningLiesController : MonoBehaviour
 {
     public GameObject puzzle5_Piece;
     public phraseSet[] sets;
-    private int currentSetIndex = 0;
+    [HideInInspector] public int currentSetIndex = 0;
 
     public phrasesController[] papers;
 
@@ -16,6 +16,8 @@ public class burningLiesController : MonoBehaviour
     public ParticleSystem[] fuegos;
     public float duracionApagadoFuego = 1.5f;
     float[] ratesOriginales;
+
+    bool puzzleAlreadySolved = false;
 
     void Start()
     {
@@ -45,10 +47,14 @@ public class burningLiesController : MonoBehaviour
 
     public void checkBurntPaper(int burnedIndex)
     {
+        Debug.Log("se está quemando el papel " + burnedIndex + " y debería quemarse el " + sets[currentSetIndex].wrongPhraseIndex);
+        if (puzzleAlreadySolved) return;
+
         int correctIndex = sets[currentSetIndex].wrongPhraseIndex;
 
         if (burnedIndex == correctIndex)
         {
+            puzzleAlreadySolved = true;
             PuzzleCompleted();
         }
         else
