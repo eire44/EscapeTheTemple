@@ -5,22 +5,32 @@ using UnityEngine;
 
 public class ESP_LeverMovement : MonoBehaviour
 {
-    public bool isMoving = false;
+    public bool leverIsMoving = false;
     public Transform center;
     Vector3 startPos;
     private void Start()
     {
         startPos = center.position;
     }
+
+    public void changeLeverColor(Material newMaterial)
+    {
+        GetComponent<Renderer>().material = newMaterial;
+        foreach (Transform child in transform)
+        {
+            child.GetComponent<Renderer>().material = newMaterial;
+        }
+    }
+
     public void moveLever(Transform direction)
     {
-        if (isMoving) return;
+        if (leverIsMoving) return;
         StartCoroutine(MoveLeverCoroutine(direction));
     }
 
     IEnumerator MoveLeverCoroutine(Transform targetPos)
     {
-        isMoving = true;
+        leverIsMoving = true;
 
         Vector3 newPosition = new Vector3(targetPos.position.x, transform.position.y, targetPos.position.z);
 
@@ -46,6 +56,8 @@ public class ESP_LeverMovement : MonoBehaviour
             yield return null;
         }
 
-        isMoving = false;
+        transform.position = startPos;
+
+        leverIsMoving = false;
     }
 }
