@@ -5,69 +5,47 @@ using UnityEngine;
 
 public class ESP_LeverMovement : MonoBehaviour
 {
-    bool puzzleActive = false;
-    bool isDragging = false;
-    bool isMoving = false;
-
-    Vector2 startMousePos;
-    float dragThreshold = 50f;
-
-    public Transform[] screenPieces;
-    int screenPieces_Index = 0;
-    enum characters
+    public bool isMoving = false;
+    public Transform center;
+    Vector3 startPos;
+    private void Start()
     {
-        Character1, Character2, Character3, Character4
+        startPos = center.position;
+    }
+    public void moveLever(Transform direction)
+    {
+        if (isMoving) return;
+        StartCoroutine(MoveLeverCoroutine(direction));
     }
 
-    characters currentCharacter;
-    Dictionary<characters, Transform> piecesCorrelation = new Dictionary<characters, Transform>();
-    // Start is called before the first frame update
-    void Start()
+    IEnumerator MoveLeverCoroutine(Transform targetPos)
     {
-        foreach (characters pair in System.Enum.GetValues(typeof(characters)))
+        isMoving = true;
+
+        Vector3 newPosition = new Vector3(targetPos.position.x, transform.position.y, targetPos.position.z);
+
+        float durationMove = 0.5f;
+        float timeMove = 0f;
+
+        while (timeMove < durationMove)
         {
-            piecesCorrelation[pair] = screenPieces[screenPieces_Index];
-            screenPieces_Index++;
+            transform.position = Vector3.Lerp(startPos, newPosition, timeMove / durationMove);
+            timeMove += Time.deltaTime;
+            yield return null;
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        transform.position = newPosition;
 
-        RaycastHit hit;
+        float durationReturn = 0.5f;
+        float timeReturn = 0f;
 
-        if (Physics.Raycast(ray, out hit, 3f))
+        while (timeReturn < durationReturn)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (hit.collider.CompareTag("Lever"))
-                {
-                    moveLever();
-                }
-                else if (hit.collider.CompareTag("Character1"))
-                {
-                    currentCharacter = characters.Character1;
-                }
-                else if (hit.collider.CompareTag("Character2"))
-                {
-                    currentCharacter = characters.Character2;
-                }
-                else if (hit.collider.CompareTag("Character3"))
-                {
-                    currentCharacter = characters.Character3;
-                }
-                else if (hit.collider.CompareTag("Character4"))
-                {
-                    currentCharacter = characters.Character4;
-                }
-            }
+            transform.position = Vector3.Lerp(newPosition, startPos, timeReturn / durationReturn);
+            timeReturn += Time.deltaTime;
+            yield return null;
         }
-    }
 
-    void moveLever()
-    {
-
+        isMoving = false;
     }
 }

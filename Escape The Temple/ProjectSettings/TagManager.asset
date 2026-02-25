@@ -19,6 +19,14 @@ TagManager:
   - Attachment
   - Suffering
   - KeyPiece
+  - ESP_Up
+  - ESP_Down
+  - ESP_Left
+  - ESP_Right
+  - Character1
+  - Character2
+  - Character3
+  - Character4
   layers:
   - Default
   - TransparentFX
