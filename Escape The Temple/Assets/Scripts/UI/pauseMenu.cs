@@ -38,11 +38,13 @@ public class pauseMenu : MonoBehaviour
 
     public void reiniciarJuego()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("SeonamsaTemple");
     }
 
     public void backToMenu()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("Inicio");
     }
 

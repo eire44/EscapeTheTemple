@@ -178,5 +178,7 @@ public class ESP_Controller : MonoBehaviour
         }
 
         Debug.Log("JUEGO TERMINADO");
+        FindObjectOfType<ESP_AudioClueController>().audioClue.Stop();
+        FindObjectOfType<endGame>().leaveTheTemple();
     }
 }
