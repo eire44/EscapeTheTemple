@@ -14,7 +14,7 @@ public class LTP_bellPattern : MonoBehaviour
     public float delayBetweenSounds = 0.5f;
     public float silenceBetweenSequences = 3f;
 
-    AudioSource audioSource;
+    [HideInInspector] public AudioSource audioSource;
 
     void Start()
     {
@@ -37,17 +37,20 @@ public class LTP_bellPattern : MonoBehaviour
 
     IEnumerator PlaySequences()
     {
-        while (true)
-        {
-            foreach (AudioClip clip in bellsSequence)
+        //if (!FindObjectOfType<LTP_Controller>().LTPpuzzleSolved)
+        //{
+            while (true)
             {
-                audioSource.PlayOneShot(clip);
-                //audioSource.clip = clip;
-                //audioSource.Play();
-                yield return new WaitForSeconds(clip.length + delayBetweenSounds);
-            }
+                foreach (AudioClip clip in bellsSequence)
+                {
+                    audioSource.PlayOneShot(clip);
+                    //audioSource.clip = clip;
+                    //audioSource.Play();
+                    yield return new WaitForSeconds(clip.length + delayBetweenSounds);
+                }
 
-            yield return new WaitForSeconds(silenceBetweenSequences);
-        }
+                yield return new WaitForSeconds(silenceBetweenSequences);
+            }
+        //}
     }
 }

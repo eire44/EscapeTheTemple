@@ -8,7 +8,7 @@ public class LTP_Controller : MonoBehaviour
     public List<LTP_soundPairs> soundsList;
     int soundIndex = 0;
     Dictionary<AudioClip, AudioClip> soundPairs = new Dictionary<AudioClip, AudioClip>();
-    bool LTPpuzzleSolved = false;
+    [HideInInspector] public bool LTPpuzzleSolved = false;
     public GameObject room4_Door;
 
     private void Start()
@@ -39,6 +39,7 @@ public class LTP_Controller : MonoBehaviour
             {
                 Debug.Log("SECUENCIA PERFECTA");
                 room4_Door.GetComponent<fadeRoomDoor>().StartFade();
+                FindObjectOfType<LTP_bellPattern>().audioSource.enabled = false;
                 LTPpuzzleSolved = true;
             }
         }

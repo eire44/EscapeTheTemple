@@ -47,6 +47,11 @@ public class collectItems : MonoBehaviour
         {
             collectItemText.gameObject.SetActive(true);
         }
+        else
+        {
+            interactionText.gameObject.SetActive(false);
+            collectItemText.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerExit(Collider other)

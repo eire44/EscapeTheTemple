@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.6150587, g: 0.65532213, b: 0.735849, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: d1964eeb12705ba47b5ad8878781117e,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -7252,6 +7253,7 @@ MonoBehaviour:
     bellSound: {fileID: 8300000, guid: 950c1a3e3a507544aa06bb869dab3bbc, type: 3}
   - drumSound: {fileID: 8300000, guid: 24fddf09398a5f341b16518df230bd92, type: 3}
     bellSound: {fileID: 8300000, guid: 8b0aa80118adfb64ab84aa655156a8e7, type: 3}
+  LTPpuzzleSolved: 0
   room4_Door: {fileID: 2022817467}
 --- !u!1001 &119555307
 PrefabInstance:
@@ -11244,7 +11246,7 @@ PrefabInstance:
     - target: {fileID: 1164976650277014861, guid: 8563f42bedc546740a97bf1ff1783a47,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -47.708
+      value: -30.648
       objectReference: {fileID: 0}
     - target: {fileID: 1164976650277014861, guid: 8563f42bedc546740a97bf1ff1783a47,
         type: 3}
@@ -11496,17 +11498,17 @@ PrefabInstance:
     - target: {fileID: 1158930210268871988, guid: a4be53a4680cd2849a2221295308c856,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.7590865
+      value: 0.096226394
       objectReference: {fileID: 0}
     - target: {fileID: 1158930210268871988, guid: a4be53a4680cd2849a2221295308c856,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.83396226
+      value: 0.55377096
       objectReference: {fileID: 0}
     - target: {fileID: 1158930210268871988, guid: a4be53a4680cd2849a2221295308c856,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.11801341
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1158930210268871989, guid: a4be53a4680cd2849a2221295308c856,
         type: 3}
@@ -20294,7 +20296,7 @@ Transform:
   m_GameObject: {fileID: 462852879}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0000015238854, y: -0.7001138, z: 0.0000004846668, w: 0.7140314}
-  m_LocalPosition: {x: -130.61554, y: -0.061304003, z: 12.739658}
+  m_LocalPosition: {x: -130.2, y: -0.06, z: 14.22}
   m_LocalScale: {x: 0.6527663, y: 0.6527663, z: 0.6527663}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27994,17 +27996,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9c77fba076892cf44886c25b0ce806e9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -132.26765
+      value: -127.54
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c77fba076892cf44886c25b0ce806e9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.73380965
+      value: -0.73
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c77fba076892cf44886c25b0ce806e9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.135502
+      value: 16.95
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c77fba076892cf44886c25b0ce806e9,
         type: 3}
@@ -42586,7 +42588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 330585545}
-  distance: 1.5
+  distance: 2
   nombreObjeto: {fileID: 467759540}
   txtIdentificacionTablas: {fileID: 1400818439}
 --- !u!114 &757456516
@@ -59861,17 +59863,17 @@ PrefabInstance:
     - target: {fileID: 1092972450210437142, guid: dbaf37e8df58c5d49b6eab00fcfb2c6c,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.21043609
+      value: 0.85882354
       objectReference: {fileID: 0}
     - target: {fileID: 1092972450210437142, guid: dbaf37e8df58c5d49b6eab00fcfb2c6c,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.7056604
+      value: 0.8784314
       objectReference: {fileID: 0}
     - target: {fileID: 1092972450210437142, guid: dbaf37e8df58c5d49b6eab00fcfb2c6c,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.12648623
+      value: 0.3019608
       objectReference: {fileID: 0}
     - target: {fileID: 1092972450210437143, guid: dbaf37e8df58c5d49b6eab00fcfb2c6c,
         type: 3}
@@ -68462,7 +68464,7 @@ Transform:
   m_GameObject: {fileID: 1193756322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0.994, z: -14.38}
+  m_LocalPosition: {x: 1.58, y: 0.994, z: -28.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -74323,7 +74325,7 @@ Transform:
   m_GameObject: {fileID: 1221829403}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0000015238854, y: -0.7001138, z: 0.0000004846668, w: 0.7140314}
-  m_LocalPosition: {x: -129.06761, y: 0.022755286, z: 10.697491}
+  m_LocalPosition: {x: -129.0687, y: 0.017304912, z: 11.106544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -74403,7 +74405,7 @@ GameObject:
   - component: {fileID: 1224978500}
   - component: {fileID: 1224978499}
   m_Layer: 5
-  m_Name: txtPistaHierbas
+  m_Name: txtPistaEstatuas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74468,8 +74470,8 @@ MonoBehaviour:
     guia por las estrellas,\r\n\u015A\u0101riputra lo observaba de frente,\r\nlo
     miraba a los ojos y lo escuchaba con su coraz\xF3n.\r\n\u0100nanda se sent\xF3
     a la derecha del Buda,\r\ny sentia la caricia del viento\r\nen su h\xE1bito azul
-    como el cielo,\r\nque abraza al sol y se deja iluminar.\r\nA la derecha de \u0100nanda
-    \r\nse sent\xF3 Maudgaly\u0101yana\r\nvistiendo el verde de los \xE1rboles\r\nque
+    como el cielo,\r\nque abraza al sol y se deja iluminar.\r\nA la izquierda de
+    \u0100nanda \r\nse sent\xF3 Maudgaly\u0101yana\r\nvistiendo el verde de los \xE1rboles\r\nque
     crecen sobre las raices m\xE1s s\xF3lidas, \r\nel verde de las plantas\r\nque
     tanta vida tienen y tanta vida dan.\r\n"
   m_isRightToLeft: 0
@@ -81051,17 +81053,17 @@ PrefabInstance:
     - target: {fileID: 5587322213394869589, guid: 44d111feca0db5642a3e62ae5d9d4506,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -130.82088
+      value: -130.40533
       objectReference: {fileID: 0}
     - target: {fileID: 5587322213394869589, guid: 44d111feca0db5642a3e62ae5d9d4506,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.77118516
+      value: -0.769881
       objectReference: {fileID: 0}
     - target: {fileID: 5587322213394869589, guid: 44d111feca0db5642a3e62ae5d9d4506,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.591099
+      value: 14.07144
       objectReference: {fileID: 0}
     - target: {fileID: 5587322213394869589, guid: 44d111feca0db5642a3e62ae5d9d4506,
         type: 3}
@@ -111524,7 +111526,7 @@ Transform:
   m_GameObject: {fileID: 1484993155}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0000015238854, y: -0.7001138, z: 0.0000004846668, w: 0.7140314}
-  m_LocalPosition: {x: -129.1052, y: 0.02274675, z: 8.157126}
+  m_LocalPosition: {x: -129.86227, y: 0.39953732, z: 7.8675156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -111720,7 +111722,7 @@ Transform:
   m_GameObject: {fileID: 1493272684}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0000015238854, y: -0.7001138, z: 0.0000004846668, w: 0.7140314}
-  m_LocalPosition: {x: -133.63873, y: 0.022768648, z: 14.515007}
+  m_LocalPosition: {x: -133.35, y: 0.02, z: 14.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -112921,17 +112923,17 @@ PrefabInstance:
     - target: {fileID: 2350870152367505557, guid: 4eef607171d85c546a30cf614ec8387b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -130.60033
+      value: -129.14
       objectReference: {fileID: 0}
     - target: {fileID: 2350870152367505557, guid: 4eef607171d85c546a30cf614ec8387b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.77430475
+      value: -0.78
       objectReference: {fileID: 0}
     - target: {fileID: 2350870152367505557, guid: 4eef607171d85c546a30cf614ec8387b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.668457
+      value: 11.03
       objectReference: {fileID: 0}
     - target: {fileID: 2350870152367505557, guid: 4eef607171d85c546a30cf614ec8387b,
         type: 3}
@@ -116800,7 +116802,11 @@ MonoBehaviour:
       correctSymbol: Desire
     - phrase: "\u201CI need to hold \nonto this image.\u201D"
       correctSymbol: Attachment
-    - phrase: '""'
+    - phrase: '"I am always
+
+        afraid of what
+
+        other people say"'
       correctSymbol: Suffering
     - phrase: "\u201CBeing \u2018spiritual\u2019 \nmakes me \nsuperior.\u201D"
       correctSymbol: Ignorance
@@ -116851,12 +116857,12 @@ PrefabInstance:
     - target: {fileID: 5577919464782880592, guid: 8c80585032492da4aa78b9a58d634adb,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.15799923
+      value: 0.025922924
       objectReference: {fileID: 0}
     - target: {fileID: 5577919464782880592, guid: 8c80585032492da4aa78b9a58d634adb,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.82641506
+      value: 0.827451
       objectReference: {fileID: 0}
     - target: {fileID: 5577919464782880594, guid: 8c80585032492da4aa78b9a58d634adb,
         type: 3}
@@ -117636,17 +117642,17 @@ PrefabInstance:
     - target: {fileID: 7638902275524845119, guid: 198dcf819ed36ca489f20ed6c6a82b80,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -130.97272
+      value: -130.04
       objectReference: {fileID: 0}
     - target: {fileID: 7638902275524845119, guid: 198dcf819ed36ca489f20ed6c6a82b80,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7805373
+      value: -0.78
       objectReference: {fileID: 0}
     - target: {fileID: 7638902275524845119, guid: 198dcf819ed36ca489f20ed6c6a82b80,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.838485
+      value: 7.8
       objectReference: {fileID: 0}
     - target: {fileID: 7638902275524845119, guid: 198dcf819ed36ca489f20ed6c6a82b80,
         type: 3}
@@ -121006,7 +121012,7 @@ PrefabInstance:
     - target: {fileID: 8696092326277500081, guid: 24b3814b604a9bf45b3ce43568debcc9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -48.73
+      value: -31.67
       objectReference: {fileID: 0}
     - target: {fileID: 8696092326277500081, guid: 24b3814b604a9bf45b3ce43568debcc9,
         type: 3}
@@ -146259,6 +146265,7 @@ MonoBehaviour:
   bellsSequence: []
   delayBetweenSounds: 0.3
   silenceBetweenSequences: 5
+  audioSource: {fileID: 0}
 --- !u!82 &2085437893
 AudioSource:
   m_ObjectHideFlags: 0
