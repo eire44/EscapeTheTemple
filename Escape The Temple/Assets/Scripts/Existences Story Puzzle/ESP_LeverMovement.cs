@@ -68,6 +68,7 @@ public class ESP_LeverMovement : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Default");
             center.gameObject.layer = LayerMask.NameToLayer("Default");
             FindObjectOfType<ESP_Controller>().enablePuzzle = true;
+            FindObjectOfType<ESP_AudioClueController>().playAudioClue();
         }
     }
 }
