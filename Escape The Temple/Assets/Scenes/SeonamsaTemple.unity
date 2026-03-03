@@ -10917,7 +10917,7 @@ GameObject:
   - component: {fileID: 277456318}
   - component: {fileID: 277456320}
   - component: {fileID: 277456321}
-  m_Layer: 9
+  m_Layer: 14
   m_Name: FirstPiece (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33313,7 +33313,7 @@ GameObject:
   - component: {fileID: 600235313}
   - component: {fileID: 600235312}
   - component: {fileID: 600235315}
-  m_Layer: 9
+  m_Layer: 14
   m_Name: SecondPiece (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56278,7 +56278,7 @@ GameObject:
   - component: {fileID: 914684103}
   - component: {fileID: 914684105}
   - component: {fileID: 914684104}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Puzzle5_Piece3
   m_TagString: KeyPiece
   m_Icon: {fileID: 0}
@@ -68464,7 +68464,7 @@ Transform:
   m_GameObject: {fileID: 1193756322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.58, y: 2.114, z: 18.16}
+  m_LocalPosition: {x: 1.58, y: 2.114, z: -25.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -68550,10 +68550,15 @@ MonoBehaviour:
   posHand: {fileID: 841873920}
   grabbableLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 8448
   placeLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 16896
+  grabToPlaceLayers_List:
+  - grabbableLayerName: Life Cycle Puzzle Pieces
+    placeLayerName: Life Cycle Puzzle Containers
+  - grabbableLayerName: Key Pieces
+    placeLayerName: Key Pieces Containers
 --- !u!1001 &1198659425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115285,7 +115290,7 @@ GameObject:
   - component: {fileID: 1621224859}
   - component: {fileID: 1621224861}
   - component: {fileID: 1621224860}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Puzzle5_Piece2
   m_TagString: KeyPiece
   m_Icon: {fileID: 0}
@@ -115702,7 +115707,7 @@ GameObject:
   - component: {fileID: 1624459131}
   - component: {fileID: 1624459130}
   - component: {fileID: 1624459133}
-  m_Layer: 9
+  m_Layer: 14
   m_Name: ThirdPiece (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116171,7 +116176,7 @@ GameObject:
   - component: {fileID: 1654646855}
   - component: {fileID: 1654646856}
   - component: {fileID: 1654646857}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Puzzle5_Piece1
   m_TagString: KeyPiece
   m_Icon: {fileID: 0}

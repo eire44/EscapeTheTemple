@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static ESP_Controller;
 
 public class grabItem_wRaycast : MonoBehaviour
 {
@@ -15,6 +16,21 @@ public class grabItem_wRaycast : MonoBehaviour
 
     GameObject currentGrabbedItem;
     Rigidbody rb;
+
+    public List<GrabToPlaceLayers> grabToPlaceLayers_List;
+    Dictionary<int, int> grabToPlaceLayers = new Dictionary<int, int>();
+
+    private void Start()
+    {
+        foreach (var pairOfLayers in grabToPlaceLayers_List)
+        {
+            int grabLayer = LayerMask.NameToLayer(pairOfLayers.grabbableLayerName);
+            int placeLayer = LayerMask.NameToLayer(pairOfLayers.placeLayerName);
+
+            grabToPlaceLayers[grabLayer] = placeLayer;
+            Debug.Log("LAYER "+ grabLayer + " FOR " + placeLayer);
+        }
+    }
 
     void Update()
     {
@@ -73,26 +89,28 @@ public class grabItem_wRaycast : MonoBehaviour
             {
                 if (currentGrabbedItem != null)
                 {
-                    currentGrabbedItem.transform.SetParent(null);
-
-                    currentGrabbedItem.transform.position = hit.transform.position;
-                    currentGrabbedItem.transform.rotation = hit.transform.rotation;
-
-                    if(rb != null)
+                    if (grabToPlaceLayers[currentGrabbedItem.layer] == hit.transform.gameObject.layer)
                     {
-                        rb.isKinematic = false;
-                        rb.useGravity = true;
-                        rb = null;
+                        currentGrabbedItem.transform.SetParent(null);
+
+                        currentGrabbedItem.transform.position = hit.transform.position;
+                        currentGrabbedItem.transform.rotation = hit.transform.rotation;
+
+                        if (rb != null)
+                        {
+                            rb.isKinematic = false;
+                            rb.useGravity = true;
+                            rb = null;
+                        }
+
+
+                        currentGrabbedItem = null;
+
+                        //if(FindObjectOfType<LC_PuzzleController>().checkOrder())
+                        //{
+                        //    Debug.Log("WIIIIIIIIIIIIIIIIIIIII");
+                        //}
                     }
-                    
-
-                    currentGrabbedItem = null;
-
-                    //if(FindObjectOfType<LC_PuzzleController>().checkOrder())
-                    //{
-                    //    Debug.Log("WIIIIIIIIIIIIIIIIIIIII");
-                    //}
-                    
                 }
             }
             //else
