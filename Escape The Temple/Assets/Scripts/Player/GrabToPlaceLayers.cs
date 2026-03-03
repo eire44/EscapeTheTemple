@@ -5,6 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class GrabToPlaceLayers
 {
-    public string grabbableLayerName;
-    public string placeLayerName;
+    public int grabbableLayerIndex;
+    public int placeLayerIndex;
 }

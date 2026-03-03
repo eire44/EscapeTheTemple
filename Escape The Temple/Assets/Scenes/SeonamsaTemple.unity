@@ -68555,10 +68555,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16896
   grabToPlaceLayers_List:
-  - grabbableLayerName: Life Cycle Puzzle Pieces
-    placeLayerName: Life Cycle Puzzle Containers
-  - grabbableLayerName: Key Pieces
-    placeLayerName: Key Pieces Containers
+  - grabbableLayerIndex: 8
+    placeLayerIndex: 9
+  - grabbableLayerIndex: 13
+    placeLayerIndex: 14
 --- !u!1001 &1198659425
 PrefabInstance:
   m_ObjectHideFlags: 0
