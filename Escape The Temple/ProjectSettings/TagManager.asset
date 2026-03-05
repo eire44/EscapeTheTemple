@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Coin
-  - Candles
   - Paper
   - Incense Burner
   - Pine
@@ -32,11 +31,15 @@ TagManager:
   - Character2_Button
   - Character3_Button
   - Character4_Button
+  - Plank
+  - Candle
+  - ShortClue
+  - LongClue
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Items

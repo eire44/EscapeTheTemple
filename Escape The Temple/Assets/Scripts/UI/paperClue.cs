@@ -4,44 +4,20 @@ using UnityEngine;
 
 public class paperClue : MonoBehaviour
 {
-    bool playerIn = false;
     public GameObject imgPaper;
     bool showPaper = false;
     
-
-    // Update is called once per frame
-    void Update()
+    public void openPaper()
     {
-        if(playerIn)
+        showPaper = !showPaper;
+        if (showPaper)
         {
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                showPaper = !showPaper;
-                if(showPaper)
-                {
-                    Time.timeScale = 0f;
-                } else
-                {
-                    Time.timeScale = 1f;
-                }
-                imgPaper.SetActive(showPaper);
-            }
-        }   
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Player"))
-        {
-            playerIn = true;
+            Time.timeScale = 0f;
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        else
         {
-            playerIn = false;
+            Time.timeScale = 1f;
         }
+        imgPaper.SetActive(showPaper);
     }
 }

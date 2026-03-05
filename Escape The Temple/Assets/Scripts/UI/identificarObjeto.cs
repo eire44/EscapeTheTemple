@@ -10,24 +10,33 @@ public class identificarObjeto : MonoBehaviour
     public float distance = 4f;
     public TMP_Text nombreObjeto;
     public TMP_Text txtIdentificacionTablas;
-    // Start is called before the first frame update
-    void Start()
+    int layerMask;
+    private void Start()
     {
-        
+        layerMask = ~LayerMask.GetMask("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, distance))
+        if (Physics.Raycast(ray, out hit, distance, layerMask))
         {
-            if(!hit.collider.gameObject.CompareTag("Untagged") && !hit.collider.gameObject.CompareTag("Player"))
+            if (!hit.collider.gameObject.CompareTag("Untagged") && !hit.collider.gameObject.CompareTag("Player") && !hit.collider.gameObject.CompareTag("ShortClue") && !hit.collider.gameObject.CompareTag("LongClue"))
             {
                 nombreObjeto.gameObject.SetActive(true);
-                nombreObjeto.text = hit.collider.gameObject.tag;
+                if(hit.collider.gameObject.CompareTag("Plank"))
+                {
+                    PlankNames plank_name = hit.collider.gameObject.GetComponent<PlankNames>();
+                    if(plank_name != null)
+                    {
+                        nombreObjeto.text = plank_name.nameToShow;
+                    }
+                } else
+                {
+                    nombreObjeto.text = hit.collider.gameObject.tag;
+                }
             }
             else
             {

@@ -6,64 +6,21 @@ using TMPro;
 
 public class encenderVelas : MonoBehaviour
 {
-    bool jugadorCerca = false;
     public ParticleSystem llama;
     public string nombreTabla;
-    TMP_Text txtNombres;
-    bool flagUnaVez = true;
-    // Start is called before the first frame update
-    void Start()
+    
+    public void encenderVela()
     {
-        txtNombres = FindObjectOfType<identificarObjeto>().txtIdentificacionTablas;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(!FindObjectOfType<candlesPuzzleSolution>().candlesPuzzleSolved)
+        if (!FindObjectOfType<candlesPuzzleSolution>().candlesPuzzleSolved)
         {
-            if (Input.GetKeyDown(KeyCode.E) && jugadorCerca)
+            if (llama.gameObject.activeInHierarchy)
             {
-                if (llama.gameObject.activeInHierarchy)
-                {
-                    llama.gameObject.SetActive(false);
-                }
-                else
-                {
-                    llama.gameObject.SetActive(true);
-                }
-
+                llama.gameObject.SetActive(false);
             }
-        } else
-        {
-            if(flagUnaVez)
+            else
             {
-                flagUnaVez = false;
-                gameObject.layer = LayerMask.NameToLayer("Default");
+                llama.gameObject.SetActive(true);
             }
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Player"))
-        {
-            jugadorCerca = true;
-            mostrarNombreTabla(true);
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            jugadorCerca = false;
-            mostrarNombreTabla(false);
-        }
-    }
-
-    void mostrarNombreTabla(bool mostrar)
-    {
-        txtNombres.text = nombreTabla;
-        txtNombres.gameObject.SetActive(mostrar);
     }
 }

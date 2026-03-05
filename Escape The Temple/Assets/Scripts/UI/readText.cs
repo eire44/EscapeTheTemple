@@ -10,7 +10,11 @@ public class readText : MonoBehaviour
     public Camera playerCamera;
     public float distance = 4f;
     public TMP_Text textoTranscripcion;
-
+    int ignorePlayerLayer;
+    private void Start()
+    {
+        ignorePlayerLayer = ~LayerMask.GetMask("Player");
+    }
     void Update()
     {
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
@@ -20,15 +24,31 @@ public class readText : MonoBehaviour
         //      playerCamera.transform.forward * distance,
         //      Color.red);
 
-        if (Physics.Raycast(ray, out hit, distance))
+        if (Physics.Raycast(ray, out hit, distance, ignorePlayerLayer))
         {
-            if (hit.collider.name.Contains("PapelFraseIluminados"))
+            if (hit.collider.gameObject.CompareTag("ShortClue"))
             {
-                mostrarTexto("Those who attain enlightenment continue to shine beyond time.");
+                ShortTextClue text = hit.collider.gameObject.GetComponent<ShortTextClue>();
+                if (text != null)
+                {
+                    mostrarTexto(text.textClue);
+                }
             }
             else
             {
                 textoTranscripcion.gameObject.SetActive(false);
+
+                if (hit.collider.gameObject.CompareTag("LongClue"))
+                {
+                    if(Input.GetKeyDown(KeyCode.R))
+                    {
+                        paperClue paper = hit.collider.gameObject.GetComponent<paperClue>();
+                        if (paper != null)
+                        {
+                            paper.openPaper();
+                        }
+                    }
+                }
             }
         }
         else

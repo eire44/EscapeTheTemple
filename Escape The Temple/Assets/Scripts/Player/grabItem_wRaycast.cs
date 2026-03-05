@@ -88,29 +88,40 @@ public class grabItem_wRaycast : MonoBehaviour
                     int grabbedLayer = currentGrabbedItem.layer;
                     int hitLayer = hit.transform.gameObject.layer;
 
-                    if (grabToPlaceLayers.TryGetValue(grabbedLayer, out int confirmedGrabbedLayer))
+                    if (grabToPlaceLayers.TryGetValue(grabbedLayer, out int allowedPlaceLayer))
                     {
-                        if (confirmedGrabbedLayer == hitLayer)
+                        if (allowedPlaceLayer == hitLayer)
                         {
-                            currentGrabbedItem.transform.SetParent(null);
-
-                            currentGrabbedItem.transform.position = hit.transform.position;
-                            currentGrabbedItem.transform.rotation = hit.transform.rotation;
-
-                            if (rb != null)
+                            if(allowedPlaceLayer == 0)
                             {
-                                rb.isKinematic = false;
-                                rb.useGravity = true;
-                                rb = null;
+                                currentGrabbedItem.transform.SetParent(null);
+
+                                if (rb != null)
+                                {
+                                    rb.isKinematic = false;
+                                    rb.useGravity = true;
+                                    rb = null;
+                                }
+
+                                currentGrabbedItem = null;
+                            } 
+                            else
+                            {
+                                currentGrabbedItem.transform.SetParent(null);
+
+                                currentGrabbedItem.transform.position = hit.transform.position;
+                                currentGrabbedItem.transform.rotation = hit.transform.rotation;
+
+                                if (rb != null)
+                                {
+                                    rb.isKinematic = false;
+                                    rb.useGravity = true;
+                                    rb = null;
+                                }
+
+
+                                currentGrabbedItem = null;
                             }
-
-
-                            currentGrabbedItem = null;
-
-                            //if(FindObjectOfType<LC_PuzzleController>().checkOrder())
-                            //{
-                            //    Debug.Log("WIIIIIIIIIIIIIIIIIIIII");
-                            //}
                         }
                     }
                 }

@@ -8,13 +8,7 @@ public class candlesPuzzleSolution : MonoBehaviour
     [HideInInspector] public bool candlesPuzzleSolved = false;
     bool flagHideText = true;
     public GameObject room2_Door;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (llamas[0].activeInHierarchy && !llamas[1].activeInHierarchy && llamas[2].activeInHierarchy && llamas[3].activeInHierarchy
@@ -24,7 +18,10 @@ public class candlesPuzzleSolution : MonoBehaviour
             candlesPuzzleSolved = true;
             if (flagHideText)
             {
-                FindObjectOfType<collectItems>().interactionText.gameObject.SetActive(false);
+                foreach (var vela in FindObjectsOfType<encenderVelas>())
+                {
+                    vela.gameObject.layer = LayerMask.NameToLayer("Default");
+                }
                 unlockRoom2();
                 flagHideText = false;
             }
