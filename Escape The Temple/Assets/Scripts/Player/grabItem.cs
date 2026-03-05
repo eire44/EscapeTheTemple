@@ -49,7 +49,7 @@ public class grabItem : MonoBehaviour
                         rb.isKinematic = true;
                         rb.useGravity = false;
                         sC.enabled = false;
-                        FindObjectOfType<collectItems>().collectItemText.gameObject.SetActive(false);
+                        //FindObjectOfType<collectItems>().collectItemText.gameObject.SetActive(false);
                     }
                     //else
                     //{

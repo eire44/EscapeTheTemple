@@ -36,7 +36,7 @@ public class incensePuzzleSolution : MonoBehaviour
             Debug.Log(incensePuzzleSolved);
             if (flagHideText)
             {
-                FindObjectOfType<collectItems>().interactionText.gameObject.SetActive(false);
+                //FindObjectOfType<collectItems>().interactionText.gameObject.SetActive(false);
                 flagHideText = false;
             }
         }

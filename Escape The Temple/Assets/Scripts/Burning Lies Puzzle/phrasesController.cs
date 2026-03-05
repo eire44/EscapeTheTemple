@@ -11,7 +11,6 @@ public class phrasesController : MonoBehaviour
     void Start()
     {
         controller = FindObjectOfType<burningLiesController>();
-
     }
 
     void OnTriggerEnter(Collider other)
@@ -21,7 +20,6 @@ public class phrasesController : MonoBehaviour
         if (other.CompareTag("Fire"))
         {
             alreadyBurned = true;
-            Debug.Log("colisionó con " + other.gameObject.name);
             controller.checkBurntPaper(index);
         }
     }

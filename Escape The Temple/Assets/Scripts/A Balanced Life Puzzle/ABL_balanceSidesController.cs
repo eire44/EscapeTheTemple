@@ -6,11 +6,23 @@ public class ABL_balanceSidesController : MonoBehaviour
 {
     public int sideIndex;
     float currentWeight = 0f;
-    
+
+    List<Transform> slots = new List<Transform>();
+
+    private void Start()
+    {
+        foreach (Transform child in transform)
+        {
+            if(child.gameObject.CompareTag("PlaceHolder"))
+            {
+                slots.Add(child);
+            }
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("A Balanced Life Puzzle Pieces"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("ABLP_Pieces"))
         {
             collision.transform.SetParent(transform);
             //collision.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
@@ -23,7 +35,7 @@ public class ABL_balanceSidesController : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("A Balanced Life Puzzle Pieces"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("ABLP_Pieces"))
         {
             //collision.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
             //collision.transform.SetParent(null);

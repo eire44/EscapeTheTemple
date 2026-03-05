@@ -22,7 +22,8 @@ public class identificarObjeto : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, distance, layerMask))
         {
-            if (!hit.collider.gameObject.CompareTag("Untagged") && !hit.collider.gameObject.CompareTag("Player") && !hit.collider.gameObject.CompareTag("ShortClue") && !hit.collider.gameObject.CompareTag("LongClue"))
+            if (!hit.collider.gameObject.CompareTag("Untagged") && !hit.collider.gameObject.CompareTag("Player") 
+                && !hit.collider.gameObject.CompareTag("ShortClue") && !hit.collider.gameObject.CompareTag("LongClue") && !hit.collider.gameObject.CompareTag("PlaceHolder"))
             {
                 nombreObjeto.gameObject.SetActive(true);
                 if(hit.collider.gameObject.CompareTag("Plank"))

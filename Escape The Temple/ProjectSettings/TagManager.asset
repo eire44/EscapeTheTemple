@@ -47,16 +47,16 @@ TagManager:
   - CollectableItems
   - Life Cycle Puzzle Pieces
   - Life Cycle Puzzle Containers
-  - A Balanced Life Puzzle Pieces
+  - ABLP_Pieces
   - Statues Puzzle Pieces
   - ESP_Characters
   - Key Pieces
   - Key Pieces Containers
   - SOSP_Pieces
   - SOSP_Containers
-  - 
-  - 
-  - 
+  - BLP_Papers
+  - BLP_Container
+  - ABLP_Containers
   - 
   - 
   - 

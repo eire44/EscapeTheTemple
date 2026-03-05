@@ -75,7 +75,6 @@ public class burningLiesController : MonoBehaviour
 
     void PuzzleCompleted()
     {
-        Debug.Log("Puzzle completado");
         puzzle5_Piece.SetActive(true);
         puzzle5_Piece.GetComponent<fadeIn_PuzzlePieces>().StartFade();
         StartCoroutine(TransicionApagar());

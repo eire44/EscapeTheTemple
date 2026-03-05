@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class ABL_PuzzleController : MonoBehaviour
@@ -16,7 +17,7 @@ public class ABL_PuzzleController : MonoBehaviour
     bool puzzleSolved = false;
 
     List<placeableObjectController> objects = new List<placeableObjectController>();
-    // Start is called before the first frame update
+    
     void Start()
     {
         foreach (var placeableObject in FindObjectsOfType<placeableObjectController>())
@@ -25,7 +26,7 @@ public class ABL_PuzzleController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if(!puzzleSolved)
@@ -58,7 +59,7 @@ public class ABL_PuzzleController : MonoBehaviour
             balance.localRotation = Quaternion.Euler(0f, 0f, 0f);
             foreach (var item in objects)
             {
-                item.GetComponent<grabItem>().enabled = false;
+                item.gameObject.layer = 0;
             }
             unlockRoom3();
             Debug.Log("BALANZA EQUILIBRADA");

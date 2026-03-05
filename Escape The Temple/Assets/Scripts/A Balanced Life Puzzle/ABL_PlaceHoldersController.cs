@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using static UnityEditor.Progress;
+
+public class ABL_PlaceHoldersController : MonoBehaviour
+{
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("ABLP_Pieces"))
+        {
+            gameObject.tag = "Untagged";
+
+            Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                //rb.isKinematic = true;
+                rb.useGravity = false;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("ABLP_Pieces"))
+        {
+            gameObject.tag = "PlaceHolder";
+
+            Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                //rb.isKinematic = false;
+                rb.useGravity = true;
+            }
+        }
+    }
+}
