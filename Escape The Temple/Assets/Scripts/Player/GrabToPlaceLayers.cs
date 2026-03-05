@@ -6,5 +6,5 @@ using UnityEngine;
 public class GrabToPlaceLayers
 {
     public int grabbableLayerIndex;
-    public int placeLayerIndex;
+    public List<int> placeLayerIndexes;
 }

@@ -18,13 +18,13 @@ public class grabItem_wRaycast : MonoBehaviour
     Rigidbody rb;
 
     public List<GrabToPlaceLayers> grabToPlaceLayers_List;
-    Dictionary<int, int> grabToPlaceLayers = new Dictionary<int, int>();
+    Dictionary<int, List<int>> grabToPlaceLayers = new Dictionary<int, List<int>>();
 
     private void Start()
     {
         foreach (var pairOfLayers in grabToPlaceLayers_List)
         {
-            grabToPlaceLayers[pairOfLayers.grabbableLayerIndex] = pairOfLayers.placeLayerIndex;
+            grabToPlaceLayers[pairOfLayers.grabbableLayerIndex] = pairOfLayers.placeLayerIndexes;
         }
     }
 
@@ -88,11 +88,11 @@ public class grabItem_wRaycast : MonoBehaviour
                     int grabbedLayer = currentGrabbedItem.layer;
                     int hitLayer = hit.transform.gameObject.layer;
 
-                    if (grabToPlaceLayers.TryGetValue(grabbedLayer, out int allowedPlaceLayer))
+                    if (grabToPlaceLayers.TryGetValue(grabbedLayer, out List<int> allowedPlaceLayer))
                     {
-                        if (allowedPlaceLayer == hitLayer)
+                        if (allowedPlaceLayer.Contains(hitLayer))
                         {
-                            if(allowedPlaceLayer == 0)
+                            if(hitLayer == 0)
                             {
                                 currentGrabbedItem.transform.SetParent(null);
 
@@ -107,38 +107,56 @@ public class grabItem_wRaycast : MonoBehaviour
                             } 
                             else
                             {
-                                currentGrabbedItem.transform.SetParent(null);
+                                Transform placePoint = HasChildWithTag(hit.transform.gameObject);
 
-                                currentGrabbedItem.transform.position = hit.transform.position;
-                                currentGrabbedItem.transform.rotation = hit.transform.rotation;
-
-                                if (rb != null)
+                                if (placePoint != null)
                                 {
-                                    rb.isKinematic = false;
-                                    rb.useGravity = true;
-                                    rb = null;
+                                    currentGrabbedItem.transform.SetParent(null);
+
+                                    currentGrabbedItem.transform.position = placePoint.position;
+                                    currentGrabbedItem.transform.rotation = placePoint.rotation;
+
+                                    if (rb != null)
+                                    {
+                                        rb.isKinematic = false;
+                                        rb.useGravity = true;
+                                        rb = null;
+                                    }
+
+                                    currentGrabbedItem = null;
+                                } 
+                                else
+                                {
+                                    currentGrabbedItem.transform.SetParent(null);
+
+                                    currentGrabbedItem.transform.position = hit.transform.position;
+                                    currentGrabbedItem.transform.rotation = hit.transform.rotation;
+
+                                    if (rb != null)
+                                    {
+                                        rb.isKinematic = false;
+                                        rb.useGravity = true;
+                                        rb = null;
+                                    }
+
+                                    currentGrabbedItem = null;
                                 }
-
-
-                                currentGrabbedItem = null;
                             }
                         }
                     }
                 }
             }
-            //else
-            //{
-            //    if (currentGrabbedItem != null)
-            //    {
-            //        holdingItem = !holdingItem;
-            //        currentGrabbedItem.transform.SetParent(null);
-            //        rb.isKinematic = false;
-            //        rb.useGravity = true;
-
-            //        currentGrabbedItem = null;
-            //        rb = null;
-            //    }
-            //}
         }
+    }
+
+    Transform HasChildWithTag(GameObject parent)
+    {
+        foreach (Transform child in parent.transform)
+        {
+            if (child.CompareTag("PlaceHolder"))
+                return child;
+        }
+
+        return null;
     }
 }

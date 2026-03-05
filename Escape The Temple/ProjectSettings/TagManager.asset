@@ -35,6 +35,7 @@ TagManager:
   - Candle
   - ShortClue
   - LongClue
+  - PlaceHolder
   layers:
   - Default
   - TransparentFX
@@ -51,8 +52,8 @@ TagManager:
   - ESP_Characters
   - Key Pieces
   - Key Pieces Containers
-  - 
-  - 
+  - SOSP_Pieces
+  - SOSP_Containers
   - 
   - 
   - 
