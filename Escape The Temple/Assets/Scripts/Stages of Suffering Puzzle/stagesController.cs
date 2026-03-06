@@ -57,7 +57,6 @@ public class stagesController : MonoBehaviour
             Debug.Log("Puzzle completo");
             foreach (var item in pieces)
             {
-                item.GetComponent<grabItem>().enabled = false;
                 item.gameObject.layer = LayerMask.NameToLayer("Default");
             }
             
