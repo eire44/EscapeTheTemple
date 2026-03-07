@@ -5,14 +5,20 @@ using UnityEngine;
 public class bowlsController : MonoBehaviour
 {
     public int bowlIndex;
-    
-    private void OnTriggerEnter(Collider other)
+    stagesController stages;
+
+    private void Start()
     {
-        FindObjectOfType<stagesController>().callForCheckConfiguration(bowlIndex, other.gameObject.tag);
+        stages = FindObjectOfType<stagesController>();
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        FindObjectOfType<stagesController>().callForCheckConfiguration(bowlIndex, "");
+        stages.callForCheckConfiguration(bowlIndex, collision.gameObject.tag);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        //stages.callForCheckConfiguration(bowlIndex, "");
     }
 }

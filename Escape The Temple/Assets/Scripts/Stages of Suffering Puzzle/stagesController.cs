@@ -16,6 +16,7 @@ public class stagesController : MonoBehaviour
     public TextMeshPro[] boards;
     public GameObject[] pieces;
     public GameObject fourthBoard;
+    public GameObject fourthText;
     public GameObject keyPiece;
 
     void Start()
@@ -27,9 +28,10 @@ public class stagesController : MonoBehaviour
     bool checkConfiguration(int bowlIndex, string symbol)
     {
         playerConfiguration[bowlIndex] = symbol;
-
+        Debug.Log("ahora en " + bowlIndex + " esta " + symbol);
         for (int i = 0; i < rounds[currentRowIndex].pairs.Length; i++)
         {
+            //Debug.Log("en " + i + " esta " + playerConfiguration[i]);
             if(rounds[currentRowIndex].pairs[i].correctSymbol != playerConfiguration[i])
             {
                 return false;
@@ -41,6 +43,7 @@ public class stagesController : MonoBehaviour
 
     public void callForCheckConfiguration(int bowlIndex, string symbol)
     {
+        Debug.Log("entro " + symbol + " en " + bowlIndex);
         if(checkConfiguration(bowlIndex, symbol))
         {
             Debug.Log("CORRECT");
@@ -59,8 +62,12 @@ public class stagesController : MonoBehaviour
             {
                 item.gameObject.layer = LayerMask.NameToLayer("Default");
             }
-            
-            fourthBoard.GetComponent<fadeRoomDoor>().StartFade();
+
+            foreach (Transform child in fourthBoard.transform)
+            {
+                child.GetComponent<fadeRoomDoor>().StartFade();
+            }
+            fourthText.SetActive(false);
             keyPiece.SetActive(true);
             keyPiece.GetComponent<fadeIn_PuzzlePieces>().StartFade();
             return;
