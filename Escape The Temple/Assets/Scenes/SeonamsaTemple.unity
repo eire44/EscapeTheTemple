@@ -428,7 +428,6 @@ GameObject:
   - component: {fileID: 4831392}
   - component: {fileID: 4831395}
   - component: {fileID: 4831394}
-  - component: {fileID: 4831393}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -453,22 +452,8 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.00011108, y: 0.00019}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 6.04, y: 4.09}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4831393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4831391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &4831394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,8 +502,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -553,7 +538,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -0.26903653, y: -0.9977584, z: -0.46235156, w: -0.99755526}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -1522,7 +1507,6 @@ GameObject:
   - component: {fileID: 40461190}
   - component: {fileID: 40461193}
   - component: {fileID: 40461192}
-  - component: {fileID: 40461191}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1547,22 +1531,8 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.00021766, y: 0.00029996}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 7.85, y: 4.09}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &40461191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40461189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &40461192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1611,8 +1581,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1647,7 +1617,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -1.1707067, z: -0.12612367, w: -1.3908238}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -9058,6 +9028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
+  alreadyBurned: 0
 --- !u!1 &181600120
 GameObject:
   m_ObjectHideFlags: 0
@@ -12051,7 +12022,6 @@ GameObject:
   - component: {fileID: 321107851}
   - component: {fileID: 321107854}
   - component: {fileID: 321107853}
-  - component: {fileID: 321107852}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -12076,22 +12046,8 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000052712, y: 0.0004}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 5.49, y: 2.73}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &321107852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321107850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &321107853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12140,8 +12096,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12176,7 +12132,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -0.58496666, y: -1.4510983, z: -0.89190054, w: -1.5683845}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -58854,6 +58810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 2
+  alreadyBurned: 0
 --- !u!1 &982604114
 GameObject:
   m_ObjectHideFlags: 0
@@ -69266,7 +69223,7 @@ Transform:
   m_GameObject: {fileID: 1193756322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.52, y: 1, z: -22.35}
+  m_LocalPosition: {x: 18.68, y: 1.314, z: -8.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -80591,6 +80548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 1
+  alreadyBurned: 0
 --- !u!1 &1242197581
 GameObject:
   m_ObjectHideFlags: 0
@@ -119904,14 +119862,14 @@ MonoBehaviour:
     - "If something \nchanges it \ncan stop."
     wrongPhraseIndex: 0
   - phrases:
-    - "Lo que nace, \nmuere."
-    - "Lo que nace \nno puede \nmorir."
-    - "El sufrimiento\n nace."
+    - "The end can come \nby one's own hand \nor someone else's."
+    - "One is powerless \nagainst suffering."
+    - "Everything that \nexists is born \nand dies.\r"
     wrongPhraseIndex: 1
   - phrases:
-    - "Cuando deseo, \nhay inquietud."
-    - "Cuando el deseo \ncesa, hay calma."
-    - "La inquietud no \npuede terminar."
+    - "Some achieve \nto leave \nsuffering behind."
+    - "One must pull the \nplant up by the roots \nso that it does \nnot grow back."
+    - "The root of suffering \nis stronger than man."
     wrongPhraseIndex: 2
   currentSetIndex: 0
   papers:

@@ -5,7 +5,7 @@ using UnityEngine;
 public class phrasesController : MonoBehaviour
 {
     public int index;
-    bool alreadyBurned = false;
+    [HideInInspector] public bool alreadyBurned = false;
     burningLiesController controller;
 
     void Start()
@@ -20,7 +20,7 @@ public class phrasesController : MonoBehaviour
         if (other.CompareTag("Fire"))
         {
             alreadyBurned = true;
-            controller.checkBurntPaper(index);
+            controller.checkBurntPaper(index, this, true);
         }
     }
 
@@ -31,6 +31,7 @@ public class phrasesController : MonoBehaviour
         if (other.CompareTag("Fire"))
         {
             alreadyBurned = false;
+            controller.checkBurntPaper(index, this, false);
         }
     }
 }

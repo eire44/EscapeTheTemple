@@ -38,6 +38,7 @@ public class burningLiesController : MonoBehaviour
     void LoadSet(int newIndex)
     {
         currentSetIndex = newIndex;
+        Shuffle(papers);
 
         for (int i = 0; i < papers.Length; i++)
         {
@@ -45,21 +46,62 @@ public class burningLiesController : MonoBehaviour
         }
     }
 
-    public void checkBurntPaper(int burnedIndex)
+    public void Shuffle(phrasesController[] array)
+    {
+        for (int i = array.Length - 1; i > 0; i--)
+        {
+            int randomIndex = Random.Range(0, i + 1);
+
+            phrasesController temp = array[i];
+            array[i] = array[randomIndex];
+            array[randomIndex] = temp;
+        }
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i].index = i;
+        }
+    }
+
+    public void checkBurntPaper(int burnedIndex, phrasesController currentPaper, bool burning)
     {
         Debug.Log("se está quemando el papel " + burnedIndex + " y debería quemarse el " + sets[currentSetIndex].wrongPhraseIndex);
         if (puzzleAlreadySolved) return;
 
         int correctIndex = sets[currentSetIndex].wrongPhraseIndex;
-
-        if (burnedIndex == correctIndex)
+        int papersBurnt = 0;
+        phrasesController singleBurningPaper = currentPaper;
+        foreach (phrasesController paper in papers)
         {
-            puzzleAlreadySolved = true;
-            PuzzleCompleted();
+            if(paper.alreadyBurned)
+            {
+                papersBurnt++;
+                singleBurningPaper = paper;
+            }   
+        }
+        Debug.Log("HAY " + papersBurnt + " PAPELES");
+        if(papersBurnt == 1)
+        {
+            Debug.Log(singleBurningPaper.index + " VS." + correctIndex);
+            if(singleBurningPaper.index == correctIndex)
+            {
+                puzzleAlreadySolved = true;
+                PuzzleCompleted();
+            }
+            else
+            {
+                LoadNextSet();
+            }
         }
         else
         {
-            LoadNextSet();
+            if (burning)
+            {
+                if(burnedIndex != correctIndex)
+                {
+                    LoadNextSet();
+                }
+            }
         }
     }
 
@@ -78,6 +120,10 @@ public class burningLiesController : MonoBehaviour
         puzzle5_Piece.SetActive(true);
         puzzle5_Piece.GetComponent<fadeIn_PuzzlePieces>().StartFade();
         StartCoroutine(TransicionApagar());
+        foreach (phrasesController paper in papers)
+        {
+            paper.gameObject.layer = LayerMask.NameToLayer("Default");
+        }
     }
 
 
