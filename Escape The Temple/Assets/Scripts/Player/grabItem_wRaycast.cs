@@ -114,7 +114,12 @@ public class grabItem_wRaycast : MonoBehaviour
                                     currentGrabbedItem.transform.SetParent(null);
 
                                     currentGrabbedItem.transform.position = placePoint.position;
-                                    //currentGrabbedItem.transform.rotation = placePoint.rotation;
+
+                                    if(hitLayer == 9)
+                                    {
+                                        currentGrabbedItem.transform.rotation = placePoint.rotation;
+                                    }
+
 
                                     if (rb != null)
                                     {
@@ -130,7 +135,11 @@ public class grabItem_wRaycast : MonoBehaviour
                                     currentGrabbedItem.transform.SetParent(null);
 
                                     currentGrabbedItem.transform.position = hit.transform.position;
-                                    //currentGrabbedItem.transform.rotation = hit.transform.rotation;
+
+                                    if (hitLayer == 9)
+                                    {
+                                        currentGrabbedItem.transform.rotation = hit.transform.rotation;
+                                    }
 
                                     if (rb != null)
                                     {
