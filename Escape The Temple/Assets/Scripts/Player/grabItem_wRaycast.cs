@@ -115,9 +115,10 @@ public class grabItem_wRaycast : MonoBehaviour
 
                                     currentGrabbedItem.transform.position = placePoint.position;
 
-                                    if(hitLayer == 9)
+                                    if (hitLayer == 9)
                                     {
-                                        currentGrabbedItem.transform.rotation = placePoint.rotation;
+                                        Quaternion newRotation = new Quaternion(hit.transform.rotation.x, hit.transform.rotation.y + 90f, hit.transform.rotation.z, hit.transform.rotation.w);
+                                        currentGrabbedItem.transform.rotation = newRotation;
                                     }
 
 
@@ -138,7 +139,8 @@ public class grabItem_wRaycast : MonoBehaviour
 
                                     if (hitLayer == 9)
                                     {
-                                        currentGrabbedItem.transform.rotation = hit.transform.rotation;
+                                        Quaternion newRotation = new Quaternion(hit.transform.rotation.x, hit.transform.rotation.y + 90f, hit.transform.rotation.z, hit.transform.rotation.w);
+                                        currentGrabbedItem.transform.rotation = newRotation;
                                     }
 
                                     if (rb != null)
