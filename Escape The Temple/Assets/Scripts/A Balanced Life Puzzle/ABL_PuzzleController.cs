@@ -6,7 +6,9 @@ using UnityEngine;
 public class ABL_PuzzleController : MonoBehaviour
 {
     public GameObject room3_Door;
-    public Transform balance;
+    public Transform balance_bar;
+    public Transform plate1;
+    public Transform plate0;
     public float maxTiltAngle = 20f;
     public float tiltSpeed = 5f;
     float currentTilt = 0f;
@@ -36,8 +38,17 @@ public class ABL_PuzzleController : MonoBehaviour
             float targetTilt = Mathf.Clamp(weightDifference * 5f, -maxTiltAngle, maxTiltAngle);
             currentTilt = Mathf.Lerp(currentTilt, targetTilt, Time.deltaTime * tiltSpeed);
 
-            balance.localRotation = Quaternion.Euler(0f, 0f, -currentTilt);
+            balance_bar.localRotation = Quaternion.Euler(0f, 0f, -currentTilt);
+            FixPlateRotation(plate0);
+            FixPlateRotation(plate1);
         }
+    }
+
+    void FixPlateRotation(Transform plate)
+    {
+        Vector3 rot = plate.eulerAngles;
+        rot.z = 0f;
+        plate.eulerAngles = rot;
     }
 
     public void saveWeightPlaced(int sideIndex, float newWeight)
@@ -56,7 +67,7 @@ public class ABL_PuzzleController : MonoBehaviour
         if(compareWeights())
         {
             puzzleSolved = true;
-            balance.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            balance_bar.localRotation = Quaternion.Euler(0f, 0f, 0f);
             foreach (var item in objects)
             {
                 item.gameObject.layer = 0;
