@@ -6,10 +6,16 @@ public class LC_PiecesController : MonoBehaviour
 {
     public int pieceIndex;
     LC_PuzzleController puzzleController;
+    candlesPuzzleSolution candlesPuzzleController;
+    public GameObject woodBottomPlank;
+    public GameObject woodPlank;
+
+    bool onPlace = true;
 
     private void Start()
     {
         puzzleController = FindObjectOfType<LC_PuzzleController>();
+        candlesPuzzleController = FindObjectOfType<candlesPuzzleSolution>();
     }
 
     //private void OnTriggerEnter(Collider other)
@@ -70,5 +76,28 @@ public class LC_PiecesController : MonoBehaviour
                 puzzleController.currentOrder[place.placeIndex] = -1;
             }
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //if (collision.gameObject == woodPlank)
+        //{
+        //    onPlace = true;
+        //} 
+        if ((collision.gameObject.layer == LayerMask.NameToLayer("Life Cycle Puzzle Pieces") || collision.gameObject == woodBottomPlank) && onPlace)
+        {
+            if(candlesPuzzleController.candlesPuzzleSolved)
+            {
+                puzzleController.audioSource.PlayOneShot(puzzleController.woodHit_clips[Random.Range(0, puzzleController.woodHit_clips.Length)]);
+            }
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        //if(collision.gameObject == woodPlank)
+        //{
+        //    onPlace = false;
+        //}
     }
 }

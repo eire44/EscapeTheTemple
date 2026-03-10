@@ -5,14 +5,19 @@ using UnityEngine;
 public class LC_PuzzleController : MonoBehaviour
 {
     public GameObject[] places;
+    public AudioClip[] woodHit_clips;
     int[] correctOrder = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
     [HideInInspector] public int[] currentOrder = new int[9];
 
     public GameObject fadeOutPiece;
     public GameObject fadeInKeyPiece;
 
+    [HideInInspector] public AudioSource audioSource;
+
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         for (int i = 0; i < currentOrder.Length; i++)
         {
             currentOrder[i] = -1;
