@@ -37,7 +37,8 @@ public class unlockPuzzle5 : MonoBehaviour
     IEnumerator raisePlatformPuzzle5()
     {
         Vector3 startPos = puzzle5_Architecture.transform.position;
-        Vector3 newPosition = Vector3.zero;
+        //Vector3 newPosition = Vector3.zero;
+        Vector3 newPosition = new Vector3(0f, 0.2f, 0f); ;
 
         float duration = 1f;
         float time = 0f;

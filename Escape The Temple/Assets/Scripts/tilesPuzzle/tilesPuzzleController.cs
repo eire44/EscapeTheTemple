@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
 public class tilesPuzzleController : MonoBehaviour
 {
-    public GameObject secretAreaWall;
+    public Transform[] bushes;
     int[] correctOrder = { 2, 5, 4, 7, 8, 9 };
     int[] currentOrder = { 0, 0, 0, 0, 0, 0 };
     int tileIndex = 0;
@@ -29,7 +30,22 @@ public class tilesPuzzleController : MonoBehaviour
     void PuzzleSolved()
     {
         tilesPuzzleSolved = true;
-        secretAreaWall.GetComponent<fadeRoomDoor>().StartFade();
+        foreach (Transform bush in bushes)
+        {
+            foreach (Transform child in bush)
+            {
+                fadeRoomDoor fader = child.GetComponent<fadeRoomDoor>();
+                if (fader != null)
+                {
+                    fader.StartFade();
+                }
+            }
+            Collider col = bush.GetComponent<Collider>();
+            if (col != null)
+            {
+                col.enabled = false;
+            }
+        }
         FindObjectOfType<LTP_bellPattern>().startBellSoundsPattern();
         Debug.Log("LOGRADO");
     }
