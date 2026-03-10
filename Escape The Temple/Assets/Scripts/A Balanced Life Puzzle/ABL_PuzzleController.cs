@@ -39,8 +39,8 @@ public class ABL_PuzzleController : MonoBehaviour
             currentTilt = Mathf.Lerp(currentTilt, targetTilt, Time.deltaTime * tiltSpeed);
 
             balance_bar.localRotation = Quaternion.Euler(0f, 0f, -currentTilt);
-            FixPlateRotation(plate0);
-            FixPlateRotation(plate1);
+            //FixPlateRotation(plate0);
+            //FixPlateRotation(plate1);
         }
     }
 
