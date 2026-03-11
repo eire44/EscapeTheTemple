@@ -40,7 +40,7 @@ public class readText : MonoBehaviour
 
                 if (hit.collider.gameObject.CompareTag("LongClue"))
                 {
-                    if(Input.GetKeyDown(KeyCode.R))
+                    if(Input.GetKeyDown(KeyCode.E))
                     {
                         paperClue paper = hit.collider.gameObject.GetComponent<paperClue>();
                         if (paper != null)

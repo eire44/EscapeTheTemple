@@ -33,7 +33,7 @@ public class grabItem_wRaycast : MonoBehaviour
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (Physics.Raycast(ray, out hit, distance, grabbableLayer))
             {
