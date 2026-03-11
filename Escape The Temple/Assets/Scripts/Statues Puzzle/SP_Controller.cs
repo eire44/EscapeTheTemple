@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class SP_Controller : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class SP_Controller : MonoBehaviour
     int[,] board;
     public Transform[] cellPositions;
     bool isMoving = false;
-    public GameObject lever;
+    public Transform lever;
     private void Start()
     {
         //board = new int[3, 3];
@@ -146,8 +147,13 @@ public class SP_Controller : MonoBehaviour
             piece.gameObject.layer = LayerMask.NameToLayer("Default");
         }
 
-        lever.SetActive(true);
+        lever.gameObject.SetActive(true);
         lever.GetComponent<fadeIn_PuzzlePieces>().StartFade();
+        foreach (Transform item in lever)
+        {
+            item.gameObject.SetActive(true);
+            item.GetComponent<fadeIn_PuzzlePieces>().StartFade();
+        }
         Debug.Log("PUZZLE 9 LOGRADO");
     }
 }
