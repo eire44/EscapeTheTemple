@@ -90,6 +90,8 @@ public class burningLiesController : MonoBehaviour
             }
             else
             {
+                currentPaper.gameObject.GetComponent<BLP_resetPhrasesPosition>().resetPosition();
+                Debug.Log(currentPaper.index);
                 LoadNextSet();
             }
         }
@@ -99,6 +101,8 @@ public class burningLiesController : MonoBehaviour
             {
                 if(burnedIndex != correctIndex)
                 {
+                    currentPaper.gameObject.GetComponent<BLP_resetPhrasesPosition>().resetPosition();
+                    Debug.Log(currentPaper.index);
                     LoadNextSet();
                 }
             }

@@ -119,11 +119,11 @@ public class grabItem_wRaycast : MonoBehaviour
                                     {
                                         Quaternion newRotation = new Quaternion(hit.transform.rotation.x, hit.transform.rotation.y + 90f, hit.transform.rotation.z, hit.transform.rotation.w);
                                         currentGrabbedItem.transform.rotation = newRotation;
-                                    } 
-                                    //else if (hitLayer == 16)
-                                    //{
-                                    //    currentGrabbedItem.transform.rotation = new Quaternion(-90f, -90f, 0f, currentGrabbedItem.transform.rotation.w);
-                                    //}
+                                    }
+                                    else if (hitLayer == 16)
+                                    {
+                                        currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, -90f, 0f);
+                                    }
 
 
                                     if (rb != null)
@@ -146,10 +146,10 @@ public class grabItem_wRaycast : MonoBehaviour
                                         Quaternion newRotation = new Quaternion(hit.transform.rotation.x, hit.transform.rotation.y + 90f, hit.transform.rotation.z, hit.transform.rotation.w);
                                         currentGrabbedItem.transform.rotation = newRotation;
                                     }
-                                    //else if (hitLayer == 16)
-                                    //{
-                                    //    currentGrabbedItem.transform.rotation = new Quaternion(-90f, -90f, 0f, currentGrabbedItem.transform.rotation.w);
-                                    //}
+                                    else if (hitLayer == 16)
+                                    {
+                                        currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, -90f, 0f);
+                                    }
 
                                     if (rb != null)
                                     {
