@@ -5,7 +5,7 @@ using UnityEngine;
 public class paperClue : MonoBehaviour
 {
     public GameObject imgPaper;
-    bool showPaper = false;
+    [HideInInspector] public bool showPaper = false;
     
     public void openPaper()
     {

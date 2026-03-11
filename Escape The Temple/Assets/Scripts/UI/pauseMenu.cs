@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class pauseMenu : MonoBehaviour
 {
     public GameObject menuDePausa;
+    public GameObject cursor;
     bool pausaActiva = false;
     // Start is called before the first frame update
     void Start()
@@ -22,13 +23,15 @@ public class pauseMenu : MonoBehaviour
         {
             pausaActiva = !pausaActiva;
             menuDePausa.SetActive(pausaActiva);
-            if(pausaActiva)
+            if (pausaActiva)
             {
+                cleanUI(false);
                 Time.timeScale = 0.0f;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             } else
             {
+                cleanUI(true);
                 Time.timeScale = 1.0f;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
@@ -55,5 +58,26 @@ public class pauseMenu : MonoBehaviour
         #else
                         Application.Quit();
         #endif
+    }
+
+    void cleanUI(bool show)
+    {
+        if(show)
+        {
+            cursor.SetActive(true);
+        } 
+        else
+        {
+            cursor.SetActive(false);
+            foreach (paperClue item in FindObjectsOfType<paperClue>())
+            {
+                if (item.showPaper)
+                {
+                    item.showPaper = false;
+                    item.imgPaper.SetActive(false);
+                }
+            }
+        }
+        
     }
 }
