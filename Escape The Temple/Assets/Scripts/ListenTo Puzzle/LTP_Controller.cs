@@ -39,6 +39,7 @@ public class LTP_Controller : MonoBehaviour
             {
                 Debug.Log("SECUENCIA PERFECTA");
                 room4_Door.GetComponent<fadeRoomDoor>().StartFade();
+                FindObjectOfType<LTP_BellSwing>().StopRinging();
                 FindObjectOfType<LTP_bellPattern>().audioSource.enabled = false;
                 LTPpuzzleSolved = true;
             }

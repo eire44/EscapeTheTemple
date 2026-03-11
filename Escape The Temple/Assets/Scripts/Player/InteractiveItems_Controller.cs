@@ -28,10 +28,19 @@ public class InteractiveItems_Controller : MonoBehaviour
             {
                 if(hit.collider.gameObject.CompareTag("Candle"))
                 {
-                    encenderVelas vela = hit.collider.gameObject.GetComponent<encenderVelas>();
-                    if (vela != null)
+                    encenderVelas candle = hit.collider.gameObject.GetComponent<encenderVelas>();
+                    if (candle != null)
                     {
-                        vela.encenderVela();
+                        candle.encenderVela();
+                    }
+                }
+                else if (hit.collider.gameObject.CompareTag("Drum"))
+                {
+                    LTP_DrumsController drum = hit.collider.gameObject.GetComponent<LTP_DrumsController>();
+                    if (drum != null)
+                    {
+                        drum.drumSound.Play();
+                        FindObjectOfType<LTP_Controller>().savePlayedSound(drum.drumSound.clip);
                     }
                 }
             }
