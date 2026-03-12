@@ -133,7 +133,7 @@ public class grabItem_wRaycast : MonoBehaviour
 
                                     currentGrabbedItem.transform.position = placePoint.position;
 
-                                    if (hitLayer == 9 || hitLayer == 19)
+                                    if (hitLayer == 9)
                                     {
                                         Quaternion newRotation = new Quaternion(hit.transform.rotation.x, hit.transform.rotation.y + 90f, hit.transform.rotation.z, hit.transform.rotation.w);
                                         currentGrabbedItem.transform.rotation = newRotation;
@@ -145,6 +145,17 @@ public class grabItem_wRaycast : MonoBehaviour
                                     else if (hitLayer == 16)
                                     {
                                         currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, -90f, 0f);
+                                    } 
+                                    else if(hitLayer == 19)
+                                    {
+                                        ABL_balanceSidesController bSC = hit.transform.GetComponent<ABL_balanceSidesController>();
+                                        bSC.sumWeight(currentGrabbedItem);
+                                    }
+                                    else if (hitLayer == 22)
+                                    {
+                                        incenseBurnerController IBcontroller = hit.transform.GetComponent<incenseBurnerController>();
+                                        IP_HerbController herbController = currentGrabbedItem.GetComponent<IP_HerbController>();
+                                        IBcontroller.placeHerb(herbController);
                                     }
 
 
@@ -163,7 +174,7 @@ public class grabItem_wRaycast : MonoBehaviour
 
                                     currentGrabbedItem.transform.position = hit.transform.position;
 
-                                    if (hitLayer == 9 || hitLayer == 19)
+                                    if (hitLayer == 9)
                                     {
                                         Quaternion newRotation = new Quaternion(hit.transform.rotation.x, hit.transform.rotation.y + 90f, hit.transform.rotation.z, hit.transform.rotation.w);
                                         currentGrabbedItem.transform.rotation = newRotation;
@@ -175,6 +186,17 @@ public class grabItem_wRaycast : MonoBehaviour
                                     else if (hitLayer == 16)
                                     {
                                         currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, -90f, 0f);
+                                    }
+                                    else if (hitLayer == 19)
+                                    {
+                                        ABL_balanceSidesController bSC = hit.transform.GetComponent<ABL_balanceSidesController>();
+                                        bSC.sumWeight(currentGrabbedItem);
+                                    }
+                                    else if (hitLayer == 22)
+                                    {
+                                        incenseBurnerController IBcontroller = hit.transform.GetComponent<incenseBurnerController>();
+                                        IP_HerbController herbController = currentGrabbedItem.GetComponent<IP_HerbController>();
+                                        IBcontroller.placeHerb(herbController);
                                     }
 
                                     if (rb != null)

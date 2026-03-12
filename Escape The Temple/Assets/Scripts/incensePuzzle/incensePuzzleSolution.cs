@@ -42,6 +42,11 @@ public class incensePuzzleSolution : MonoBehaviour
         }
     }
 
+    public void pickHerb()
+    {
+
+    }
+
     public void grabbedItem(bool picked, GameObject item)
     {
         pinePicked = false;

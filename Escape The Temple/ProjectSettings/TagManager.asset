@@ -38,6 +38,7 @@ TagManager:
   - PlaceHolder
   - Drum
   - ABLP_BalanceObjects
+  - Lotus
   layers:
   - Default
   - TransparentFX
@@ -60,8 +61,8 @@ TagManager:
   - BLP_Container
   - ABLP_Containers
   - ABLP_BalanceObjects
-  - 
-  - 
+  - IP_Herbs
+  - IP_IncenseBurners
   - 
   - 
   - 

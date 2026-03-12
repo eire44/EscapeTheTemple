@@ -10,20 +10,25 @@ public class ABL_balanceSidesController : MonoBehaviour
     public GameObject[] objects;
 
     
-    private void OnTriggerEnter(Collider other)
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.layer == LayerMask.NameToLayer("ABLP_Pieces"))
+    //    {
+            
+    //        //Destroy(other.gameObject);
+    //    }
+    //} 
+
+    public void sumWeight(GameObject objectPlaced)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("ABLP_Pieces"))
-        {
-            placeableObjectController pOC = other.gameObject.GetComponent<placeableObjectController>();
-            placeObject(pOC, true);
-            pOC.placed = true;
-            currentWeight += pOC.weightValue;
-            FindObjectOfType<ABL_PuzzleController>().saveWeightPlaced(sideIndex, currentWeight);
-            FindObjectOfType<ABL_PuzzleController>().saveObject(pOC);
-            other.gameObject.SetActive(false);
-            //Destroy(other.gameObject);
-        }
-    } 
+        placeableObjectController pOC = objectPlaced.GetComponent<placeableObjectController>();
+        placeObject(pOC, true);
+        pOC.placed = true;
+        currentWeight += pOC.weightValue;
+        FindObjectOfType<ABL_PuzzleController>().saveWeightPlaced(sideIndex, currentWeight);
+        FindObjectOfType<ABL_PuzzleController>().saveObject(pOC);
+        objectPlaced.SetActive(false);
+    }
 
     public void placeObject(placeableObjectController objectToPlace, bool active)
     {
