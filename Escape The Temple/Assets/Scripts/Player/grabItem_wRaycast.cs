@@ -115,10 +115,14 @@ public class grabItem_wRaycast : MonoBehaviour
 
                                     currentGrabbedItem.transform.position = placePoint.position;
 
-                                    if (hitLayer == 9 || hitLayer == 14 || hitLayer == 19)
+                                    if (hitLayer == 9 || hitLayer == 19)
                                     {
                                         Quaternion newRotation = new Quaternion(hit.transform.rotation.x, hit.transform.rotation.y + 90f, hit.transform.rotation.z, hit.transform.rotation.w);
                                         currentGrabbedItem.transform.rotation = newRotation;
+                                    }
+                                    else if (hitLayer == 14)
+                                    {
+                                        currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 180f);
                                     }
                                     else if (hitLayer == 16)
                                     {
@@ -141,10 +145,14 @@ public class grabItem_wRaycast : MonoBehaviour
 
                                     currentGrabbedItem.transform.position = hit.transform.position;
 
-                                    if (hitLayer == 9 || hitLayer == 14 || hitLayer == 19)
+                                    if (hitLayer == 9 || hitLayer == 19)
                                     {
                                         Quaternion newRotation = new Quaternion(hit.transform.rotation.x, hit.transform.rotation.y + 90f, hit.transform.rotation.z, hit.transform.rotation.w);
                                         currentGrabbedItem.transform.rotation = newRotation;
+                                    }
+                                    else if (hitLayer == 14)
+                                    {
+                                        currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 180f);
                                     }
                                     else if (hitLayer == 16)
                                     {
