@@ -39,7 +39,16 @@ public class grabItem_wRaycast : MonoBehaviour
             {
                 if (currentGrabbedItem == null)
                 {
-                    currentGrabbedItem = hit.collider.gameObject;
+                    if(hit.transform.gameObject.layer == 20)
+                    {
+                        ABL_GrabObjectFromBalance objectHit = hit.transform.GetComponent<ABL_GrabObjectFromBalance>();
+                        currentGrabbedItem = FindObjectOfType<ABL_PuzzleController>().getObject(hit.transform.GetComponent<placeableObjectController>().index);
+                        objectHit.balanceSide.GetComponent<ABL_balanceSidesController>().removeObjectFromBalance(hit.transform.gameObject);
+                    } else
+                    {
+                        currentGrabbedItem = hit.collider.gameObject;
+                    }
+                    
                     rb = currentGrabbedItem.GetComponent<Rigidbody>();
 
                     currentGrabbedItem.transform.SetParent(posHand.transform);
@@ -66,9 +75,18 @@ public class grabItem_wRaycast : MonoBehaviour
                     }
                     
                     currentGrabbedItem = null;
-                    
 
-                    currentGrabbedItem = hit.collider.gameObject;
+
+                    if (hit.transform.gameObject.layer == 20)
+                    {
+                        ABL_GrabObjectFromBalance objectHit = hit.transform.GetComponent<ABL_GrabObjectFromBalance>();
+                        currentGrabbedItem = FindObjectOfType<ABL_PuzzleController>().getObject(hit.transform.GetComponent<placeableObjectController>().index);
+                        objectHit.balanceSide.GetComponent<ABL_balanceSidesController>().removeObjectFromBalance(hit.transform.gameObject);
+                    }
+                    else
+                    {
+                        currentGrabbedItem = hit.collider.gameObject;
+                    }
                     rb = currentGrabbedItem.GetComponent<Rigidbody>();
 
                     currentGrabbedItem.transform.SetParent(posHand.transform);

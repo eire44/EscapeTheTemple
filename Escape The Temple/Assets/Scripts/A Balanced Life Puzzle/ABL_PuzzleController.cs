@@ -21,6 +21,11 @@ public class ABL_PuzzleController : MonoBehaviour
     List<placeableObjectController> objects = new List<placeableObjectController>();
     Quaternion initialRotation;
 
+    [HideInInspector] public GameObject object1;
+    [HideInInspector] public GameObject object2;
+    [HideInInspector] public GameObject object3;
+    [HideInInspector] public GameObject object4;
+
     void Start()
     {
         initialRotation = balance_bar.localRotation;
@@ -41,6 +46,50 @@ public class ABL_PuzzleController : MonoBehaviour
             currentTilt = Mathf.Lerp(currentTilt, targetTilt, Time.deltaTime * tiltSpeed);
 
             balance_bar.localRotation = initialRotation * Quaternion.Euler(0f, currentTilt, 0f);
+        }
+    }
+
+    public void saveObject(placeableObjectController objectSaved)
+    {
+        if(objectSaved.index == 0)
+        {
+            object1 = objectSaved.gameObject;
+        } 
+        else if(objectSaved.index == 1)
+        {
+            object2 = objectSaved.gameObject;
+        } 
+        else if (objectSaved.index == 2)
+        {
+            object3 = objectSaved.gameObject;
+        }
+        else
+        {
+            object4 = objectSaved.gameObject;
+        }
+    }
+
+    public GameObject getObject(int objectIndex)
+    {
+        if (objectIndex == 0)
+        {
+            object1.SetActive(true);
+            return object1;
+        }
+        else if (objectIndex == 1)
+        {
+            object2.SetActive(true);
+            return object2;
+        }
+        else if (objectIndex == 2)
+        {
+            object3.SetActive(true);
+            return object3;
+        }
+        else
+        {
+            object4.SetActive(true);
+            return object4;
         }
     }
 

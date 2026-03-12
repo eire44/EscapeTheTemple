@@ -19,22 +19,11 @@ public class ABL_balanceSidesController : MonoBehaviour
             pOC.placed = true;
             currentWeight += pOC.weightValue;
             FindObjectOfType<ABL_PuzzleController>().saveWeightPlaced(sideIndex, currentWeight);
+            FindObjectOfType<ABL_PuzzleController>().saveObject(pOC);
             other.gameObject.SetActive(false);
+            //Destroy(other.gameObject);
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("ABLP_Pieces"))
-        {
-            placeableObjectController pOC = other.gameObject.GetComponent<placeableObjectController>();
-            placeObject(pOC, false);
-            pOC.placed = false;
-            currentWeight -= pOC.weightValue;
-            FindObjectOfType<ABL_PuzzleController>().saveWeightPlaced(sideIndex, currentWeight);
-            //other.gameObject.SetActive(false); INSTANCIAR EN MANO
-        }
-    }
+    } 
 
     public void placeObject(placeableObjectController objectToPlace, bool active)
     {
@@ -54,5 +43,14 @@ public class ABL_balanceSidesController : MonoBehaviour
         {
             objects[3].SetActive(active);
         }
+    }
+
+    public void removeObjectFromBalance(GameObject objectToRemove)
+    {
+        placeableObjectController pOC = objectToRemove.GetComponent<placeableObjectController>();
+        placeObject(pOC, false);
+        pOC.placed = false;
+        currentWeight -= pOC.weightValue;
+        FindObjectOfType<ABL_PuzzleController>().saveWeightPlaced(sideIndex, currentWeight);
     }
 }

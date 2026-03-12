@@ -37,6 +37,7 @@ TagManager:
   - LongClue
   - PlaceHolder
   - Drum
+  - ABLP_BalanceObjects
   layers:
   - Default
   - TransparentFX
@@ -58,7 +59,7 @@ TagManager:
   - BLP_Papers
   - BLP_Container
   - ABLP_Containers
-  - 
+  - ABLP_BalanceObjects
   - 
   - 
   - 
