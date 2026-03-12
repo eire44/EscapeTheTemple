@@ -7,42 +7,52 @@ public class ABL_balanceSidesController : MonoBehaviour
     public int sideIndex;
     float currentWeight = 0f;
 
-    List<Transform> slots = new List<Transform>();
+    public GameObject[] objects;
 
-    private void Start()
+    
+    private void OnTriggerEnter(Collider other)
     {
-        foreach (Transform child in transform)
+        if (other.gameObject.layer == LayerMask.NameToLayer("ABLP_Pieces"))
         {
-            if(child.gameObject.CompareTag("PlaceHolder"))
-            {
-                slots.Add(child);
-            }
+            placeableObjectController pOC = other.gameObject.GetComponent<placeableObjectController>();
+            placeObject(pOC, true);
+            pOC.placed = true;
+            currentWeight += pOC.weightValue;
+            FindObjectOfType<ABL_PuzzleController>().saveWeightPlaced(sideIndex, currentWeight);
+            other.gameObject.SetActive(false);
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("ABLP_Pieces"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("ABLP_Pieces"))
         {
-            collision.transform.SetParent(transform);
-            //collision.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-            //collision.transform.localScale = collision.gameObject.GetComponent<placeableObjectController>().objectSize;
-            collision.gameObject.GetComponent<placeableObjectController>().placed = true;
-            currentWeight += collision.gameObject.GetComponent<placeableObjectController>().weightValue;
+            placeableObjectController pOC = other.gameObject.GetComponent<placeableObjectController>();
+            placeObject(pOC, false);
+            pOC.placed = false;
+            currentWeight -= pOC.weightValue;
             FindObjectOfType<ABL_PuzzleController>().saveWeightPlaced(sideIndex, currentWeight);
+            //other.gameObject.SetActive(false); INSTANCIAR EN MANO
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    public void placeObject(placeableObjectController objectToPlace, bool active)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("ABLP_Pieces"))
+        if(objectToPlace.index == 0)
         {
-            //collision.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-            //collision.transform.SetParent(null);
-            collision.transform.localScale = collision.gameObject.GetComponent<placeableObjectController>().objectSize;
-            collision.gameObject.GetComponent<placeableObjectController>().placed = false;
-            currentWeight -= collision.gameObject.GetComponent<placeableObjectController>().weightValue;
-            FindObjectOfType<ABL_PuzzleController>().saveWeightPlaced(sideIndex, currentWeight);
+            objects[0].SetActive(active);
+        } 
+        else if (objectToPlace.index == 1)
+        {
+            objects[1].SetActive(active);
+        } 
+        else if(objectToPlace.index == 2)
+        {
+            objects[2].SetActive(active);
+        } 
+        else
+        {
+            objects[3].SetActive(active);
         }
     }
 }

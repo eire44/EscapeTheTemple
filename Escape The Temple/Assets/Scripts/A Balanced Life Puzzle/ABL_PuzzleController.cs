@@ -19,36 +19,29 @@ public class ABL_PuzzleController : MonoBehaviour
     bool puzzleSolved = false;
 
     List<placeableObjectController> objects = new List<placeableObjectController>();
-    
+    Quaternion initialRotation;
+
     void Start()
     {
+        initialRotation = balance_bar.localRotation;
+
         foreach (var placeableObject in FindObjectsOfType<placeableObjectController>())
         {
             objects.Add(placeableObject);
         }
     }
 
-    
     void Update()
     {
-        if(!puzzleSolved)
+        if (!puzzleSolved)
         {
             float weightDifference = side1_Weight - side0_Weight;
 
             float targetTilt = Mathf.Clamp(weightDifference * 5f, -maxTiltAngle, maxTiltAngle);
             currentTilt = Mathf.Lerp(currentTilt, targetTilt, Time.deltaTime * tiltSpeed);
 
-            balance_bar.localRotation = Quaternion.Euler(0f, 0f, -currentTilt);
-            //FixPlateRotation(plate0);
-            //FixPlateRotation(plate1);
+            balance_bar.localRotation = initialRotation * Quaternion.Euler(0f, currentTilt, 0f);
         }
-    }
-
-    void FixPlateRotation(Transform plate)
-    {
-        Vector3 rot = plate.eulerAngles;
-        rot.z = 0f;
-        plate.eulerAngles = rot;
     }
 
     public void saveWeightPlaced(int sideIndex, float newWeight)
@@ -67,7 +60,7 @@ public class ABL_PuzzleController : MonoBehaviour
         if(compareWeights())
         {
             puzzleSolved = true;
-            balance_bar.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            balance_bar.localRotation = initialRotation;
             foreach (var item in objects)
             {
                 item.gameObject.layer = 0;
