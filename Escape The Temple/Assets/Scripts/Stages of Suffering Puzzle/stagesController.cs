@@ -66,10 +66,10 @@ public class stagesController : MonoBehaviour
                 item.gameObject.layer = LayerMask.NameToLayer("Default");
             }
 
-            foreach (Transform child in fourthBoard.transform)
-            {
-                child.GetComponent<fadeRoomDoor>().StartFade();
-            }
+            //foreach (Transform child in fourthBoard.transform)
+            //{
+            //    child.GetComponent<fadeRoomDoor>().StartFade();
+            //}
             fourthText.SetActive(false);
             keyPiece.SetActive(true);
             keyPiece.GetComponent<fadeIn_PuzzlePieces>().StartFade();
