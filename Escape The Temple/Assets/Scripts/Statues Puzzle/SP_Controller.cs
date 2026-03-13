@@ -154,6 +154,6 @@ public class SP_Controller : MonoBehaviour
             item.gameObject.SetActive(true);
             item.GetComponent<fadeIn_PuzzlePieces>().StartFade();
         }
-        Debug.Log("PUZZLE 9 LOGRADO");
+        FindObjectOfType<SunMovement>().sunProgression();
     }
 }

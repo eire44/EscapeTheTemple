@@ -18,20 +18,6 @@ public class LC_PiecesController : MonoBehaviour
         candlesPuzzleController = FindObjectOfType<candlesPuzzleSolution>();
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if(other.gameObject.layer == LayerMask.NameToLayer("Life Cycle Puzzle Containers"))
-    //    {
-    //        for (int i = 0; i < puzzleController.places.Length; i++)
-    //        {
-    //            if (other.gameObject == puzzleController.places[i])
-    //            {
-    //                //Debug.Log(i);
-    //                puzzleController.currentOrder[i] = pieceIndex;
-    //            }
-    //        }
-    //    }
-    //}
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Life Cycle Puzzle Containers"))
@@ -44,11 +30,7 @@ public class LC_PiecesController : MonoBehaviour
             }
         }
 
-        //Debug.Log(string.Join(", ", FindObjectOfType<LC_PuzzleController>().currentOrder));
-        if (FindObjectOfType<LC_PuzzleController>().checkOrder())
-        {
-            Debug.Log("WIIIIIIIIIIIIIIIIIIIII");
-        }
+        FindObjectOfType<LC_PuzzleController>().checkOrder();
     }
 
     private void OnTriggerStay(Collider other)
@@ -80,10 +62,6 @@ public class LC_PiecesController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //if (collision.gameObject == woodPlank)
-        //{
-        //    onPlace = true;
-        //} 
         if ((collision.gameObject.layer == LayerMask.NameToLayer("Life Cycle Puzzle Pieces") || collision.gameObject == woodBottomPlank) && onPlace)
         {
             if(candlesPuzzleController.candlesPuzzleSolved)
@@ -91,13 +69,5 @@ public class LC_PiecesController : MonoBehaviour
                 puzzleController.audioSource.PlayOneShot(puzzleController.woodHit_clips[Random.Range(0, puzzleController.woodHit_clips.Length)]);
             }
         }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        //if(collision.gameObject == woodPlank)
-        //{
-        //    onPlace = false;
-        //}
     }
 }

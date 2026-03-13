@@ -23,15 +23,13 @@ public class LC_PuzzleController : MonoBehaviour
             currentOrder[i] = -1;
         }
     }
-    public bool checkOrder()
+    public void checkOrder()
     {
-        //Debug.Log(string.Join(", ", currentOrder));
-
         for (int i = 0; i < currentOrder.Length; i++)
         {
             if (currentOrder[i] != correctOrder[i])
             {
-                return false;
+                return;
             }
         }
 
@@ -48,6 +46,6 @@ public class LC_PuzzleController : MonoBehaviour
         fadeOutPiece.SetActive(false);
         fadeInKeyPiece.SetActive(true);
         fadeInKeyPiece.GetComponent<fadeIn_PuzzlePieces>().StartFade();
-        return true;
+        FindObjectOfType<SunMovement>().sunProgression();
     }
 }

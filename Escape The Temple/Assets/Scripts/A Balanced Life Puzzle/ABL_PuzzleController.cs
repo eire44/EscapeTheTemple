@@ -115,7 +115,7 @@ public class ABL_PuzzleController : MonoBehaviour
                 item.gameObject.layer = 0;
             }
             unlockRoom3();
-            Debug.Log("BALANZA EQUILIBRADA");
+            FindObjectOfType<SunMovement>().sunProgression();
         }
         
     }

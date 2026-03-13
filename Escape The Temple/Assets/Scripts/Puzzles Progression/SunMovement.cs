@@ -18,20 +18,9 @@ public class SunMovement : MonoBehaviour
     public Color startColor = Color.white;
     public Color endColor = new Color(1f, 0.82f, 0.14f);
 
-    float time = 0f;
-    float timeIndex = 10f;
-    private void Update()
-    {
-        //time += Time.deltaTime;
-        //if (time >= timeIndex)
-        //{
-        //    timeIndex += 10f;
-        //    sunProgression();
-        //}
-    }
-
     public void sunProgression()
     {
+        Debug.Log("SUN MOVED");
         if (progressionIndex >= totalPuzzles)
             return;
 

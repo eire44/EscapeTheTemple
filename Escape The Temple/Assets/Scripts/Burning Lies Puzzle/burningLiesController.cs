@@ -65,7 +65,6 @@ public class burningLiesController : MonoBehaviour
 
     public void checkBurntPaper(int burnedIndex, phrasesController currentPaper, bool burning)
     {
-        Debug.Log("se está quemando el papel " + burnedIndex + " y debería quemarse el " + sets[currentSetIndex].wrongPhraseIndex);
         if (puzzleAlreadySolved) return;
 
         int correctIndex = sets[currentSetIndex].wrongPhraseIndex;
@@ -79,10 +78,8 @@ public class burningLiesController : MonoBehaviour
                 singleBurningPaper = paper;
             }   
         }
-        Debug.Log("HAY " + papersBurnt + " PAPELES");
         if(papersBurnt == 1)
         {
-            Debug.Log(singleBurningPaper.index + " VS." + correctIndex);
             if(singleBurningPaper.index == correctIndex)
             {
                 puzzleAlreadySolved = true;
@@ -91,7 +88,6 @@ public class burningLiesController : MonoBehaviour
             else
             {
                 currentPaper.gameObject.GetComponent<BLP_resetPhrasesPosition>().resetPosition();
-                Debug.Log(currentPaper.index);
                 LoadNextSet();
             }
         }
@@ -102,7 +98,6 @@ public class burningLiesController : MonoBehaviour
                 if(burnedIndex != correctIndex)
                 {
                     currentPaper.gameObject.GetComponent<BLP_resetPhrasesPosition>().resetPosition();
-                    Debug.Log(currentPaper.index);
                     LoadNextSet();
                 }
             }
@@ -128,6 +123,7 @@ public class burningLiesController : MonoBehaviour
         {
             paper.gameObject.layer = LayerMask.NameToLayer("Default");
         }
+        FindObjectOfType<SunMovement>().sunProgression();
     }
 
 

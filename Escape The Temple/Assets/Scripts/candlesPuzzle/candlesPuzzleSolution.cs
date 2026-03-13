@@ -24,6 +24,7 @@ public class candlesPuzzleSolution : MonoBehaviour
                 }
                 unlockRoom2();
                 flagHideText = false;
+                FindObjectOfType<SunMovement>().sunProgression();
             }
             
         }

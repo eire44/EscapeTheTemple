@@ -48,7 +48,7 @@ public class tilesPuzzleController : MonoBehaviour
         }
         FindObjectOfType<LTP_bellPattern>().startBellSoundsPattern();
         FindObjectOfType<LTP_BellSwing>().StartRinging();
-        Debug.Log("LOGRADO");
+        FindObjectOfType<SunMovement>().sunProgression();
     }
 
     void checkOrder ()

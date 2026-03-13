@@ -24,6 +24,7 @@ public class incensePuzzleSolution : MonoBehaviour
         if (checkIncenseConfiguration())
         {
             incensePuzzleSolved = true;
+            FindObjectOfType<SunMovement>().sunProgression();
 
             foreach (IP_HerbController herb in FindObjectsOfType<IP_HerbController>())
             {

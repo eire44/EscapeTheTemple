@@ -37,10 +37,14 @@ public class LTP_Controller : MonoBehaviour
 
             if (soundIndex >= FindObjectOfType<LTP_bellPattern>().bellsSequence.Count)
             {
-                Debug.Log("SECUENCIA PERFECTA");
+                FindObjectOfType<SunMovement>().sunProgression();
                 room4_Door.GetComponent<fadeRoomDoor>().StartFade();
                 FindObjectOfType<LTP_BellSwing>().StopRinging();
                 FindObjectOfType<LTP_bellPattern>().audioSource.enabled = false;
+                foreach (LTP_DrumsController drum in FindObjectsOfType<LTP_DrumsController>())
+                {
+                    drum.gameObject.layer = LayerMask.NameToLayer("Default");
+                }
                 LTPpuzzleSolved = true;
             }
         }

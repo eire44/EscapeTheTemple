@@ -31,10 +31,8 @@ public class stagesController : MonoBehaviour
     bool checkConfiguration(int bowlIndex, string symbol)
     {
         playerConfiguration[bowlIndex] = symbol;
-        Debug.Log("ahora en " + bowlIndex + " esta " + symbol);
         for (int i = 0; i < rounds[currentRowIndex].pairs.Length; i++)
         {
-            //Debug.Log("en " + i + " esta " + playerConfiguration[i]);
             if(rounds[currentRowIndex].pairs[i].correctSymbol != playerConfiguration[i])
             {
                 return false;
@@ -46,10 +44,8 @@ public class stagesController : MonoBehaviour
 
     public void callForCheckConfiguration(int bowlIndex, string symbol)
     {
-        Debug.Log("entro " + symbol + " en " + bowlIndex);
         if(checkConfiguration(bowlIndex, symbol))
         {
-            Debug.Log("CORRECT");
             currentRowIndex++;
             nextRow(currentRowIndex);
         }
@@ -60,7 +56,6 @@ public class stagesController : MonoBehaviour
     {
         if (roundIndex >= rounds.Length)
         {
-            Debug.Log("Puzzle completo");
             foreach (var item in pieces)
             {
                 item.gameObject.layer = LayerMask.NameToLayer("Default");
@@ -73,6 +68,7 @@ public class stagesController : MonoBehaviour
             fourthText.SetActive(false);
             keyPiece.SetActive(true);
             keyPiece.GetComponent<fadeIn_PuzzlePieces>().StartFade();
+            FindObjectOfType<SunMovement>().sunProgression();
             return;
         }
 
