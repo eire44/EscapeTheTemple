@@ -112,16 +112,7 @@ public class grabItem_wRaycast : MonoBehaviour
                         {
                             if(hitLayer == 0)
                             {
-                                currentGrabbedItem.transform.SetParent(null);
-
-                                if (rb != null)
-                                {
-                                    rb.isKinematic = false;
-                                    rb.useGravity = true;
-                                    rb = null;
-                                }
-
-                                currentGrabbedItem = null;
+                                dropOnTheGround();
                             }
                             else if (hitLayer == 22)
                             {
@@ -208,6 +199,20 @@ public class grabItem_wRaycast : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void dropOnTheGround()
+    {
+        currentGrabbedItem.transform.SetParent(null);
+
+        if (rb != null)
+        {
+            rb.isKinematic = false;
+            rb.useGravity = true;
+            rb = null;
+        }
+
+        currentGrabbedItem = null;
     }
 
     Transform HasChildWithTag(GameObject parent)

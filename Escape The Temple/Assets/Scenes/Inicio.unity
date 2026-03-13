@@ -5285,7 +5285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c588803f3829f4089659ab8e2f7229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture: {fileID: 2800000, guid: bdf8c079e5fc864458b9baaf2fb1e42b, type: 3}
+  cursorTexture: {fileID: 2800000, guid: d7f96762ee2196b43bacb9b3f4cabb88, type: 3}
   hotspot: {x: 16, y: 16}
 --- !u!1 &1570460147
 GameObject:

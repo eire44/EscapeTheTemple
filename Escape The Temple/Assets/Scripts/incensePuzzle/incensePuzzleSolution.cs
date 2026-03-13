@@ -25,7 +25,7 @@ public class incensePuzzleSolution : MonoBehaviour
         {
             incensePuzzleSolved = true;
             FindObjectOfType<SunMovement>().sunProgression();
-
+            FindObjectOfType<grabItem_wRaycast>().dropOnTheGround();
             foreach (IP_HerbController herb in FindObjectsOfType<IP_HerbController>())
             {
                 herb.gameObject.layer = LayerMask.NameToLayer("Default");
