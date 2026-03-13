@@ -4,92 +4,36 @@ using UnityEngine;
 
 public class incensePuzzleSolution : MonoBehaviour
 {
-    [HideInInspector] public bool pineIncenseLit = false;
-    [HideInInspector] public bool cinnamonIncenseLit = false;
-    [HideInInspector] public bool lotusIncenseLit = false;
-    [HideInInspector] public bool sagebrushIncenseLit = false;
-    [HideInInspector] public bool sandalwoodIncenseLit = false;
-
     [HideInInspector] public bool incensePuzzleSolved = false;
 
-
-    [HideInInspector] public bool pinePicked = false;
-    [HideInInspector] public bool cinnamonPicked = false;
-    [HideInInspector] public bool lotusPicked = false;
-    [HideInInspector] public bool sagebrushPicked = false;
-    [HideInInspector] public bool sandalwoodPicked = false;
-    [HideInInspector] public bool herbPicked = false;
-
-    bool flagHideText = true;
-    // Start is called before the first frame update
-    void Start()
+    bool checkIncenseConfiguration()
     {
-        
+        foreach (incenseBurnerController incenseBurner in FindObjectsOfType<incenseBurnerController>())
+        {
+            if(!incenseBurner.rightHerbPlaced)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void checkForPuzzleSolution()
     {
-        if(pineIncenseLit && cinnamonIncenseLit && lotusIncenseLit && sagebrushIncenseLit && sandalwoodIncenseLit)
+        if (checkIncenseConfiguration())
         {
             incensePuzzleSolved = true;
-            Debug.Log(incensePuzzleSolved);
-            if (flagHideText)
-            {
-                //FindObjectOfType<collectItems>().interactionText.gameObject.SetActive(false);
-                flagHideText = false;
-            }
-        }
-    }
 
-    public void pickHerb()
-    {
+            foreach (IP_HerbController herb in FindObjectsOfType<IP_HerbController>())
+            {
+                herb.gameObject.layer = LayerMask.NameToLayer("Default");
+            }
 
-    }
-
-    public void grabbedItem(bool picked, GameObject item)
-    {
-        pinePicked = false;
-        cinnamonPicked = false;
-        lotusPicked = false;
-        sagebrushPicked = false;
-        sandalwoodPicked = false;
-        
-        if (picked)
-        {
-            if (item.CompareTag("Pine"))
+            foreach (incenseBurnerController incenseBurner in FindObjectsOfType<incenseBurnerController>())
             {
-                pinePicked = true;
-                herbPicked = true;
+                incenseBurner.gameObject.layer = LayerMask.NameToLayer("Default");
             }
-            else if (item.CompareTag("Cinnamon"))
-            {
-                cinnamonPicked = true;
-                herbPicked = true;
-            }
-            else if (item.CompareTag("DriedLotus"))
-            {
-                lotusPicked = true;
-                herbPicked = true;
-            }
-            else if (item.CompareTag("Sagebrush"))
-            {
-                sagebrushPicked = true;
-                herbPicked = true;
-            }
-            else if (item.CompareTag("Sandalwood"))
-            {
-                sandalwoodPicked = true;
-                herbPicked = true;
-            }
-            else
-            {
-                herbPicked = false;
-            }
-        }
-        else
-        {
-            herbPicked = false;
         }
     }
 }
