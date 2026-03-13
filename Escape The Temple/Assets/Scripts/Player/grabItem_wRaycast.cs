@@ -122,7 +122,13 @@ public class grabItem_wRaycast : MonoBehaviour
                                 }
 
                                 currentGrabbedItem = null;
-                            } 
+                            }
+                            else if (hitLayer == 22)
+                            {
+                                incenseBurnerController IBcontroller = hit.transform.GetComponent<incenseBurnerController>();
+                                IP_HerbController herbController = currentGrabbedItem.GetComponent<IP_HerbController>();
+                                IBcontroller.placeHerb(herbController);
+                            }
                             else
                             {
                                 Transform placePoint = HasChildWithTag(hit.transform.gameObject);
@@ -150,12 +156,6 @@ public class grabItem_wRaycast : MonoBehaviour
                                     {
                                         ABL_balanceSidesController bSC = hit.transform.GetComponent<ABL_balanceSidesController>();
                                         bSC.sumWeight(currentGrabbedItem);
-                                    }
-                                    else if (hitLayer == 22)
-                                    {
-                                        incenseBurnerController IBcontroller = hit.transform.GetComponent<incenseBurnerController>();
-                                        IP_HerbController herbController = currentGrabbedItem.GetComponent<IP_HerbController>();
-                                        IBcontroller.placeHerb(herbController);
                                     }
 
 
@@ -191,12 +191,6 @@ public class grabItem_wRaycast : MonoBehaviour
                                     {
                                         ABL_balanceSidesController bSC = hit.transform.GetComponent<ABL_balanceSidesController>();
                                         bSC.sumWeight(currentGrabbedItem);
-                                    }
-                                    else if (hitLayer == 22)
-                                    {
-                                        incenseBurnerController IBcontroller = hit.transform.GetComponent<incenseBurnerController>();
-                                        IP_HerbController herbController = currentGrabbedItem.GetComponent<IP_HerbController>();
-                                        IBcontroller.placeHerb(herbController);
                                     }
 
                                     if (rb != null)
