@@ -1406,8 +1406,6 @@ GameObject:
   - component: {fileID: 17706883}
   - component: {fileID: 17706887}
   - component: {fileID: 17706886}
-  - component: {fileID: 17706885}
-  - component: {fileID: 17706884}
   m_Layer: 0
   m_Name: txtNorth (1)
   m_TagString: ShortClue
@@ -1430,41 +1428,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1456025616}
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: -180}
---- !u!114 &17706884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 17706882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f50d6ac3dd5ff941ac1d90b4c367958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textClue: North
---- !u!64 &17706885
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 17706882}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &17706886
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1595,8 +1558,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.35, y: 0.3, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.47680938, y: 0.3, z: 0.2}
+  m_Center: {x: -0.06340468, y: 0, z: 0}
 --- !u!114 &18777189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2868,11 +2831,6 @@ MonoBehaviour:
   - {fileID: 324200158}
   - {fileID: 1877382793}
   - {fileID: 234098124}
-  materials:
-  - {fileID: 2100000, guid: 12faa954337a6a44396bb25309570218, type: 2}
-  - {fileID: 2100000, guid: d847adc730f46454486e7283a6aa165a, type: 2}
-  - {fileID: 2100000, guid: 00cff10704ba40642b9e1b7e627dba7d, type: 2}
-  - {fileID: 2100000, guid: 09531e42bd8b11f4d8e1a2d20c6fa2e1, type: 2}
   currentCharacter: 0
   newDirection: 0
   enablePuzzle: 0
@@ -18694,9 +18652,11 @@ GameObject:
   - component: {fileID: 317745601}
   - component: {fileID: 317745600}
   - component: {fileID: 317745599}
-  m_Layer: 0
+  - component: {fileID: 317745602}
+  - component: {fileID: 317745603}
+  m_Layer: 25
   m_Name: Cube (9)
-  m_TagString: ESP_Right
+  m_TagString: ShortClue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18788,6 +18748,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317745597}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &317745602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317745597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59658422624f4842be7ec64bd914228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 2
+--- !u!114 &317745603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317745597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f50d6ac3dd5ff941ac1d90b4c367958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textClue: East
 --- !u!1001 &319512517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19012,8 +18998,6 @@ GameObject:
   - component: {fileID: 320183893}
   - component: {fileID: 320183897}
   - component: {fileID: 320183896}
-  - component: {fileID: 320183895}
-  - component: {fileID: 320183894}
   m_Layer: 0
   m_Name: txtSouth (1)
   m_TagString: ShortClue
@@ -19036,41 +19020,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1784771652}
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: -180}
---- !u!114 &320183894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320183892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f50d6ac3dd5ff941ac1d90b4c367958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textClue: South
---- !u!64 &320183895
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320183892}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &320183896
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54102,6 +54051,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 25f0ab392f1766c4c80e8e6ad68d4086,
         type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 25f0ab392f1766c4c80e8e6ad68d4086,
+        type: 3}
       propertyPath: m_TagString
       value: Character4_Button
       objectReference: {fileID: 0}
@@ -68350,6 +68304,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 25f0ab392f1766c4c80e8e6ad68d4086,
         type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 25f0ab392f1766c4c80e8e6ad68d4086,
+        type: 3}
       propertyPath: m_TagString
       value: Character1_Button
       objectReference: {fileID: 0}
@@ -78552,9 +78511,11 @@ GameObject:
   - component: {fileID: 926013026}
   - component: {fileID: 926013025}
   - component: {fileID: 926013024}
-  m_Layer: 0
+  - component: {fileID: 926013027}
+  - component: {fileID: 926013028}
+  m_Layer: 25
   m_Name: Cube (11)
-  m_TagString: ESP_Left
+  m_TagString: ShortClue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78646,6 +78607,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926013022}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &926013027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926013022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59658422624f4842be7ec64bd914228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 3
+--- !u!114 &926013028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926013022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f50d6ac3dd5ff941ac1d90b4c367958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textClue: West
 --- !u!1 &933542500
 GameObject:
   m_ObjectHideFlags: 0
@@ -84654,6 +84641,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PieceJugador (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 25f0ab392f1766c4c80e8e6ad68d4086,
+        type: 3}
+      propertyPath: m_Layer
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 25f0ab392f1766c4c80e8e6ad68d4086,
         type: 3}
@@ -107742,7 +107734,7 @@ PrefabInstance:
     - target: {fileID: 4611608861409146269, guid: 18b36aa0347a56946850a62316c63da2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4676941753903880953, guid: 18b36aa0347a56946850a62316c63da2,
         type: 3}
@@ -140174,9 +140166,11 @@ GameObject:
   - component: {fileID: 1456025619}
   - component: {fileID: 1456025618}
   - component: {fileID: 1456025617}
-  m_Layer: 0
+  - component: {fileID: 1456025620}
+  - component: {fileID: 1456025621}
+  m_Layer: 25
   m_Name: Cube (12)
-  m_TagString: ESP_Up
+  m_TagString: ShortClue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140268,6 +140262,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456025615}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1456025620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456025615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59658422624f4842be7ec64bd914228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+--- !u!114 &1456025621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456025615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f50d6ac3dd5ff941ac1d90b4c367958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textClue: North
 --- !u!1 &1457919674
 GameObject:
   m_ObjectHideFlags: 0
@@ -148372,8 +148392,6 @@ GameObject:
   - component: {fileID: 1620148467}
   - component: {fileID: 1620148471}
   - component: {fileID: 1620148470}
-  - component: {fileID: 1620148469}
-  - component: {fileID: 1620148468}
   m_Layer: 0
   m_Name: txtWest (1)
   m_TagString: ShortClue
@@ -148396,41 +148414,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 926013023}
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: -180}
---- !u!114 &1620148468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620148466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f50d6ac3dd5ff941ac1d90b4c367958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textClue: West
---- !u!64 &1620148469
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620148466}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1620148470
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -152198,8 +152181,6 @@ GameObject:
   - component: {fileID: 1706476893}
   - component: {fileID: 1706476897}
   - component: {fileID: 1706476896}
-  - component: {fileID: 1706476895}
-  - component: {fileID: 1706476894}
   m_Layer: 0
   m_Name: txtEast (1)
   m_TagString: ShortClue
@@ -152222,41 +152203,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 317745598}
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: -180}
---- !u!114 &1706476894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1706476892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f50d6ac3dd5ff941ac1d90b4c367958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textClue: East
---- !u!64 &1706476895
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1706476892}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1706476896
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -154273,9 +154219,11 @@ GameObject:
   - component: {fileID: 1784771655}
   - component: {fileID: 1784771654}
   - component: {fileID: 1784771653}
-  m_Layer: 0
+  - component: {fileID: 1784771656}
+  - component: {fileID: 1784771657}
+  m_Layer: 25
   m_Name: Cube (10)
-  m_TagString: ESP_Down
+  m_TagString: ShortClue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154367,6 +154315,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784771651}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1784771656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784771651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59658422624f4842be7ec64bd914228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 1
+--- !u!114 &1784771657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784771651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f50d6ac3dd5ff941ac1d90b4c367958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textClue: South
 --- !u!1 &1791191497
 GameObject:
   m_ObjectHideFlags: 0
@@ -157633,12 +157607,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 25f0ab392f1766c4c80e8e6ad68d4086,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.22111306
+      value: -0.221
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 25f0ab392f1766c4c80e8e6ad68d4086,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.1019998
+      value: 3.769
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 25f0ab392f1766c4c80e8e6ad68d4086,
         type: 3}
@@ -178280,7 +178254,7 @@ GameObject:
   - component: {fileID: 1996929661}
   - component: {fileID: 1996929660}
   - component: {fileID: 1996929663}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: AudioClue
   m_TagString: ESP_ListenAgain
   m_Icon: {fileID: 0}
@@ -187676,6 +187650,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PieceMujer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 25f0ab392f1766c4c80e8e6ad68d4086,
+        type: 3}
+      propertyPath: m_Layer
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 25f0ab392f1766c4c80e8e6ad68d4086,
         type: 3}

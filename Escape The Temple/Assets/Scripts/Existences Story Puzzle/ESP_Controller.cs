@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,6 @@ public class ESP_Controller : MonoBehaviour
     public Transform screenAreasContainer;
     public Transform[] screenPieces;
     public Transform[] leverPositions;
-    public Material[] materials;
-    Material newLeverColor;
     int screenPieces_Index = 0;
     int leverPositions_Index = 0;
     [HideInInspector] public enum characters
@@ -46,7 +45,6 @@ public class ESP_Controller : MonoBehaviour
         }
 
         currentCharacter = characters.Character3;
-        newLeverColor = materials[2];
     }
 
     // Update is called once per frame
@@ -66,49 +64,49 @@ public class ESP_Controller : MonoBehaviour
                     {
                         currentCharacter = characters.Character1;
                         hit.transform.gameObject.GetComponent<ESP_ButtonsPressed>().Press();
-                        FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[0]);
                     }
                     else if (hit.collider.CompareTag("Character2_Button"))
                     {
                         currentCharacter = characters.Character2;
                         hit.transform.gameObject.GetComponent<ESP_ButtonsPressed>().Press();
-                        FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[1]);
                     }
                     else if (hit.collider.CompareTag("Character3_Button"))
                     {
                         currentCharacter = characters.Character3;
                         hit.transform.gameObject.GetComponent<ESP_ButtonsPressed>().Press();
-                        FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[2]);
                     }
                     else if (hit.collider.CompareTag("Character4_Button"))
                     {
                         currentCharacter = characters.Character4;
                         hit.transform.gameObject.GetComponent<ESP_ButtonsPressed>().Press();
-                        FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[3]);
                     }
-                    else if (hit.collider.CompareTag("ESP_Up"))
+                    else if (hit.transform.gameObject.TryGetComponent<ESP_DirectionButtonsController>(out ESP_DirectionButtonsController dirButton))
                     {
-                        newDirection = directions.Up;
-                        FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
-                        callForMovePieces();
-                    }
-                    else if (hit.collider.CompareTag("ESP_Down"))
-                    {
-                        newDirection = directions.Down;
-                        FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
-                        callForMovePieces();
-                    }
-                    else if (hit.collider.CompareTag("ESP_Left"))
-                    {
-                        newDirection = directions.Left;
-                        FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
-                        callForMovePieces();
-                    }
-                    else if (hit.collider.CompareTag("ESP_Right"))
-                    {
-                        newDirection = directions.Right;
-                        FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
-                        callForMovePieces();
+                        if(dirButton.index == 0)
+                        {
+                            newDirection = directions.Up;
+                            FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
+                            callForMovePieces();
+                        } 
+                        else if(dirButton.index == 1)
+                        {
+                            newDirection = directions.Down;
+                            FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
+                            callForMovePieces();
+                        } 
+                        else if(dirButton.index == 2)
+                        {
+                            newDirection = directions.Right;
+                            FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
+                            callForMovePieces();
+                        } 
+                        else if(dirButton.index == 3)
+                        {
+                            newDirection = directions.Left;
+                            FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
+                            callForMovePieces();
+                        }
+                        
                     }
                     else if (hit.collider.CompareTag("ESP_ListenAgain"))
                     {
@@ -145,23 +143,23 @@ public class ESP_Controller : MonoBehaviour
 
         if (newDirection == directions.Up)
         {
-            newPosition_CurrentCharacter.y += 0.5f;
-            newPosition_AffectedCharacter.y -= 0.5f;
+            newPosition_CurrentCharacter.y += 0.3f;
+            newPosition_AffectedCharacter.y -= 0.3f;
         }
         else if (newDirection == directions.Down)
         {
-            newPosition_CurrentCharacter.y -= 0.5f;
-            newPosition_AffectedCharacter.y += 0.5f;
+            newPosition_CurrentCharacter.y -= 0.3f;
+            newPosition_AffectedCharacter.y += 0.3f;
         }
         else if (newDirection == directions.Left)
         {
-            newPosition_CurrentCharacter.x -= 0.5f;
-            newPosition_AffectedCharacter.x += 0.5f;
+            newPosition_CurrentCharacter.x -= 0.3f;
+            newPosition_AffectedCharacter.x += 0.3f;
         }
         else if (newDirection == directions.Right)
         {
-            newPosition_CurrentCharacter.x += 0.5f;
-            newPosition_AffectedCharacter.x -= 0.5f;
+            newPosition_CurrentCharacter.x += 0.3f;
+            newPosition_AffectedCharacter.x -= 0.3f;
         }
 
         FindObjectOfType<ESP_PiecesMovement>().movePieces(newPosition_CurrentCharacter, charactersCorrelation[currentCharacter], affectedCharacter, newPosition_AffectedCharacter);
@@ -170,17 +168,19 @@ public class ESP_Controller : MonoBehaviour
 
     public void checkCharactersPositions()
     {
+        Debug.Log("CHECK");
         foreach (Transform item in screenAreasContainer)
         {
             if (item.GetComponent<ESP_AreasController>().collidedCharacters.Count != 1)
             {
+                Debug.Log(item.name + "FALTA");
                 return;
             }
-
             foreach (var obj in item.GetComponent<ESP_AreasController>().collidedCharacters)
             {
                 if(!obj.CompareTag(item.GetComponent<ESP_AreasController>().correctCharacterTag))
                 {
+                    Debug.Log("necesita: " + item.GetComponent<ESP_AreasController>().correctCharacterTag + " y tiene: " + obj.tag);
                     return;
                 }
             }

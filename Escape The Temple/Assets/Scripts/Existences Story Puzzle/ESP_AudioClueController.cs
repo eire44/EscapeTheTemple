@@ -10,13 +10,13 @@ public class ESP_AudioClueController : MonoBehaviour
 
     public void playAudioClue()
     {
-        play = !play;
-        if (play)
-        {
-            audioClue.Play();
-        } else
-        {
-            audioClue.Stop();
-        }
+        //play = !play;
+        //if (play)
+        //{
+        //    audioClue.Play();
+        //} else
+        //{
+        //    audioClue.Stop();
+        //}
     }
 }

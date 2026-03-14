@@ -150,7 +150,7 @@ public class grabItem_wRaycast : MonoBehaviour
                                     }
                                     else if (hitLayer == 24)
                                     {
-                                        currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 90f);
+                                        currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 0f);
                                     }
 
 
@@ -189,7 +189,7 @@ public class grabItem_wRaycast : MonoBehaviour
                                     }
                                     else if (hitLayer == 24)
                                     {
-                                        currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 90f);
+                                        currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 0f);
                                     }
 
                                     if (rb != null)

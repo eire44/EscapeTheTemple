@@ -13,15 +13,6 @@ public class ESP_LeverMovement : MonoBehaviour
         startPos = center.position;
     }
 
-    public void changeLeverColor(Material newMaterial)
-    {
-        GetComponent<Renderer>().material = newMaterial;
-        foreach (Transform child in transform)
-        {
-            child.GetComponent<Renderer>().material = newMaterial;
-        }
-    }
-
     public void moveLever(Transform direction)
     {
         if (leverIsMoving) return;
