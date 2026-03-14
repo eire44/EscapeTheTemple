@@ -65,21 +65,25 @@ public class ESP_Controller : MonoBehaviour
                     if (hit.collider.CompareTag("Character1_Button"))
                     {
                         currentCharacter = characters.Character1;
+                        hit.transform.gameObject.GetComponent<ESP_ButtonsPressed>().Press();
                         FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[0]);
                     }
                     else if (hit.collider.CompareTag("Character2_Button"))
                     {
                         currentCharacter = characters.Character2;
+                        hit.transform.gameObject.GetComponent<ESP_ButtonsPressed>().Press();
                         FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[1]);
                     }
                     else if (hit.collider.CompareTag("Character3_Button"))
                     {
                         currentCharacter = characters.Character3;
+                        hit.transform.gameObject.GetComponent<ESP_ButtonsPressed>().Press();
                         FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[2]);
                     }
                     else if (hit.collider.CompareTag("Character4_Button"))
                     {
                         currentCharacter = characters.Character4;
+                        hit.transform.gameObject.GetComponent<ESP_ButtonsPressed>().Press();
                         FindObjectOfType<ESP_LeverMovement>().changeLeverColor(materials[3]);
                     }
                     else if (hit.collider.CompareTag("ESP_Up"))
