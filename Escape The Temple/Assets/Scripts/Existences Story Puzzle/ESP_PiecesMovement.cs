@@ -17,7 +17,8 @@ public class ESP_PiecesMovement : MonoBehaviour
 
     IEnumerator MoveScreenPiece(Vector3 newPosition, Transform character)
     {
-        //isMoving = true;
+        newPosition.x = Mathf.Clamp(newPosition.x, -1.1f, 1.5f);
+        newPosition.y = Mathf.Clamp(newPosition.y, 2.6f, 4.2f);
 
         Vector3 startPos = character.position;
 
@@ -26,14 +27,13 @@ public class ESP_PiecesMovement : MonoBehaviour
 
         while (timeMove < durationMove)
         {
-            character.transform.position = Vector3.Lerp(startPos, newPosition, timeMove / durationMove);
+            character.position = Vector3.Lerp(startPos, newPosition, timeMove / durationMove);
             timeMove += Time.deltaTime;
             yield return null;
         }
 
-        character.transform.position = newPosition;
+        character.position = newPosition;
 
-        //isMoving = false;
         FindObjectOfType<ESP_Controller>().checkCharactersPositions();
     }
 }

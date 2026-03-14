@@ -148,6 +148,10 @@ public class grabItem_wRaycast : MonoBehaviour
                                         ABL_balanceSidesController bSC = hit.transform.GetComponent<ABL_balanceSidesController>();
                                         bSC.sumWeight(currentGrabbedItem);
                                     }
+                                    else if (hitLayer == 24)
+                                    {
+                                        currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 90f);
+                                    }
 
 
                                     if (rb != null)
@@ -182,6 +186,10 @@ public class grabItem_wRaycast : MonoBehaviour
                                     {
                                         ABL_balanceSidesController bSC = hit.transform.GetComponent<ABL_balanceSidesController>();
                                         bSC.sumWeight(currentGrabbedItem);
+                                    }
+                                    else if (hitLayer == 24)
+                                    {
+                                        currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 90f);
                                     }
 
                                     if (rb != null)
