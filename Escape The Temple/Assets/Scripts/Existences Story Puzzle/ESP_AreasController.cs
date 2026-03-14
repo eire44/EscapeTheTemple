@@ -5,25 +5,24 @@ using static ESP_Controller;
 
 public class ESP_AreasController : MonoBehaviour
 {
-    public string correctCharacterTag;
+    public string correctCharacterTag; //EN VEZ DE COMPARAR EL TAG, PONER UN INDEX A LOS PERSONAJES
     [HideInInspector] public HashSet<GameObject> collidedCharacters = new HashSet<GameObject>();
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("ESP_Characters"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("ESP_Characters"))
         {
-            collidedCharacters.Add(collision.gameObject);
-            Debug.Log("ENTRÓ " + collision.gameObject.tag);
+            collidedCharacters.Add(other.gameObject);
+            Debug.Log("ENTRÓ " + other.gameObject.tag);
         }
-        
     }
-    private void OnCollisionExit(Collision collision)
+
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("ESP_Characters"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("ESP_Characters"))
         {
-            collidedCharacters.Remove(collision.gameObject);
-            Debug.Log("SALIÓ " + collision.gameObject.tag);
+            collidedCharacters.Remove(other.gameObject);
+            Debug.Log("SALIÓ " + other.gameObject.tag);
         }
-        
     }
 }

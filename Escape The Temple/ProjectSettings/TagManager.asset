@@ -40,6 +40,8 @@ TagManager:
   - ABLP_BalanceObjects
   - Lotus
   - Gardenia
+  - Lever
+  - Missing Lever
   layers:
   - Default
   - TransparentFX
@@ -64,8 +66,8 @@ TagManager:
   - ABLP_BalanceObjects
   - IP_Herbs
   - IP_IncenseBurners
-  - 
-  - 
+  - ESP_Lever
+  - ESP_LeverPlaceHolder
   - 
   - 
   - 
