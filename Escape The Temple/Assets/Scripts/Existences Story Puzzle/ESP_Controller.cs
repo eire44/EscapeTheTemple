@@ -186,6 +186,6 @@ public class ESP_Controller : MonoBehaviour
         Debug.Log("JUEGO TERMINADO");
         FindObjectOfType<SunMovement>().sunProgression();
         FindObjectOfType<ESP_AudioClueController>().audioClue.Stop();
-        FindObjectOfType<endGame>().leaveTheTemple();
+        FindObjectOfType<endGame>().enablePortal();
     }
 }
