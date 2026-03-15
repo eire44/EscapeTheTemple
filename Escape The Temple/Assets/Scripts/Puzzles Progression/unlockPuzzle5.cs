@@ -40,7 +40,7 @@ public class unlockPuzzle5 : MonoBehaviour
         //Vector3 newPosition = Vector3.zero;
         Vector3 newPosition = new Vector3(0f, 0.3f, 0f); ;
 
-        float duration = 1f;
+        float duration = 2f;
         float time = 0f;
 
         while (time < duration)

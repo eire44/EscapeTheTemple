@@ -8,13 +8,7 @@ public class ESP_ButtonsPressed : MonoBehaviour
     public float pressTime = 0.1f;
     public float returnTime = 0.15f;
 
-    Vector3 startPos;
     bool isAnimating = false;
-
-    void Start()
-    {
-        startPos = transform.localPosition;
-    }
 
     public void Press()
     {
@@ -25,6 +19,8 @@ public class ESP_ButtonsPressed : MonoBehaviour
     IEnumerator PressAnimation()
     {
         isAnimating = true;
+
+        Vector3 startPos = transform.localPosition;
 
         Vector3 pressedPos = startPos + Vector3.down * pressDepth;
         float t = 0;

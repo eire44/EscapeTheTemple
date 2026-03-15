@@ -54,7 +54,7 @@ public class ESP_LeverMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject == center.gameObject)
+        if(other.gameObject == center.gameObject && !FindObjectOfType<ESP_Controller>().enablePuzzle)
         {
             gameObject.layer = LayerMask.NameToLayer("Default");
             center.gameObject.layer = LayerMask.NameToLayer("Default");

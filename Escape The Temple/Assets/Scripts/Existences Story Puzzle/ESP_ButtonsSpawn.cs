@@ -6,12 +6,13 @@ public class ESP_ButtonsSpawn : MonoBehaviour
 {
     public Vector3 newPosition;
     Vector3 startPos;
+    [HideInInspector] public Vector3 moveToPosition;
 
-    private void Start()
+    void Start()
     {
-        startPos = transform.position;
+        startPos = transform.localPosition;
+        moveToPosition = startPos + newPosition;
     }
-
 
     public void spawnButtons()
     {
@@ -20,18 +21,16 @@ public class ESP_ButtonsSpawn : MonoBehaviour
 
     IEnumerator MoveButtonsCoroutine()
     {
-        Vector3 moveToPosition = new Vector3(transform.position.x + newPosition.x, transform.position.y + newPosition.y, transform.position.z + newPosition.z);
-
         float durationMove = 2f;
         float timeMove = 0f;
 
         while (timeMove < durationMove)
         {
-            transform.position = Vector3.Lerp(startPos, moveToPosition, timeMove / durationMove);
+            transform.localPosition = Vector3.Lerp(startPos, moveToPosition, timeMove / durationMove);
             timeMove += Time.deltaTime;
             yield return null;
         }
 
-        transform.position = moveToPosition;
+        transform.localPosition = moveToPosition;
     }
 }

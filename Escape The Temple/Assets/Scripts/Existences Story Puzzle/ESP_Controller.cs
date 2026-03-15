@@ -171,7 +171,7 @@ public class ESP_Controller : MonoBehaviour
         Debug.Log("CHECK");
         foreach (Transform item in screenAreasContainer)
         {
-            if (item.GetComponent<ESP_AreasController>().collidedCharacters.Count != 1)
+            if (item.GetComponent<ESP_AreasController>().collidedCharacters.Count == 0)
             {
                 Debug.Log(item.name + "FALTA");
                 return;
