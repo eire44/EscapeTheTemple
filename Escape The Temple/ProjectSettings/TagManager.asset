@@ -69,7 +69,7 @@ TagManager:
   - ESP_Lever
   - ESP_LeverPlaceHolder
   - ESP_Buttons
-  - 
+  - ESP_ButtonsBlocked
   - 
   - 
   - 

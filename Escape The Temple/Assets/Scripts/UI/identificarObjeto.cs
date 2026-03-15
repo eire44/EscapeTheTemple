@@ -33,7 +33,7 @@ public class identificarObjeto : MonoBehaviour
             }
             else
             {
-                if (!hit.collider.gameObject.CompareTag("Untagged") && !hit.collider.gameObject.CompareTag("Player")
+                if (hit.transform.gameObject.layer != LayerMask.NameToLayer("ESP_ButtonsBlocked") && !hit.collider.gameObject.CompareTag("Untagged") && !hit.collider.gameObject.CompareTag("Player")
                 && !hit.collider.gameObject.CompareTag("ShortClue") && !hit.collider.gameObject.CompareTag("LongClue") && !hit.collider.gameObject.CompareTag("PlaceHolder"))
                 {
                     nombreObjeto.gameObject.SetActive(true);

@@ -44,7 +44,8 @@ public class grabItem_wRaycast : MonoBehaviour
                         ABL_GrabObjectFromBalance objectHit = hit.transform.GetComponent<ABL_GrabObjectFromBalance>();
                         currentGrabbedItem = FindObjectOfType<ABL_PuzzleController>().getObject(hit.transform.GetComponent<placeableObjectController>().index);
                         objectHit.balanceSide.GetComponent<ABL_balanceSidesController>().removeObjectFromBalance(hit.transform.gameObject);
-                    } else
+                    }
+                    else
                     {
                         currentGrabbedItem = hit.collider.gameObject;
                     }
@@ -138,6 +139,8 @@ public class grabItem_wRaycast : MonoBehaviour
                                     else if (hitLayer == 14)
                                     {
                                         currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 180f);
+                                        keyPieceHolder_Controller kPieceHolder = hit.transform.GetComponent<keyPieceHolder_Controller>();
+                                        kPieceHolder.placeKeyPiece(currentGrabbedItem);
                                     }
                                     else if (hitLayer == 16)
                                     {
@@ -177,6 +180,8 @@ public class grabItem_wRaycast : MonoBehaviour
                                     else if (hitLayer == 14)
                                     {
                                         currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 180f);
+                                        keyPieceHolder_Controller kPieceHolder = hit.transform.GetComponent<keyPieceHolder_Controller>();
+                                        kPieceHolder.placeKeyPiece(currentGrabbedItem);
                                     }
                                     else if (hitLayer == 16)
                                     {

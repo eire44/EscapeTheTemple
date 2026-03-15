@@ -6,24 +6,18 @@ public class keyPieceHolder_Controller : MonoBehaviour
 {
     [HideInInspector] public bool keyPlaced = false;
     
-    private void OnTriggerEnter(Collider other)
+    public void placeKeyPiece(GameObject keypiece)
     {
-        if(other.gameObject.CompareTag("KeyPiece"))
-        {
-            keyPlaced = true;
-            gameObject.layer = LayerMask.NameToLayer("Default");
-            other.gameObject.layer = LayerMask.NameToLayer("Default");
-            FindObjectOfType<unlockPuzzle5>().checkPlaces();
-        }
+        keyPlaced = true;
+        gameObject.layer = LayerMask.NameToLayer("Default");
+        keypiece.gameObject.layer = LayerMask.NameToLayer("Default");
+        FindObjectOfType<unlockPuzzle5>().checkPlaces();
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("KeyPiece"))
-        {
-            keyPlaced = false;
-            gameObject.layer = LayerMask.NameToLayer("Life Cycle Puzzle Containers");
-            other.gameObject.layer = LayerMask.NameToLayer("Life Cycle Puzzle Pieces");
-        }
-    }
+    //public void removeKeyPiece(GameObject keypiece)
+    //{
+    //    keyPlaced = false;
+    //    gameObject.layer = LayerMask.NameToLayer("Life Cycle Puzzle Containers");
+    //    keypiece.gameObject.layer = LayerMask.NameToLayer("Life Cycle Puzzle Pieces");
+    //}
 }
