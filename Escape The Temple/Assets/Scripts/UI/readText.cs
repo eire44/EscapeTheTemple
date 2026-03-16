@@ -29,7 +29,7 @@ public class readText : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("ShortClue"))
             {
                 ShortTextClue text = hit.collider.gameObject.GetComponent<ShortTextClue>();
-                if (text != null)
+                if (text != null && !FindObjectOfType<ESP_CaptionsController>().audioSource.isPlaying)
                 {
                     mostrarTexto(text.textClue);
                 }

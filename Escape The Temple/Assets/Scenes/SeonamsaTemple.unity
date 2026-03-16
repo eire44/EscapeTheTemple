@@ -2807,6 +2807,7 @@ GameObject:
   - component: {fileID: 51254407}
   - component: {fileID: 51254408}
   - component: {fileID: 51254409}
+  - component: {fileID: 51254410}
   m_Layer: 0
   m_Name: Existences Story Puzzle
   m_TagString: Untagged
@@ -2887,6 +2888,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClue: {fileID: 1996929663}
+--- !u!114 &51254410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51254405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 023fe1b5b8916184190eaf71bea17477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1892286343}
+  subtitleText: {fileID: 1040696530}
+  subtitles: []
 --- !u!1001 &51851644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100734,7 +100750,7 @@ MonoBehaviour:
     Your feet were firm upon the earth,
 
     your
-    presence steady, upright.'
+    face warmed by the dawn.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7f71b55df1cfc6b43b403a85a1d7b7d5, type: 2}
   m_sharedMaterial: {fileID: 2841673206269946197, guid: 7f71b55df1cfc6b43b403a85a1d7b7d5,
