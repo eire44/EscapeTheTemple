@@ -8,6 +8,7 @@ public class ESP_LeverMovement : MonoBehaviour
     public bool leverIsMoving = false;
     public Transform center;
     Vector3 startPos;
+    public AudioSource audiosource;
     private void Start()
     {
         startPos = center.position;
@@ -52,10 +53,11 @@ public class ESP_LeverMovement : MonoBehaviour
         leverIsMoving = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void placeLever()
     {
-        if(other.gameObject == center.gameObject && !FindObjectOfType<ESP_Controller>().enablePuzzle)
+        if (!FindObjectOfType<ESP_Controller>().enablePuzzle)
         {
+            audiosource.Play();
             gameObject.layer = LayerMask.NameToLayer("Default");
             center.gameObject.layer = LayerMask.NameToLayer("Default");
             center.gameObject.tag = "Untagged";

@@ -32,6 +32,7 @@ public class tilesPuzzleController : MonoBehaviour
         tilesPuzzleSolved = true;
         foreach (Transform bush in bushes)
         {
+            bush.GetComponent<TP_bushesAudio>().bushSound();
             foreach (Transform child in bush)
             {
                 fadeRoomDoor fader = child.GetComponent<fadeRoomDoor>();

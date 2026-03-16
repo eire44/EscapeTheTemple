@@ -11,11 +11,18 @@ public class ESP_ButtonsPressed : MonoBehaviour
     public Vector3 pressingDirection = Vector3.down;
 
     bool isAnimating = false;
-
+    AudioSource audiosource;
+    void Start()
+    {
+        audiosource = GetComponent<AudioSource>();
+    }
     public void Press()
     {
         if (!isAnimating)
+        {
+            audiosource.Play();
             StartCoroutine(PressAnimation());
+        }
     }
 
     IEnumerator PressAnimation()

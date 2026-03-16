@@ -9,12 +9,14 @@ public class incenseBurnerController : MonoBehaviour
     [HideInInspector] public bool rightHerbPlaced = false;
     incensePuzzleSolution IPcontroller;
     public bool herbPlaced = false;
+    AudioSource audiosource;
 
     List<incenseBurnerController> burners = new List<incenseBurnerController>();
     int burnersIndex = 0;
     private void Start()
     {
         IPcontroller = FindObjectOfType<incensePuzzleSolution>();
+        audiosource = GetComponent<AudioSource>();
 
         foreach (incenseBurnerController incenseBurner in FindObjectsOfType<incenseBurnerController>())
         {
@@ -26,6 +28,7 @@ public class incenseBurnerController : MonoBehaviour
     {
         if (!IPcontroller.incensePuzzleSolved)
         {
+            audiosource.Play();
             herbPlaced = true;
             Transform humoNormal = transform.Find("GraySmoke");
             if (herbNeeded == currentObject.herb_id)

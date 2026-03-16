@@ -17,10 +17,13 @@ public class BLP_resetPhrasesPosition : MonoBehaviour
     float time;
     bool reseting = false;
 
+    public AudioClip audioClip;
+    AudioSource audiosource;
     private void Start()
     {
         endPoint = transform.position;
         endRotation = transform.rotation;
+        audiosource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -51,5 +54,7 @@ public class BLP_resetPhrasesPosition : MonoBehaviour
 
         time = 0f;
         reseting = true;
+
+        audiosource.PlayOneShot(audioClip);
     }
 }

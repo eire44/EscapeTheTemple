@@ -12,6 +12,8 @@ public class ESP_Controller : MonoBehaviour
     public Transform[] leverPositions;
     int screenPieces_Index = 0;
     int leverPositions_Index = 0;
+
+    public AudioSource audiosource;
     [HideInInspector] public enum characters
     {
         Character1, Character2, Character3, Character4
@@ -122,6 +124,7 @@ public class ESP_Controller : MonoBehaviour
 
     void callForMovePieces()
     {
+        audiosource.Play();
         Vector3 newPosition_CurrentCharacter = charactersCorrelation[currentCharacter].position;
         Transform affectedCharacter = null;
 

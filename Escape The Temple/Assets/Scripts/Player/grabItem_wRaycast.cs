@@ -40,8 +40,12 @@ public class grabItem_wRaycast : MonoBehaviour
                 if (hit.transform.gameObject.layer == 17)
                 {
                     hit.transform.gameObject.GetComponent<phrasesController>().grabPaper();
+                } else if(hit.transform.gameObject.layer == 13)
+                {
+                    hit.transform.gameObject.GetComponent<kayPieceSound>().handleKeypiece(true);
                 }
-                    if (currentGrabbedItem == null)
+
+                if (currentGrabbedItem == null)
                 {
                     if(hit.transform.gameObject.layer == 20)
                     {
@@ -158,6 +162,7 @@ public class grabItem_wRaycast : MonoBehaviour
                                     else if (hitLayer == 24)
                                     {
                                         currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 0f);
+                                        FindObjectOfType<ESP_LeverMovement>().placeLever();
                                     }
 
                                     if (currentGrabbedItem.transform.gameObject.layer == 17)
@@ -204,6 +209,7 @@ public class grabItem_wRaycast : MonoBehaviour
                                     else if (hitLayer == 24)
                                     {
                                         currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 0f);
+                                        FindObjectOfType<ESP_LeverMovement>().placeLever();
                                     }
 
                                     if (currentGrabbedItem.transform.gameObject.layer == 17)

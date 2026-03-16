@@ -9,18 +9,25 @@ public class ABL_balanceSidesController : MonoBehaviour
 
     public GameObject[] objects;
 
-    
+    public AudioClip[] audioClips;
+    AudioSource audiosource;
+    void Start()
+    {
+        audiosource = GetComponent<AudioSource>();
+    }
+
     //private void OnTriggerEnter(Collider other)
     //{
     //    if (other.gameObject.layer == LayerMask.NameToLayer("ABLP_Pieces"))
     //    {
-            
+
     //        //Destroy(other.gameObject);
     //    }
     //} 
 
     public void sumWeight(GameObject objectPlaced)
     {
+        audiosource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
         placeableObjectController pOC = objectPlaced.GetComponent<placeableObjectController>();
         placeObject(pOC, true);
         pOC.placed = true;

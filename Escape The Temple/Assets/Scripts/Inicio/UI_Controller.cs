@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class UI_Controller : MonoBehaviour
 {
-    public AudioSource audioSource;
+    public AudioSource audioSource_Fire;
+    public AudioSource audioSource_Click;
     public float duracionFadeAudio = 1.5f;
 
     public ParticleSystem[] fuegos;
@@ -45,28 +46,32 @@ public class UI_Controller : MonoBehaviour
 
     public void Salir()
     {
+        audioSource_Click.Play();
         StartCoroutine(TransicionApagar("", 5));
         
     }
 
     public void irACreditos()
     {
+        audioSource_Click.Play();
         StartCoroutine(TransicionApagar("", 2));
     }
 
     public void irAOpciones()
     {
+        audioSource_Click.Play();
         StartCoroutine(TransicionApagar("", 1));
     }
 
     public void CargarEscenaConTransicion(string nombreEscena)
     {
+        audioSource_Click.Play();
         StartCoroutine(TransicionApagar(nombreEscena, 0));
     }
 
     private IEnumerator TransicionApagar(string nombreEscena, int btnIndex)
     {
-        float volumenInicial = audioSource.volume;
+        float volumenInicial = audioSource_Fire.volume;
 
         // Guardamos el rate inicial de cada fuego
         float[] ratesIniciales = new float[fuegos.Length];
@@ -88,7 +93,7 @@ public class UI_Controller : MonoBehaviour
             // Fade de audio
             if (tiempo < duracionFadeAudio)
             {
-                audioSource.volume = Mathf.Lerp(volumenInicial, 0f, tiempo / duracionFadeAudio);
+                audioSource_Fire.volume = Mathf.Lerp(volumenInicial, 0f, tiempo / duracionFadeAudio);
             }
 
             // Apagado de todos los fuegos
@@ -114,7 +119,7 @@ public class UI_Controller : MonoBehaviour
         }
 
         // Forzamos valores finales
-        audioSource.volume = 0f;
+        audioSource_Fire.volume = 0f;
 
         for (int i = 0; i < fuegos.Length; i++)
         {
@@ -168,7 +173,7 @@ public class UI_Controller : MonoBehaviour
     private IEnumerator TransicionEncender()
     {
         float volumenFinal = 1; // o audioSource.volume si querés guardar uno
-        audioSource.volume = 0f;
+        audioSource_Fire.volume = 0f;
 
         // Guardamos el rate objetivo de cada fuego
         float[] ratesObjetivo = new float[fuegos.Length];
@@ -196,7 +201,7 @@ public class UI_Controller : MonoBehaviour
             // Fade IN de audio
             if (tiempo < duracionFadeAudio)
             {
-                audioSource.volume = Mathf.Lerp(0f, volumenFinal, tiempo / duracionFadeAudio);
+                audioSource_Fire.volume = Mathf.Lerp(0f, volumenFinal, tiempo / duracionFadeAudio);
             }
 
             // Encendido de fuegos
@@ -222,7 +227,7 @@ public class UI_Controller : MonoBehaviour
         }
 
         // Forzamos valores finales
-        audioSource.volume = volumenFinal;
+        audioSource_Fire.volume = volumenFinal;
 
         for (int i = 0; i < fuegos.Length; i++)
         {
@@ -235,11 +240,13 @@ public class UI_Controller : MonoBehaviour
 
     public void ocultarCreditos()
     {
+        audioSource_Click.Play();
         StartCoroutine(TransicionApagar("", 3));
     }
 
     public void ocultarOpciones()
     {
+        audioSource_Click.Play();
         StartCoroutine(TransicionApagar("", 4));
     }
 }

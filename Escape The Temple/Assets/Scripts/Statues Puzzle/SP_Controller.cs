@@ -10,6 +10,8 @@ public class SP_Controller : MonoBehaviour
     public Transform[] cellPositions;
     bool isMoving = false;
     public Transform lever;
+    public AudioSource audiosource;
+    public AudioClip[] audioClips;
     private void Start()
     {
         //board = new int[3, 3];
@@ -63,6 +65,7 @@ public class SP_Controller : MonoBehaviour
 
                 if (IsAdjacent(piecePos, emptyPos))
                 {
+                    audiosource.PlayOneShot(audioClips[0]);
                     int index = emptyPos.x * board.GetLength(1) + emptyPos.y; //fila * cantidadColumnas + columna
                     Vector3 targetPos = cellPositions[index].position;
                     StartCoroutine(MovePieceCoroutine(pieceController, piecePos, emptyPos, targetPos));
@@ -145,7 +148,7 @@ public class SP_Controller : MonoBehaviour
         {
             piece.gameObject.layer = LayerMask.NameToLayer("Default");
         }
-
+        audiosource.PlayOneShot(audioClips[1]);
         lever.gameObject.SetActive(true);
         lever.GetComponent<fadeIn_PuzzlePieces>().StartFade();
         foreach (Transform item in lever)
