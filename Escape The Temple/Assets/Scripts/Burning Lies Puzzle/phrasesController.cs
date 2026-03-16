@@ -8,9 +8,12 @@ public class phrasesController : MonoBehaviour
     [HideInInspector] public bool alreadyBurned = false;
     burningLiesController controller;
 
+    public AudioClip[] audioClips;
+    AudioSource audiosource;
     void Start()
     {
         controller = FindObjectOfType<burningLiesController>();
+        audiosource = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -33,5 +36,9 @@ public class phrasesController : MonoBehaviour
             alreadyBurned = false;
             controller.checkBurntPaper(index, this, false);
         }
+    }
+    public void grabPaper()
+    {
+        audiosource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
     }
 }

@@ -10,12 +10,16 @@ public class LC_PiecesController : MonoBehaviour
     public GameObject woodBottomPlank;
     public GameObject woodPlank;
 
+    AudioSource audioSource;
+    public AudioClip[] woodHit_clips;
+
     bool onPlace = true;
 
     private void Start()
     {
         puzzleController = FindObjectOfType<LC_PuzzleController>();
         candlesPuzzleController = FindObjectOfType<candlesPuzzleSolution>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -66,7 +70,7 @@ public class LC_PiecesController : MonoBehaviour
         {
             if(candlesPuzzleController.candlesPuzzleSolved)
             {
-                puzzleController.audioSource.PlayOneShot(puzzleController.woodHit_clips[Random.Range(0, puzzleController.woodHit_clips.Length)]);
+                audioSource.PlayOneShot(woodHit_clips[Random.Range(0, woodHit_clips.Length)]);
             }
         }
     }

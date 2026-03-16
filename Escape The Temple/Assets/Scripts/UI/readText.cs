@@ -11,9 +11,12 @@ public class readText : MonoBehaviour
     public float distance = 4f;
     public TMP_Text textoTranscripcion;
     int ignorePlayerLayer;
+    public AudioClip[] audioClips;
+    AudioSource audiosource;
     private void Start()
     {
-        ignorePlayerLayer = ~LayerMask.GetMask("Player");
+        ignorePlayerLayer = ~LayerMask.GetMask("Player"); 
+        audiosource = GetComponent<AudioSource>(); 
     }
     void Update()
     {
@@ -45,6 +48,7 @@ public class readText : MonoBehaviour
                         paperClue paper = hit.collider.gameObject.GetComponent<paperClue>();
                         if (paper != null)
                         {
+                            audiosource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
                             paper.openPaper();
                         }
                     }

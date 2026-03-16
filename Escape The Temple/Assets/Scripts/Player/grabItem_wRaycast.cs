@@ -37,7 +37,11 @@ public class grabItem_wRaycast : MonoBehaviour
         {
             if (Physics.Raycast(ray, out hit, distance, grabbableLayer))
             {
-                if (currentGrabbedItem == null)
+                if (hit.transform.gameObject.layer == 17)
+                {
+                    hit.transform.gameObject.GetComponent<phrasesController>().grabPaper();
+                }
+                    if (currentGrabbedItem == null)
                 {
                     if(hit.transform.gameObject.layer == 20)
                     {
@@ -156,6 +160,11 @@ public class grabItem_wRaycast : MonoBehaviour
                                         currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 0f);
                                     }
 
+                                    if (currentGrabbedItem.transform.gameObject.layer == 17)
+                                    {
+                                        currentGrabbedItem.transform.gameObject.GetComponent<phrasesController>().grabPaper();
+                                    }
+
 
                                     if (rb != null)
                                     {
@@ -195,6 +204,11 @@ public class grabItem_wRaycast : MonoBehaviour
                                     else if (hitLayer == 24)
                                     {
                                         currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 0f);
+                                    }
+
+                                    if (currentGrabbedItem.transform.gameObject.layer == 17)
+                                    {
+                                        currentGrabbedItem.transform.gameObject.GetComponent<phrasesController>().grabPaper();
                                     }
 
                                     if (rb != null)

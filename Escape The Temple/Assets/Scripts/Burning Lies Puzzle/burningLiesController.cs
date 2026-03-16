@@ -11,7 +11,8 @@ public class burningLiesController : MonoBehaviour
     [HideInInspector] public int currentSetIndex = 0;
 
     public phrasesController[] papers;
-
+    public AudioSource audioSource;
+    public float duracionFadeAudio = 1.5f;
 
     public ParticleSystem[] fuegos;
     public float duracionApagadoFuego = 1.5f;
@@ -129,7 +130,7 @@ public class burningLiesController : MonoBehaviour
 
     private IEnumerator TransicionApagar()
     {
-        //float volumenInicial = audioSource.volume;
+        float volumenInicial = audioSource.volume;
 
         float[] ratesIniciales = new float[fuegos.Length];
 
@@ -147,13 +148,11 @@ public class burningLiesController : MonoBehaviour
         {
             tiempo += Time.deltaTime;
 
-            // Fade de audio
-            //if (tiempo < duracionFadeAudio)
-            //{
-            //    audioSource.volume = Mathf.Lerp(volumenInicial, 0f, tiempo / duracionFadeAudio);
-            //}
+            if (tiempo < duracionFadeAudio)
+            {
+                audioSource.volume = Mathf.Lerp(volumenInicial, 0f, tiempo / duracionFadeAudio);
+            }
 
-            // Apagado de todos los fuegos
             for (int i = 0; i < fuegos.Length; i++)
             {
                 if (fuegos[i] == null) continue;
@@ -175,7 +174,7 @@ public class burningLiesController : MonoBehaviour
             yield return null;
         }
 
-        //audioSource.volume = 0f;
+        audioSource.volume = 0f;
 
         for (int i = 0; i < fuegos.Length; i++)
         {

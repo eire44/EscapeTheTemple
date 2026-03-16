@@ -16,10 +16,12 @@ public class encenderVelas : MonoBehaviour
             if (llama.gameObject.activeInHierarchy)
             {
                 llama.gameObject.SetActive(false);
+                gameObject.GetComponent<CP_audioManager>().turnCandle(false);
             }
             else
             {
                 llama.gameObject.SetActive(true);
+                gameObject.GetComponent<CP_audioManager>().turnCandle(true);
             }
         }
     }

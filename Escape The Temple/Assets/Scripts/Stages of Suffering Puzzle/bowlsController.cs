@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class bowlsController : MonoBehaviour
 {
+    public AudioClip[] audioClips;
+    AudioSource audiosource;
     public int bowlIndex;
     stagesController stages;
     candlesPuzzleSolution candlesPuzzleController;
@@ -12,6 +14,7 @@ public class bowlsController : MonoBehaviour
     {
         stages = FindObjectOfType<stagesController>();
         candlesPuzzleController = FindObjectOfType<candlesPuzzleSolution>();
+        audiosource = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -22,7 +25,7 @@ public class bowlsController : MonoBehaviour
         {
             if (candlesPuzzleController.candlesPuzzleSolved)
             {
-                stages.audiosource.PlayOneShot(stages.audioClips[Random.Range(0, stages.audioClips.Length)]);
+                audiosource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
             }
         }
     }
