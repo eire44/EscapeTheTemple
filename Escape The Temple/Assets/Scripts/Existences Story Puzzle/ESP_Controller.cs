@@ -82,7 +82,8 @@ public class ESP_Controller : MonoBehaviour
                     }
                     else if (hit.transform.gameObject.TryGetComponent<ESP_DirectionButtonsController>(out ESP_DirectionButtonsController dirButton))
                     {
-                        if(dirButton.index == 0)
+                        hit.transform.gameObject.GetComponent<ESP_ButtonsPressed>().Press();
+                        if (dirButton.index == 0)
                         {
                             newDirection = directions.Up;
                             FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
@@ -106,10 +107,11 @@ public class ESP_Controller : MonoBehaviour
                             FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
                             callForMovePieces();
                         }
-                        
+
                     }
                     else if (hit.collider.CompareTag("ESP_ListenAgain"))
                     {
+                        hit.transform.gameObject.GetComponent<ESP_ButtonsPressed>().Press();
                         FindObjectOfType<ESP_AudioClueController>().playAudioClue();
                     }
                 }
