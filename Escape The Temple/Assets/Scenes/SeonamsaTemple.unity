@@ -163714,17 +163714,25 @@ MonoBehaviour:
   puzzle5_Piece: {fileID: 1193101218}
   sets:
   - phrases:
-    - "Suffering is \ninevitable."
+    - 'One cannot
+
+      put an end
+
+      to suffering.'
     - "Everything that \nis conditioned \nchanges."
-    - "If something \nchanges it \ncan stop."
+    - 'What changes
+
+      will eventually
+
+      come to an end.'
     wrongPhraseIndex: 0
   - phrases:
     - "The end can come \nby one's own hand \nor someone else's."
-    - "One is powerless \nagainst suffering."
-    - "Everything that \nexists is born \nand dies.\r"
+    - "The human hand\nis powerless \nagainst suffering."
+    - "Everything that \nexists has a\nbeginning and \nan end.\r"
     wrongPhraseIndex: 1
   - phrases:
-    - "Some achieve \nto leave \nsuffering behind."
+    - "Some achieved \nto leave suffering \nbehind by letting\ngo of their desires."
     - "One must pull the \nplant up by the roots \nso that it does \nnot grow back."
     - "The root of suffering \nis stronger than man."
     wrongPhraseIndex: 2
