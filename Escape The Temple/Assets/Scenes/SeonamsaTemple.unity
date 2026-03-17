@@ -3440,7 +3440,8 @@ MonoBehaviour:
   newDirection: 0
   enablePuzzle: 0
   puzzleAlreadySolved: 0
-  interiorLantern: []
+  interiorLantern:
+  - {fileID: 1329395847}
 --- !u!114 &51254408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136066,10 +136067,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cafb36028a87e1498eb90aa9f239325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointLight: {fileID: 1697001337}
+  pointLight: {fileID: 1947342543}
   maxIntensity: 4
   fadeDuration: 1.5
-  audiosource: {fileID: 39777329}
+  audiosource: {fileID: 1579644254}
   maxFlickerIntensity: 3
 --- !u!1 &1332894952 stripped
 GameObject:
@@ -199469,7 +199470,8 @@ MonoBehaviour:
   puzzleAlreadySolved: 0
   interiorLantern:
   - {fileID: 314606978}
-  puzzle10Lantern: []
+  puzzle10Lantern:
+  - {fileID: 1329395847}
   lanternsExitGame:
   - {fileID: 330055405}
   - {fileID: 1402549016}
@@ -201569,10 +201571,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cafb36028a87e1498eb90aa9f239325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointLight: {fileID: 1947342543}
+  pointLight: {fileID: 1296328193}
   maxIntensity: 4
   fadeDuration: 1.5
-  audiosource: {fileID: 1579644254}
+  audiosource: {fileID: 1769097668}
   maxFlickerIntensity: 3
 --- !u!1001 &2003185544
 PrefabInstance:
