@@ -20,8 +20,10 @@ public class optionsController : MonoBehaviour
         audioMixer.SetFloat("MusicVolume", Mathf.Log10(music) * 20);
         audioMixer.SetFloat("SFXvolume", Mathf.Log10(sfx) * 20);
 
-        musicSlider.value = music;
-        sfxSlider.value = sfx;
+        music = Mathf.Clamp(music, 0.0001f, 1f);
+        sfx = Mathf.Clamp(sfx, 0.0001f, 1f);
+        //musicSlider.value = music;
+        //sfxSlider.value = sfx;
         sensitivitySlider.value = sensitivity;
     }
 
