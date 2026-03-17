@@ -17,6 +17,14 @@ public class ESP_AudioClueController : MonoBehaviour
     float originalSFX;
     float originalMusic;
 
+    private void Update()
+    {
+        if (audioClue.isPlaying)
+        {
+            Debug.Log(audioClue.time);
+        }
+    }
+
     public void playAudioClue()
     {
         play = !play;

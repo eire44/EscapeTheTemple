@@ -3306,39 +3306,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023fe1b5b8916184190eaf71bea17477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 1892286343}
+  audioSource: {fileID: 565467281}
   subtitleText: {fileID: 1040696530}
   subtitles:
   - text: If one opens their eyes to the world, they may begin to see.
     startTime: 0
-    endTime: 4
+    endTime: 4.5
   - text: A woman, weeping for what she has lost.
-    startTime: 4
-    endTime: 7
+    startTime: 4.5
+    endTime: 8.2
   - text: A leader, sharing his wisdom out of compassion.
-    startTime: 7
-    endTime: 11
+    startTime: 8.2
+    endTime: 12.2
   - text: A man who lives by the river,
-    startTime: 11
-    endTime: 14
+    startTime: 12.2
+    endTime: 14.7
   - text: and contemplating the current discovered that all things are one.
-    startTime: 14
-    endTime: 19
-  - text: 
-    startTime: 0
-    endTime: 0
-  - text: 
-    startTime: 0
-    endTime: 0
-  - text: 
-    startTime: 0
-    endTime: 0
-  - text: 
-    startTime: 0
-    endTime: 0
-  - text: 
-    startTime: 0
-    endTime: 0
+    startTime: 14.7
+    endTime: 20.2
+  - text: And a player, who moves his pieces and uses his wit to deceive his opponent,
+    startTime: 20.2
+    endTime: 25
+  - text: yet does not see the hand that moved his own.
+    startTime: 25
+    endTime: 28.5
+  - text: Each believes themselves separate.
+    startTime: 28.5
+    endTime: 31.1
+  - text: Each shapes the world around them.
+    startTime: 31.1
+    endTime: 34
+  - text: Yet all are part of the same scenery.
+    startTime: 34
+    endTime: 37.5
+  - text: "The grieving, the teacher, the player, the seeker\u2026"
+    startTime: 37.5
+    endTime: 42
+  - text: Like currents within a single river.
+    startTime: 42
+    endTime: 45.7
+  - text: And to the awakened eye,
+    startTime: 45.7
+    endTime: 47.5
+  - text: they are not many but one.
+    startTime: 47.5
+    endTime: 50.28
 --- !u!1001 &51851644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12005,7 +12017,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 8
+  MaxDistance: 4
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

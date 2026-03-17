@@ -23,18 +23,24 @@ public class pauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             pausaActiva = !pausaActiva;
             menuDePausa.SetActive(pausaActiva);
             if (pausaActiva)
             {
+                if (FindObjectOfType<ESP_AudioClueController>().audioClue.isPlaying)
+                {
+                    FindObjectOfType<ESP_AudioClueController>().audioClue.Pause();
+                }
                 cleanUI(false);
                 Time.timeScale = 0.0f;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
             } else
             {
+                FindObjectOfType<ESP_AudioClueController>().audioClue.UnPause();
+                
                 cleanUI(true);
                 Time.timeScale = 1.0f;
                 Cursor.visible = false;

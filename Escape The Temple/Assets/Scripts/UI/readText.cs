@@ -39,7 +39,11 @@ public class readText : MonoBehaviour
             }
             else
             {
-                textoTranscripcion.gameObject.SetActive(false);
+                if(!FindObjectOfType<ESP_AudioClueController>().audioClue.isPlaying)
+                {
+                    textoTranscripcion.gameObject.SetActive(false);
+                }
+                
 
                 if (hit.collider.gameObject.CompareTag("LongClue"))
                 {
@@ -57,7 +61,10 @@ public class readText : MonoBehaviour
         }
         else
         {
-            textoTranscripcion.gameObject.SetActive(false);
+            if (!FindObjectOfType<ESP_AudioClueController>().audioClue.isPlaying)
+            {
+                textoTranscripcion.gameObject.SetActive(false);
+            }
         }
     }
 
