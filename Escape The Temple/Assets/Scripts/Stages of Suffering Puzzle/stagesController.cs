@@ -19,7 +19,9 @@ public class stagesController : MonoBehaviour
     public GameObject fourthText;
     public GameObject keyPiece;
     [HideInInspector] public bool puzzleAlreadySolved = false;
-    public interiorLanternsController[] interiorLantern;
+    public interiorLanternsController[] interiorLantern1;
+    public interiorLanternsController[] interiorLantern2;
+    public interiorLanternsController[] interiorLantern3;
 
     void Start()
     {
@@ -45,7 +47,18 @@ public class stagesController : MonoBehaviour
     {
         if(checkConfiguration(bowlIndex, symbol))
         {
+            if (currentRowIndex == 0)
+            {
+                FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern1);
+            } else if (currentRowIndex == 1)
+            {
+                FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern2);
+            } else if (currentRowIndex == 2)
+            {
+                FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern3);
+            }
             currentRowIndex++;
+            
             nextRow(currentRowIndex);
         }
     }
@@ -68,7 +81,6 @@ public class stagesController : MonoBehaviour
             keyPiece.SetActive(true);
             keyPiece.GetComponent<fadeIn_PuzzlePieces>().StartFade();
             FindObjectOfType<puzzleProgressionController>().checkIfRoom2Completed();
-            FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
             FindObjectOfType<SunMovement>().sunProgression();
             return;
         }
