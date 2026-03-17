@@ -26,13 +26,13 @@ public class exteriorLanternsController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            TurnOn();
-        } else if (Input.GetKeyDown(KeyCode.U))
-        {
-            TurnOff();
-        }
+        //if (Input.GetKeyDown(KeyCode.Y))
+        //{
+        //    TurnOn();
+        //} else if (Input.GetKeyDown(KeyCode.U))
+        //{
+        //    TurnOff();
+        //}
     }
 
     public void TurnOn()
