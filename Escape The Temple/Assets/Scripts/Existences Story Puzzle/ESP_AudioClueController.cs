@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -16,12 +17,14 @@ public class ESP_AudioClueController : MonoBehaviour
     public float fadeTime = 1f;
     float originalSFX;
     float originalMusic;
+    bool cached = false;
 
-    private void Update()
+    void Update()
     {
-        if (audioClue.isPlaying)
+        if (play && !audioClue.isPlaying)
         {
-            Debug.Log(audioClue.time);
+            play = false;
+            StartCoroutine(RestoreAudio());
         }
     }
 
@@ -42,22 +45,27 @@ public class ESP_AudioClueController : MonoBehaviour
 
     public void CacheVolumes()
     {
-        mixer.GetFloat("SFXvolume", out originalSFX);
+        if (cached) return;
+
+        mixer.GetFloat("SFXbolume", out originalSFX);
         mixer.GetFloat("MusicVolume", out originalMusic);
+
+        cached = true;
     }
 
 
     public IEnumerator DuckAudio()
     {
         CacheVolumes();
-        yield return StartCoroutine(FadeMixer("SFXvolume", originalSFX - 20f));
-        yield return StartCoroutine(FadeMixer("MusicVolume", originalMusic - 20f));
+        yield return StartCoroutine(FadeMixer("SFXvolume", originalSFX - 10f));
+        yield return StartCoroutine(FadeMixer("MusicVolume", originalMusic - 25f));
     }
 
     public IEnumerator RestoreAudio()
     {
         yield return StartCoroutine(FadeMixer("SFXvolume", originalSFX));
         yield return StartCoroutine(FadeMixer("MusicVolume", originalMusic));
+        cached = false;
     }
 
     IEnumerator FadeMixer(string parameter, float target)

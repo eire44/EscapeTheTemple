@@ -22,8 +22,8 @@ public class optionsController : MonoBehaviour
 
         music = Mathf.Clamp(music, 0.0001f, 1f);
         sfx = Mathf.Clamp(sfx, 0.0001f, 1f);
-        //musicSlider.value = music;
-        //sfxSlider.value = sfx;
+        musicSlider.value = music;
+        sfxSlider.value = sfx;
         sensitivitySlider.value = sensitivity;
     }
 
