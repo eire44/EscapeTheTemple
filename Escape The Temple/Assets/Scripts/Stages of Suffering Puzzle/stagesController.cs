@@ -55,6 +55,7 @@ public class stagesController : MonoBehaviour
                 FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern2);
             } else if (currentRowIndex == 2)
             {
+                puzzleAlreadySolved = true;
                 FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern3);
             }
             currentRowIndex++;

@@ -15,6 +15,7 @@ public class SP_Controller : MonoBehaviour
 
     [HideInInspector] public bool puzzleAlreadySolved = false;
     public interiorLanternsController[] interiorLantern;
+    public interiorLanternsController[] puzzle10Lantern;
     public exteriorLanternsController[] lanternsExitGame;
     private void Start()
     {
@@ -161,8 +162,8 @@ public class SP_Controller : MonoBehaviour
             item.GetComponent<fadeIn_PuzzlePieces>().StartFade();
         }
         puzzleAlreadySolved = true;
-        FindObjectOfType<puzzleProgressionController>().checkIfRoom4Completed();
         FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
+        FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(puzzle10Lantern);
         FindObjectOfType<SunMovement>().sunProgression();
     }
 }

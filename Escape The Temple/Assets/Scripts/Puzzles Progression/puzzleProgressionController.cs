@@ -39,20 +39,33 @@ public class puzzleProgressionController : MonoBehaviour
 
     public void checkIfRoom2Completed()
     {
-        
         if(FindObjectOfType<burningLiesController>().puzzleAlreadySolved && FindObjectOfType<LC_PuzzleController>().puzzleAlreadySolved && FindObjectOfType<stagesController>().puzzleAlreadySolved)
         {
             turnOn_ExteriorLanterns(FindObjectOfType<burningLiesController>().lanternsRoomABL, false);
             flicker_InteriorLanterns(FindObjectOfType<burningLiesController>().interiorLanternABL);
         }
     }
-
-    public void checkIfRoom4Completed()
+    public IEnumerator turnOn_TilesLanterns(exteriorLanternsController[] extLanterns, bool ending)
     {
+        bool flag = true;
 
-        if (FindObjectOfType<SP_Controller>().puzzleAlreadySolved && FindObjectOfType<ESP_Controller>().puzzleAlreadySolved)
+        for (int i = 0; i < extLanterns.Length; i++)
         {
-            turnOn_ExteriorLanterns(FindObjectOfType<SP_Controller>().lanternsExitGame, true);
+            extLanterns[i].TurnOn();
+
+            if (flag)
+            {
+                flag = false;
+                musicController.changeMusic(ending);
+            }
+
+            // Lógica de espera: 
+            // Si el índice es impar (1, 3, 5, 7), significa que ya encendió una pareja
+            if (i % 2 != 0)
+            {
+                yield return new WaitForSeconds(0.5f);
+            }
         }
     }
+
 }

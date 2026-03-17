@@ -197,7 +197,7 @@ public class ESP_Controller : MonoBehaviour
 
         Debug.Log("JUEGO TERMINADO");
         puzzleAlreadySolved = true;
-        FindObjectOfType<puzzleProgressionController>().checkIfRoom4Completed();
+        FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(FindObjectOfType<SP_Controller>().lanternsExitGame, true);
         FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
         FindObjectOfType<SunMovement>().sunProgression();
         FindObjectOfType<ESP_AudioClueController>().audioClue.Stop();

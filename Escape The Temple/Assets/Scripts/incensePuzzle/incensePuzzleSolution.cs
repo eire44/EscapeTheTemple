@@ -28,7 +28,8 @@ public class incensePuzzleSolution : MonoBehaviour
         if (checkIncenseConfiguration())
         {
             incensePuzzleSolved = true;
-            FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(lanternsRoomTiles, false);
+            //FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(lanternsRoomTiles, false);
+            StartCoroutine(FindObjectOfType<puzzleProgressionController>().turnOn_TilesLanterns(lanternsRoomTiles, false));
             FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
             FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(interiorLanternTiles);
             FindObjectOfType<SunMovement>().sunProgression();
