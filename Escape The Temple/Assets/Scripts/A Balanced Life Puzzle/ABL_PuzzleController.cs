@@ -21,10 +21,12 @@ public class ABL_PuzzleController : MonoBehaviour
     List<placeableObjectController> objects = new List<placeableObjectController>();
     Quaternion initialRotation;
 
-    [HideInInspector] public GameObject object1;
-    [HideInInspector] public GameObject object2;
-    [HideInInspector] public GameObject object3;
-    [HideInInspector] public GameObject object4;
+    //[HideInInspector] public GameObject object1;
+    //[HideInInspector] public GameObject object2;
+    //[HideInInspector] public GameObject object3;
+    //[HideInInspector] public GameObject object4;
+
+    GameObject[] placedObjects = new GameObject[4];
 
     void Start()
     {
@@ -51,32 +53,28 @@ public class ABL_PuzzleController : MonoBehaviour
 
     public void saveObject(placeableObjectController objectSaved)
     {
-        if(objectSaved.index == 0)
-        {
-            object1 = objectSaved.gameObject;
-        } 
-        else if(objectSaved.index == 1)
-        {
-            object2 = objectSaved.gameObject;
-        } 
-        else if (objectSaved.index == 2)
-        {
-            object3 = objectSaved.gameObject;
-        }
-        else
-        {
-            object4 = objectSaved.gameObject;
-        }
+        placedObjects[objectSaved.index] = objectSaved.gameObject;
+        //if(objectSaved.index == 0)
+        //{
+        //    object1 = objectSaved.gameObject;
+        //} 
+        //else if(objectSaved.index == 1)
+        //{
+        //    object2 = objectSaved.gameObject;
+        //} 
+        //else if (objectSaved.index == 2)
+        //{
+        //    object3 = objectSaved.gameObject;
+        //}
+        //else
+        //{
+        //    object4 = objectSaved.gameObject;
+        //}
     }
 
     public GameObject getObject(int objectIndex)
     {
-        GameObject obj = null;
-
-        if (objectIndex == 0) obj = object1;
-        else if (objectIndex == 1) obj = object2;
-        else if (objectIndex == 2) obj = object3;
-        else obj = object4;
+        GameObject obj = placedObjects[objectIndex];
 
         if (obj != null)
         {
@@ -84,6 +82,22 @@ public class ABL_PuzzleController : MonoBehaviour
         }
 
         return obj;
+        //GameObject obj = null;
+
+        //if (objectIndex == 0) obj = object1;
+        //else if (objectIndex == 1) obj = object2;
+        //else if (objectIndex == 2) obj = object3;
+        //else obj = object4;
+
+        //if (obj != null)
+        //{
+        //    obj.SetActive(true);
+        //}
+
+        //return obj;
+
+
+
         //if (objectIndex == 0)
         //{
         //    object1.SetActive(true);
@@ -108,10 +122,11 @@ public class ABL_PuzzleController : MonoBehaviour
 
     public void clearObject(int index)
     {
-        if (index == 0) object1 = null;
-        else if (index == 1) object2 = null;
-        else if (index == 2) object3 = null;
-        else object4 = null;
+        placedObjects[index] = null;
+        //if (index == 0) object1 = null;
+        //else if (index == 1) object2 = null;
+        //else if (index == 2) object3 = null;
+        //else object4 = null;
     }
 
     public void saveWeightPlaced(int sideIndex, float newWeight)

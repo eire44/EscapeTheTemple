@@ -29,7 +29,10 @@ public class ABL_balanceSidesController : MonoBehaviour
     {
         audiosource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
         placeableObjectController pOC = objectPlaced.GetComponent<placeableObjectController>();
+        Debug.Log(objectPlaced.name + " se agrega. indice " + pOC.index);
         placeObject(pOC, true);
+        objects[pOC.index].GetComponent<ABL_GrabObjectFromBalance>().grabbedObject = objectPlaced;
+
         pOC.placed = true;
         currentWeight += pOC.weightValue;
         FindObjectOfType<ABL_PuzzleController>().saveWeightPlaced(sideIndex, currentWeight);
@@ -60,6 +63,13 @@ public class ABL_balanceSidesController : MonoBehaviour
     public void removeObjectFromBalance(GameObject objectToRemove)
     {
         placeableObjectController pOC = objectToRemove.GetComponent<placeableObjectController>();
+
+        if (pOC == null)
+        {
+            Debug.LogError("El objeto visual no tiene placeableObjectController: " + objectToRemove.name);
+            return;
+        }
+        Debug.Log(objectToRemove.name + " se esta eliminando. indice " + pOC.index);
         placeObject(pOC, false);
         FindObjectOfType<ABL_PuzzleController>().clearObject(pOC.index);
         pOC.placed = false;

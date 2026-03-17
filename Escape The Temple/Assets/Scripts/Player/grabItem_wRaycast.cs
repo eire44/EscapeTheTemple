@@ -50,8 +50,15 @@ public class grabItem_wRaycast : MonoBehaviour
                     if(hit.transform.gameObject.layer == 20)
                     {
                         ABL_GrabObjectFromBalance objectHit = hit.transform.GetComponent<ABL_GrabObjectFromBalance>();
-                        currentGrabbedItem = FindObjectOfType<ABL_PuzzleController>().getObject(hit.transform.GetComponent<placeableObjectController>().index);
-                        objectHit.balanceSide.GetComponent<ABL_balanceSidesController>().removeObjectFromBalance(hit.transform.gameObject);
+
+                        currentGrabbedItem = objectHit.grabbedObject;
+                        var sideController = objectHit.balanceSide.GetComponent<ABL_balanceSidesController>();
+                        sideController.removeObjectFromBalance(currentGrabbedItem);
+
+                        currentGrabbedItem.SetActive(true);
+                        //ABL_GrabObjectFromBalance objectHit = hit.transform.GetComponent<ABL_GrabObjectFromBalance>();
+                        //currentGrabbedItem = FindObjectOfType<ABL_PuzzleController>().getObject(hit.transform.GetComponent<placeableObjectController>().index);
+                        //objectHit.balanceSide.GetComponent<ABL_balanceSidesController>().removeObjectFromBalance(hit.transform.gameObject);
                     }
                     else
                     {
@@ -89,8 +96,15 @@ public class grabItem_wRaycast : MonoBehaviour
                     if (hit.transform.gameObject.layer == 20)
                     {
                         ABL_GrabObjectFromBalance objectHit = hit.transform.GetComponent<ABL_GrabObjectFromBalance>();
-                        currentGrabbedItem = FindObjectOfType<ABL_PuzzleController>().getObject(hit.transform.GetComponent<placeableObjectController>().index);
-                        objectHit.balanceSide.GetComponent<ABL_balanceSidesController>().removeObjectFromBalance(hit.transform.gameObject);
+
+                        currentGrabbedItem = objectHit.grabbedObject;
+                        var sideController = objectHit.balanceSide.GetComponent<ABL_balanceSidesController>();
+                        sideController.removeObjectFromBalance(currentGrabbedItem);
+
+                        currentGrabbedItem.SetActive(true);
+                        //ABL_GrabObjectFromBalance objectHit = hit.transform.GetComponent<ABL_GrabObjectFromBalance>();
+                        //currentGrabbedItem = FindObjectOfType<ABL_PuzzleController>().getObject(hit.transform.GetComponent<placeableObjectController>().index);
+                        //objectHit.balanceSide.GetComponent<ABL_balanceSidesController>().removeObjectFromBalance(hit.transform.gameObject);
                     }
                     else
                     {

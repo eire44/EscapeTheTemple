@@ -71,7 +71,6 @@ public class LC_PiecesController : MonoBehaviour
             if(candlesPuzzleController.candlesPuzzleSolved)
             {
                 audioSource.PlayOneShot(woodHit_clips[Random.Range(0, woodHit_clips.Length)]);
-                Debug.Log(audioSource.isPlaying + " ESTE ");
             }
         }
     }
