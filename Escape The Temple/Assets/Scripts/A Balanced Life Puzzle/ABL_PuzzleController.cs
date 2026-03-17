@@ -71,26 +71,47 @@ public class ABL_PuzzleController : MonoBehaviour
 
     public GameObject getObject(int objectIndex)
     {
-        if (objectIndex == 0)
+        GameObject obj = null;
+
+        if (objectIndex == 0) obj = object1;
+        else if (objectIndex == 1) obj = object2;
+        else if (objectIndex == 2) obj = object3;
+        else obj = object4;
+
+        if (obj != null)
         {
-            object1.SetActive(true);
-            return object1;
+            obj.SetActive(true);
         }
-        else if (objectIndex == 1)
-        {
-            object2.SetActive(true);
-            return object2;
-        }
-        else if (objectIndex == 2)
-        {
-            object3.SetActive(true);
-            return object3;
-        }
-        else
-        {
-            object4.SetActive(true);
-            return object4;
-        }
+
+        return obj;
+        //if (objectIndex == 0)
+        //{
+        //    object1.SetActive(true);
+        //    return object1;
+        //}
+        //else if (objectIndex == 1)
+        //{
+        //    object2.SetActive(true);
+        //    return object2;
+        //}
+        //else if (objectIndex == 2)
+        //{
+        //    object3.SetActive(true);
+        //    return object3;
+        //}
+        //else
+        //{
+        //    object4.SetActive(true);
+        //    return object4;
+        //}
+    }
+
+    public void clearObject(int index)
+    {
+        if (index == 0) object1 = null;
+        else if (index == 1) object2 = null;
+        else if (index == 2) object3 = null;
+        else object4 = null;
     }
 
     public void saveWeightPlaced(int sideIndex, float newWeight)
@@ -126,6 +147,7 @@ public class ABL_PuzzleController : MonoBehaviour
         {
             for (int i = 0; i < objects.Count; i++)
             {
+                Debug.Log(objects[i].name + " is placed " + objects[i].placed);
                 if (objects[i].placed == false)
                 {
                     return false;

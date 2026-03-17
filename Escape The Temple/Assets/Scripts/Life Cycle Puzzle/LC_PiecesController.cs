@@ -66,11 +66,12 @@ public class LC_PiecesController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if ((collision.gameObject.layer == LayerMask.NameToLayer("Life Cycle Puzzle Pieces") || collision.gameObject == woodBottomPlank) && onPlace)
+        if ((collision.gameObject.layer == LayerMask.NameToLayer("Life Cycle Puzzle Pieces") || collision.gameObject == woodPlank) && onPlace)
         {
             if(candlesPuzzleController.candlesPuzzleSolved)
             {
                 audioSource.PlayOneShot(woodHit_clips[Random.Range(0, woodHit_clips.Length)]);
+                Debug.Log(audioSource.isPlaying + " ESTE ");
             }
         }
     }

@@ -61,6 +61,7 @@ public class ABL_balanceSidesController : MonoBehaviour
     {
         placeableObjectController pOC = objectToRemove.GetComponent<placeableObjectController>();
         placeObject(pOC, false);
+        FindObjectOfType<ABL_PuzzleController>().clearObject(pOC.index);
         pOC.placed = false;
         currentWeight -= pOC.weightValue;
         FindObjectOfType<ABL_PuzzleController>().saveWeightPlaced(sideIndex, currentWeight);

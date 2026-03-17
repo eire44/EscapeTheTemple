@@ -6,18 +6,13 @@ public class tilesController : MonoBehaviour
 {
     [HideInInspector] public Transform pattern;
     public int tileNumber;
+    AudioSource audiosource;
     // Start is called before the first frame update
     void Start()
     {
         pattern = transform.Find("Pattern");
+        audiosource = GetComponent<AudioSource>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (!FindObjectOfType<tilesPuzzleController>().tilesPuzzleSolved)
@@ -26,6 +21,7 @@ public class tilesController : MonoBehaviour
             {
                 if (!pattern.gameObject.activeInHierarchy)
                 {
+                    audiosource.Play();
                     pattern.gameObject.SetActive(true);
                     FindObjectOfType<tilesPuzzleController>().addPattern(tileNumber);
                 }
