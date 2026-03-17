@@ -4,29 +4,31 @@ using UnityEngine;
 
 public class musicManager : MonoBehaviour
 {
-    AudioSource musicAudiosource;
-    public AudioClip[] musicClips;
-
-    private void Start()
-    {
-        musicAudiosource = GetComponent<AudioSource>();
-    }
+    public AudioSource[] musicSources;
 
     public void changeMusic(bool ending)
     {
         if(ending)
         {
-            musicAudiosource.clip = musicClips[2];
+            musicSources[0].Stop();
+            musicSources[1].Stop();
+            musicSources[2].Play();
         }
         else
         {
-            if (musicAudiosource.clip == musicClips[0])
+            Debug.Log("Source 0 isPlaying: " + musicSources[0].isPlaying);
+            Debug.Log("Source 1 isPlaying: " + musicSources[1].isPlaying);
+            if (musicSources[0].isPlaying)
             {
-                musicAudiosource.clip = musicClips[1];
+                Debug.Log("suena 1");
+                musicSources[0].Stop();
+                musicSources[1].Play();
             }
-            else if (musicAudiosource.clip == musicClips[1])
+            else if (musicSources[1].isPlaying)
             {
-                musicAudiosource.clip = musicClips[0];
+                Debug.Log("suena 0");
+                musicSources[1].Stop();
+                musicSources[0].Play();
             }
         }
     }

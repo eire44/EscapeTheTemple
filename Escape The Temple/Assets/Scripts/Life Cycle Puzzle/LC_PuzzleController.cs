@@ -10,6 +10,8 @@ public class LC_PuzzleController : MonoBehaviour
 
     public GameObject fadeOutPiece;
     public GameObject fadeInKeyPiece;
+    [HideInInspector] public bool puzzleAlreadySolved = false;
+    public interiorLanternsController[] interiorLantern;
 
     private void Start()
     {
@@ -38,9 +40,12 @@ public class LC_PuzzleController : MonoBehaviour
 
         //fadeOutPiece.GetComponent<BoxCollider>().isTrigger = true;
         //fadeOutPiece.GetComponent<fadeRoomDoor>().StartFade();
+        puzzleAlreadySolved = true;
         fadeOutPiece.SetActive(false);
         fadeInKeyPiece.SetActive(true);
         fadeInKeyPiece.GetComponent<fadeIn_PuzzlePieces>().StartFade();
+        FindObjectOfType<puzzleProgressionController>().checkIfRoom2Completed();
+        FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
         FindObjectOfType<SunMovement>().sunProgression();
     }
 }

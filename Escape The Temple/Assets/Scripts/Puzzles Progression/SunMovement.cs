@@ -20,18 +20,18 @@ public class SunMovement : MonoBehaviour
 
     public void sunProgression()
     {
-        Debug.Log("SUN MOVED");
-        if (progressionIndex >= totalPuzzles)
-            return;
+        //Debug.Log("SUN MOVED");
+        //if (progressionIndex >= totalPuzzles)
+        //    return;
 
-        progressionIndex++;
+        //progressionIndex++;
 
-        float t = (float)progressionIndex / totalPuzzles;
+        //float t = (float)progressionIndex / totalPuzzles;
 
-        float angle = Mathf.Lerp(startAngle, endAngle, t);
-        directionalLight.transform.rotation = Quaternion.Euler(angle, 0f, 0f);
-        directionalLight.intensity = Mathf.Lerp(startIntensity, endIntensity, t);
-        directionalLight.color = Color.Lerp(startColor, endColor, t);
+        //float angle = Mathf.Lerp(startAngle, endAngle, t);
+        //directionalLight.transform.rotation = Quaternion.Euler(angle, 0f, 0f);
+        //directionalLight.intensity = Mathf.Lerp(startIntensity, endIntensity, t);
+        //directionalLight.color = Color.Lerp(startColor, endColor, t);
     }
 
     //[Header("Referencias")]

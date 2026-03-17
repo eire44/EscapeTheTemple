@@ -24,17 +24,6 @@ public class exteriorLanternsController : MonoBehaviour
         UpdateEmission(0f);
     }
 
-    private void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Y))
-        //{
-        //    TurnOn();
-        //} else if (Input.GetKeyDown(KeyCode.U))
-        //{
-        //    TurnOff();
-        //}
-    }
-
     public void TurnOn()
     {
         audiosource.Play();

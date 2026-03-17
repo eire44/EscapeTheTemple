@@ -18,6 +18,8 @@ public class stagesController : MonoBehaviour
     public GameObject fourthBoard;
     public GameObject fourthText;
     public GameObject keyPiece;
+    [HideInInspector] public bool puzzleAlreadySolved = false;
+    public interiorLanternsController[] interiorLantern;
 
     void Start()
     {
@@ -65,6 +67,8 @@ public class stagesController : MonoBehaviour
             fourthText.SetActive(false);
             keyPiece.SetActive(true);
             keyPiece.GetComponent<fadeIn_PuzzlePieces>().StartFade();
+            FindObjectOfType<puzzleProgressionController>().checkIfRoom2Completed();
+            FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
             FindObjectOfType<SunMovement>().sunProgression();
             return;
         }

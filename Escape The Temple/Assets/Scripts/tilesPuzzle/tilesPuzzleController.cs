@@ -11,7 +11,10 @@ public class tilesPuzzleController : MonoBehaviour
     int[] currentOrder = { 0, 0, 0, 0, 0, 0 };
     int tileIndex = 0;
     [HideInInspector] public bool tilesPuzzleSolved = false;
-    
+
+    public interiorLanternsController[] interiorLantern;
+    public interiorLanternsController[] interiorLanternBell;
+    public exteriorLanternsController[] lanternsRoomBell;
 
     public void addPattern(int tileNumber)
     {
@@ -49,6 +52,9 @@ public class tilesPuzzleController : MonoBehaviour
         }
         FindObjectOfType<LTP_bellPattern>().startBellSoundsPattern();
         FindObjectOfType<LTP_BellSwing>().StartRinging();
+        FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(lanternsRoomBell, false);
+        FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
+        FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(interiorLanternBell);
         FindObjectOfType<SunMovement>().sunProgression();
     }
 

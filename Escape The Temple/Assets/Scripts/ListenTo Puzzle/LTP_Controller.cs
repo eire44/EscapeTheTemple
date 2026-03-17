@@ -11,6 +11,10 @@ public class LTP_Controller : MonoBehaviour
     [HideInInspector] public bool LTPpuzzleSolved = false;
     public GameObject room4_Door;
 
+
+    public interiorLanternsController[] interiorLantern;
+    public interiorLanternsController[] interiorLanternRoom4;
+    public exteriorLanternsController[] lanternsRoomRoom4;
     private void Start()
     {
         foreach (var soundPair in soundsList)
@@ -38,6 +42,9 @@ public class LTP_Controller : MonoBehaviour
             if (soundIndex >= FindObjectOfType<LTP_bellPattern>().bellsSequence.Count)
             {
                 FindObjectOfType<SunMovement>().sunProgression();
+                FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(lanternsRoomRoom4, false);
+                FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
+                FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(interiorLanternRoom4);
                 room4_Door.GetComponent<fadeRoomDoor>().StartFade();
                 FindObjectOfType<LTP_BellSwing>().StopRinging();
                 FindObjectOfType<LTP_bellPattern>().audioSource.enabled = false;

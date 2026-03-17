@@ -29,14 +29,6 @@ public class interiorLanternsController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            TurnOn();
-        } else if (Input.GetKeyDown(KeyCode.U))
-        {
-            StartFlicker();
-        }
-
         if (isFlickering)
         {
             if(isLightOn)
@@ -66,7 +58,7 @@ public class interiorLanternsController : MonoBehaviour
         isFlickering = true;
     }
 
-    void StopFlicker()
+    public void StopFlicker()
     {
         isFlickering = false;
     }
@@ -91,7 +83,7 @@ public class interiorLanternsController : MonoBehaviour
         float intensity = 0f;
         if (isFlickering)
         {
-            intensity = 0.5f;
+            intensity = 0.2f;
         }
         StartFade(intensity, false);
     }

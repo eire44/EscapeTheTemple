@@ -6,6 +6,10 @@ public class incensePuzzleSolution : MonoBehaviour
 {
     [HideInInspector] public bool incensePuzzleSolved = false;
 
+    public interiorLanternsController[] interiorLantern;
+    public interiorLanternsController[] interiorLanternTiles;
+    public exteriorLanternsController[] lanternsRoomTiles;
+
     bool checkIncenseConfiguration()
     {
         foreach (incenseBurnerController incenseBurner in FindObjectsOfType<incenseBurnerController>())
@@ -24,6 +28,9 @@ public class incensePuzzleSolution : MonoBehaviour
         if (checkIncenseConfiguration())
         {
             incensePuzzleSolved = true;
+            FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(lanternsRoomTiles, false);
+            FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
+            FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(interiorLanternTiles);
             FindObjectOfType<SunMovement>().sunProgression();
             FindObjectOfType<grabItem_wRaycast>().dropOnTheGround();
             foreach (IP_HerbController herb in FindObjectsOfType<IP_HerbController>())

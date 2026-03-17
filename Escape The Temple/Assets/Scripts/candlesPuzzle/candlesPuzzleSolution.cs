@@ -8,7 +8,17 @@ public class candlesPuzzleSolution : MonoBehaviour
     [HideInInspector] public bool candlesPuzzleSolved = false;
     bool flagHideText = true;
     public GameObject room2_Door;
-    
+    public exteriorLanternsController[] lanternsRoom1;
+    public exteriorLanternsController[] lanternsRoom2;
+    public interiorLanternsController[] interiorLanternRoom1;
+    public interiorLanternsController[] interiorLanternRoom2;
+
+    private void Start()
+    {
+        FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(lanternsRoom1, false);
+        FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(interiorLanternRoom1);
+    }
+
     void Update()
     {
         if (llamas[0].activeInHierarchy && !llamas[1].activeInHierarchy && llamas[2].activeInHierarchy && llamas[3].activeInHierarchy
@@ -33,5 +43,8 @@ public class candlesPuzzleSolution : MonoBehaviour
     void unlockRoom2()
     {
         room2_Door.GetComponent<fadeRoomDoor>().StartFade();
+        FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(lanternsRoom2, false);
+        FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLanternRoom1);
+        FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(interiorLanternRoom2);
     }
 }

@@ -18,7 +18,10 @@ public class burningLiesController : MonoBehaviour
     public float duracionApagadoFuego = 1.5f;
     float[] ratesOriginales;
 
-    bool puzzleAlreadySolved = false;
+    [HideInInspector] public bool puzzleAlreadySolved = false;
+    public interiorLanternsController[] interiorLantern;
+    public interiorLanternsController[] interiorLanternABL;
+    public exteriorLanternsController[] lanternsRoomABL;
 
     void Start()
     {
@@ -124,6 +127,8 @@ public class burningLiesController : MonoBehaviour
         {
             paper.gameObject.layer = LayerMask.NameToLayer("Default");
         }
+        FindObjectOfType<puzzleProgressionController>().checkIfRoom2Completed();
+        FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
         FindObjectOfType<SunMovement>().sunProgression();
     }
 

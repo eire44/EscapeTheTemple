@@ -28,6 +28,9 @@ public class ABL_PuzzleController : MonoBehaviour
 
     GameObject[] placedObjects = new GameObject[4];
 
+    public interiorLanternsController[] interiorLantern;
+    public interiorLanternsController[] interiorLanternRoom3;
+    public exteriorLanternsController[] lanternsRoomRoom3;
     void Start()
     {
         initialRotation = balance_bar.localRotation;
@@ -151,6 +154,9 @@ public class ABL_PuzzleController : MonoBehaviour
                 item.gameObject.layer = 0;
             }
             unlockRoom3();
+            FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(lanternsRoomRoom3, false);
+            FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
+            FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(interiorLanternRoom3);
             FindObjectOfType<SunMovement>().sunProgression();
         }
         

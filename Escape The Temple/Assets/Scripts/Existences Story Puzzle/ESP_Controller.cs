@@ -31,6 +31,9 @@ public class ESP_Controller : MonoBehaviour
 
     [HideInInspector] public bool enablePuzzle = false;
 
+    [HideInInspector] public bool puzzleAlreadySolved = false;
+    public interiorLanternsController[] interiorLantern;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -193,6 +196,9 @@ public class ESP_Controller : MonoBehaviour
         }
 
         Debug.Log("JUEGO TERMINADO");
+        puzzleAlreadySolved = true;
+        FindObjectOfType<puzzleProgressionController>().checkIfRoom4Completed();
+        FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
         FindObjectOfType<SunMovement>().sunProgression();
         FindObjectOfType<ESP_AudioClueController>().audioClue.Stop();
         FindObjectOfType<endGame>().enablePortal();

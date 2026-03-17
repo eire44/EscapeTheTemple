@@ -12,6 +12,10 @@ public class SP_Controller : MonoBehaviour
     public Transform lever;
     public AudioSource audiosource;
     public AudioClip[] audioClips;
+
+    [HideInInspector] public bool puzzleAlreadySolved = false;
+    public interiorLanternsController[] interiorLantern;
+    public exteriorLanternsController[] lanternsExitGame;
     private void Start()
     {
         //board = new int[3, 3];
@@ -156,6 +160,9 @@ public class SP_Controller : MonoBehaviour
             item.gameObject.SetActive(true);
             item.GetComponent<fadeIn_PuzzlePieces>().StartFade();
         }
+        puzzleAlreadySolved = true;
+        FindObjectOfType<puzzleProgressionController>().checkIfRoom4Completed();
+        FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
         FindObjectOfType<SunMovement>().sunProgression();
     }
 }
