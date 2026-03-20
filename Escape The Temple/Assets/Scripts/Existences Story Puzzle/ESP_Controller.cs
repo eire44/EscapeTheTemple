@@ -197,6 +197,8 @@ public class ESP_Controller : MonoBehaviour
 
         Debug.Log("JUEGO TERMINADO");
         puzzleAlreadySolved = true;
+
+        enablePuzzle = false;
         FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(FindObjectOfType<SP_Controller>().lanternsExitGame, true);
         FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
         FindObjectOfType<SunMovement>().sunProgression();

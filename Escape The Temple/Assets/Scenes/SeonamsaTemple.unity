@@ -3488,46 +3488,40 @@ MonoBehaviour:
   subtitles:
   - text: If one opens their eyes to the world, they may begin to see.
     startTime: 0
-    endTime: 4.5
+    endTime: 4
   - text: A woman, weeping for what she has lost.
-    startTime: 4.5
-    endTime: 8.2
+    startTime: 4
+    endTime: 7.7
   - text: A leader, sharing his wisdom out of compassion.
-    startTime: 8.2
+    startTime: 7.7
     endTime: 12.2
   - text: A man who lives by the river,
     startTime: 12.2
     endTime: 14.5
   - text: and contemplating the current discovered that all things are one.
     startTime: 14.5
-    endTime: 20.2
+    endTime: 19.5
   - text: And a player, who moves his pieces and uses his wit to deceive his opponent,
-    startTime: 20.2
-    endTime: 25
+    startTime: 19.5
+    endTime: 24.7
   - text: yet does not see the hand that moved his own.
-    startTime: 25
-    endTime: 28.5
+    startTime: 24.7
+    endTime: 27.7
   - text: Each believes themselves separate.
-    startTime: 28.5
-    endTime: 31.1
+    startTime: 27.9
+    endTime: 30.6
   - text: Each shapes the world around them.
-    startTime: 31.1
-    endTime: 34
+    startTime: 30.6
+    endTime: 33.5
   - text: Yet all are part of the same scenery.
-    startTime: 34
-    endTime: 37.65
-  - text: "The grieving, the teacher, the player, the seeker\u2026"
-    startTime: 37.65
-    endTime: 42
-  - text: Like currents within a single river.
-    startTime: 42
-    endTime: 45.7
+    startTime: 33.5
+    endTime: 37.1
   - text: And to the awakened eye,
-    startTime: 45.7
-    endTime: 47.8
+    startTime: 37.1
+    endTime: 39.3
   - text: they are not many but one.
-    startTime: 47.8
-    endTime: 50.28
+    startTime: 39.3
+    endTime: 42.8
 --- !u!1001 &51851644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44343,7 +44337,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b127636ca01e066478a5a9839f80ee07, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a4e9bdc9bfe95eb4d95db7d3164c944e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
