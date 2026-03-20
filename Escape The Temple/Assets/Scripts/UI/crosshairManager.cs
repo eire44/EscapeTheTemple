@@ -40,7 +40,7 @@ public class crosshairManager : MonoBehaviour
         if ((interactiveItems & (1 << layer)) != 0)
         {
             SetInteract();
-        } else if(tag == "LongClue" || tag == "ShortClue")
+        } else if(tag == "LongClue")
         {
             SetInteract();
         }

@@ -42,6 +42,11 @@ TagManager:
   - Gardenia
   - Lever
   - Missing Lever
+  - Pine Smoke
+  - Gardenia Smoke
+  - Sandalwood Smoke
+  - Sagebrush Smoke
+  - Cinnamon Smoke
   layers:
   - Default
   - TransparentFX

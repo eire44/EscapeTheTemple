@@ -10,6 +10,7 @@ public class incenseBurnerController : MonoBehaviour
     incensePuzzleSolution IPcontroller;
     public bool herbPlaced = false;
     AudioSource audiosource;
+    public string smokeTag = "";
 
     List<incenseBurnerController> burners = new List<incenseBurnerController>();
     int burnersIndex = 0;
@@ -35,6 +36,7 @@ public class incenseBurnerController : MonoBehaviour
             {
                 coloredIncense.SetActive(true);
                 humoNormal.gameObject.SetActive(false);
+                gameObject.tag = smokeTag;
                 rightHerbPlaced = true;
                 IPcontroller.checkForPuzzleSolution();
             }
@@ -46,6 +48,7 @@ public class incenseBurnerController : MonoBehaviour
                     {
                         Transform humoGris = incenseBurner.transform.Find("GraySmoke");
                         humoGris.gameObject.SetActive(true);
+                        gameObject.tag = "Incense Burner";
                         incenseBurner.coloredIncense.SetActive(false);
                         humoGris.localScale = Vector3.one;
                         incenseBurner.rightHerbPlaced = false;

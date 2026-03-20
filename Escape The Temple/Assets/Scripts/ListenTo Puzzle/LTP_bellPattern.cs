@@ -7,8 +7,8 @@ public class LTP_bellPattern : MonoBehaviour
 {
     public AudioClip[] clips;
 
-    public int minSounds = 6;
-    public int maxSounds = 8;
+    //public int minSounds = 6;
+    //public int maxSounds = 8;
     int amountOfSounds = 6;
     [HideInInspector] public List<AudioClip> bellsSequence = new List<AudioClip>();
     public float delayBetweenSounds = 0.5f;
@@ -20,7 +20,7 @@ public class LTP_bellPattern : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
 
-        amountOfSounds = Random.Range(minSounds, maxSounds +1);
+        //amountOfSounds = Random.Range(minSounds, maxSounds +1);
         for (int i = 0; i < amountOfSounds; i++)
         {
             AudioClip randomClip = clips[Random.Range(0, clips.Length)];
