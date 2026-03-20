@@ -91,25 +91,25 @@ public class ESP_Controller : MonoBehaviour
                         if (dirButton.index == 0)
                         {
                             newDirection = directions.Up;
-                            FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
+                            FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection], false);
                             callForMovePieces();
                         } 
                         else if(dirButton.index == 1)
                         {
                             newDirection = directions.Down;
-                            FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
+                            FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection], false);
                             callForMovePieces();
                         } 
                         else if(dirButton.index == 2)
                         {
                             newDirection = directions.Right;
-                            FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
+                            FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection], true);
                             callForMovePieces();
                         } 
                         else if(dirButton.index == 3)
                         {
                             newDirection = directions.Left;
-                            FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection]);
+                            FindObjectOfType<ESP_LeverMovement>().moveLever(directionsCorrelation[newDirection], true);
                             callForMovePieces();
                         }
 

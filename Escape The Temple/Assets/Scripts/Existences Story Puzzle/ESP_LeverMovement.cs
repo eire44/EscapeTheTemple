@@ -9,18 +9,24 @@ public class ESP_LeverMovement : MonoBehaviour
     public Transform center;
     Vector3 startPos;
     public AudioSource audiosource;
+    Quaternion startRot;
     private void Start()
     {
         startPos = center.position;
+        startRot = Quaternion.Euler(-90f, 0f, 0f);
     }
 
-    public void moveLever(Transform direction)
+    public void moveLever(Transform direction, bool movingSideways)
     {
         if (leverIsMoving) return;
-        StartCoroutine(MoveLeverCoroutine(direction));
+        if (movingSideways)
+        {
+            transform.rotation *= Quaternion.Euler(0, 0, 90f);
+        }
+        StartCoroutine(MoveLeverCoroutine(direction, movingSideways));
     }
 
-    IEnumerator MoveLeverCoroutine(Transform targetPos)
+    IEnumerator MoveLeverCoroutine(Transform targetPos, bool movingSideways)
     {
         leverIsMoving = true;
 
@@ -49,6 +55,7 @@ public class ESP_LeverMovement : MonoBehaviour
         }
 
         transform.position = startPos;
+        transform.rotation = startRot;
 
         leverIsMoving = false;
     }
