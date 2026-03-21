@@ -1970,7 +1970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 911599209}
-  maxIntensity: 4
+  maxIntensity: 5
   fadeDuration: 1.5
   audiosource: {fileID: 294225723}
   maxFlickerIntensity: 3
@@ -16017,7 +16017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 1504589739}
-  maxIntensity: 4
+  maxIntensity: 5
   fadeDuration: 1.5
   audiosource: {fileID: 934010680}
   maxFlickerIntensity: 3
@@ -21486,7 +21486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 1282192163}
-  maxIntensity: 4
+  maxIntensity: 5
   fadeDuration: 1.5
   audiosource: {fileID: 674002081}
   maxFlickerIntensity: 3
@@ -24621,7 +24621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 1697001337}
-  maxIntensity: 4
+  maxIntensity: 5
   fadeDuration: 1.5
   audiosource: {fileID: 39777329}
   maxFlickerIntensity: 3
@@ -38466,7 +38466,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 228d23293d0ad0f49befe9164c3d8384, type: 3}
   - {fileID: 8300000, guid: d6093629e86f8e44d87ee71ae7672be4, type: 3}
   bowlIndex: 0
-  piecesPlaced: []
 --- !u!82 &543575657
 AudioSource:
   m_ObjectHideFlags: 0
@@ -59306,7 +59305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 2050042100}
-  maxIntensity: 4
+  maxIntensity: 5
   fadeDuration: 1.5
   audiosource: {fileID: 1384797825}
   maxFlickerIntensity: 3
@@ -71924,7 +71923,7 @@ Transform:
   m_GameObject: {fileID: 822143345}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.05335557, z: -0, w: 0.99857557}
-  m_LocalPosition: {x: -0.071, y: -1.063, z: -0.008}
+  m_LocalPosition: {x: -0.119, y: -1.063, z: -0.014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -79737,7 +79736,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 228d23293d0ad0f49befe9164c3d8384, type: 3}
   - {fileID: 8300000, guid: d6093629e86f8e44d87ee71ae7672be4, type: 3}
   bowlIndex: 2
-  piecesPlaced: []
 --- !u!82 &846618425
 AudioSource:
   m_ObjectHideFlags: 0
@@ -83314,7 +83312,7 @@ Transform:
   m_GameObject: {fileID: 911599206}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.05335557, z: -0, w: 0.99857557}
-  m_LocalPosition: {x: 0, y: -1.063, z: 0}
+  m_LocalPosition: {x: 0.018, y: -1.063, z: -0.169}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -92699,7 +92697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 1111275753}
-  maxIntensity: 4
+  maxIntensity: 5
   fadeDuration: 1.5
   audiosource: {fileID: 834234498}
   maxFlickerIntensity: 3
@@ -93985,7 +93983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 1804476323}
-  maxIntensity: 4
+  maxIntensity: 5
   fadeDuration: 1.5
   audiosource: {fileID: 1567829536}
   maxFlickerIntensity: 3
@@ -104073,7 +104071,7 @@ Transform:
   m_GameObject: {fileID: 1111275750}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.05335557, z: -0, w: 0.99857557}
-  m_LocalPosition: {x: -0.071, y: -1.063, z: -0.008}
+  m_LocalPosition: {x: -0.119, y: -1.063, z: -0.013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -107410,7 +107408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 993094723}
-  maxIntensity: 4
+  maxIntensity: 5
   fadeDuration: 1.5
   audiosource: {fileID: 317532304}
   maxFlickerIntensity: 3
@@ -128200,7 +128198,7 @@ Transform:
   m_GameObject: {fileID: 1282192160}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.06975647, z: -0, w: 0.9975641}
-  m_LocalPosition: {x: 0, y: -1.063, z: 0}
+  m_LocalPosition: {x: 0.101, y: -1.063, z: 0.014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -129287,7 +129285,7 @@ Transform:
   m_GameObject: {fileID: 1296328190}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.11320323, z: -0, w: 0.9935719}
-  m_LocalPosition: {x: 0, y: -1.063, z: 0}
+  m_LocalPosition: {x: 0.099, y: -1.063, z: 0.023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -136338,7 +136336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 1947342543}
-  maxIntensity: 4
+  maxIntensity: 5
   fadeDuration: 1.5
   audiosource: {fileID: 1579644254}
   maxFlickerIntensity: 3
@@ -147670,7 +147668,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 228d23293d0ad0f49befe9164c3d8384, type: 3}
   - {fileID: 8300000, guid: d6093629e86f8e44d87ee71ae7672be4, type: 3}
   bowlIndex: 1
-  piecesPlaced: []
 --- !u!82 &1366300610
 AudioSource:
   m_ObjectHideFlags: 0
@@ -160316,7 +160313,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 228d23293d0ad0f49befe9164c3d8384, type: 3}
   - {fileID: 8300000, guid: d6093629e86f8e44d87ee71ae7672be4, type: 3}
   bowlIndex: 3
-  piecesPlaced: []
 --- !u!82 &1497732307
 AudioSource:
   m_ObjectHideFlags: 0
@@ -162605,7 +162601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 822143348}
-  maxIntensity: 4
+  maxIntensity: 5
   fadeDuration: 1.5
   audiosource: {fileID: 31708771}
   maxFlickerIntensity: 3
@@ -177289,7 +177285,7 @@ Transform:
   m_GameObject: {fileID: 1804476320}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.05335557, z: -0, w: 0.99857557}
-  m_LocalPosition: {x: 0, y: -1.063, z: 0}
+  m_LocalPosition: {x: -0.014, y: -1.063, z: 0.132}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -199036,7 +199032,7 @@ Transform:
   m_GameObject: {fileID: 1947342540}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.06975647, z: -0, w: 0.9975641}
-  m_LocalPosition: {x: 0, y: -1.063, z: 0}
+  m_LocalPosition: {x: 0.016, y: -1.063, z: -0.111}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -202278,7 +202274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 1296328193}
-  maxIntensity: 4
+  maxIntensity: 5
   fadeDuration: 1.5
   audiosource: {fileID: 1769097668}
   maxFlickerIntensity: 3
@@ -209189,7 +209185,7 @@ Transform:
   m_GameObject: {fileID: 2050042097}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.05335557, z: -0, w: 0.99857557}
-  m_LocalPosition: {x: -0.071, y: -1.063, z: -0.008}
+  m_LocalPosition: {x: -0.119, y: -1.063, z: -0.014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -24,17 +24,17 @@ public class puzzleProgressionController : MonoBehaviour
     {
         foreach (interiorLanternsController item in intLanterns)
         {
-            item.StopFlicker();
+            //item.StopFlicker();
             item.TurnOn();
         }
     }
     public void flicker_InteriorLanterns(interiorLanternsController[] intLanterns)
     {
-        foreach (interiorLanternsController item in intLanterns)
-        {
-            Debug.Log(item.name);
-            item.StartFlicker();
-        }
+        //foreach (interiorLanternsController item in intLanterns)
+        //{
+        //    Debug.Log(item.name);
+        //    item.StartFlicker();
+        //}
     }
 
     public void checkIfRoom2Completed()
