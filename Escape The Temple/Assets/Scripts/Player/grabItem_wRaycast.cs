@@ -155,8 +155,9 @@ public class grabItem_wRaycast : MonoBehaviour
 
                                     if (hitLayer == 9)
                                     {
-                                        Quaternion newRotation = new Quaternion(hit.transform.rotation.x, hit.transform.rotation.y + 90f, hit.transform.rotation.z, hit.transform.rotation.w);
-                                        currentGrabbedItem.transform.rotation = newRotation;
+                                        currentGrabbedItem.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+                                        //Quaternion newRotation = new Quaternion(hit.transform.rotation.x, hit.transform.rotation.y + 90f, hit.transform.rotation.z, hit.transform.rotation.w);
+                                        //currentGrabbedItem.transform.rotation = newRotation;
                                     }
                                     else if (hitLayer == 14)
                                     {
