@@ -22146,8 +22146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressDepth: 0.02
-  pressTime: 0.2
-  returnTime: 0.2
+  pressTime: 0.15
+  returnTime: 0.15
   pressingDirection: {x: 0, y: -1, z: 0}
 --- !u!82 &317745606
 AudioSource:
@@ -22160,7 +22160,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4244183987004584110, guid: de3953411d017f9409027d068cd3aa5e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: cbdde14ff95a4d7478a069afb4470eea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 09a3c4a4de882b74a8bbf689a79dcd79, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -23581,6 +23581,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 330055401}
   emissionMultiplier: 2
   audiosource: {fileID: 1328056320}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -26946,6 +26947,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 401239735}
   emissionMultiplier: 2
   audiosource: {fileID: 326070349}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &401274859 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5101721514215686439, guid: 7d474b00fc389b047b337ecc5dec2b58,
@@ -27435,7 +27437,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.7735849, g: 0.6668306, b: 0.2729441, a: 1}
+  m_Color: {r: 0.9547169, g: 0.9149585, b: 0.7691776, a: 1}
   m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
@@ -27494,13 +27496,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
+  m_LocalRotation: {x: 0.6427876, y: 0, z: 0, w: 0.7660445}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 80, y: 0, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37005,6 +37007,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 508536874}
   emissionMultiplier: 2
   audiosource: {fileID: 889470592}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &510192370 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5539133547305676297, guid: 6acd7cc1af45ef04aa99b22ecc0a0271,
@@ -44487,7 +44490,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9c44d7ddc41d8b74fa95b0cde1da5799, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2d2abd841c4dc774c9d8d878b929f5d9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -51318,6 +51321,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 611048264}
   emissionMultiplier: 2
   audiosource: {fileID: 489598853}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1001 &612938375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52532,6 +52536,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 629552631}
   emissionMultiplier: 2
   audiosource: {fileID: 1786287436}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1001 &632222495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53313,6 +53318,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 640364722}
   emissionMultiplier: 2
   audiosource: {fileID: 1017684686}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &640528855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2944840930475523620, guid: 18b36aa0347a56946850a62316c63da2,
@@ -59702,6 +59708,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 290279398}
   emissionMultiplier: 2
   audiosource: {fileID: 723791180}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &675741000 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2111925492594947879, guid: bb636b2cb5b48b2419f378153a43e5c7,
@@ -61849,8 +61856,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressDepth: 0.02
-  pressTime: 0.2
-  returnTime: 0.2
+  pressTime: 0.15
+  returnTime: 0.15
   pressingDirection: {x: 0, y: -1, z: 0}
 --- !u!114 &723075155
 MonoBehaviour:
@@ -61877,7 +61884,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4244183987004584110, guid: de3953411d017f9409027d068cd3aa5e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: cbdde14ff95a4d7478a069afb4470eea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 09a3c4a4de882b74a8bbf689a79dcd79, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -70523,6 +70530,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 798619433}
   emissionMultiplier: 2
   audiosource: {fileID: 172460423}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1001 &802404988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70830,6 +70838,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 803726306}
   emissionMultiplier: 2
   audiosource: {fileID: 1839277799}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &804925137
 GameObject:
   m_ObjectHideFlags: 0
@@ -71896,6 +71905,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 817913261}
   emissionMultiplier: 2
   audiosource: {fileID: 1518115474}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &822143345
 GameObject:
   m_ObjectHideFlags: 0
@@ -77662,8 +77672,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressDepth: 0.02
-  pressTime: 0.2
-  returnTime: 0.2
+  pressTime: 0.15
+  returnTime: 0.15
   pressingDirection: {x: 0, y: -1, z: 0}
 --- !u!114 &832857997
 MonoBehaviour:
@@ -77690,7 +77700,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4244183987004584110, guid: de3953411d017f9409027d068cd3aa5e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: cbdde14ff95a4d7478a069afb4470eea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 09a3c4a4de882b74a8bbf689a79dcd79, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -88827,8 +88837,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressDepth: 0.02
-  pressTime: 0.2
-  returnTime: 0.2
+  pressTime: 0.15
+  returnTime: 0.15
   pressingDirection: {x: 0, y: -1, z: 0}
 --- !u!82 &926013031
 AudioSource:
@@ -88841,7 +88851,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4244183987004584110, guid: de3953411d017f9409027d068cd3aa5e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: cbdde14ff95a4d7478a069afb4470eea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 09a3c4a4de882b74a8bbf689a79dcd79, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -91546,10 +91556,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 979415269}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 13e292e425d7cf14fb057815b9ddd86e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 979415271}
   m_SourcePrefab: {fileID: 100100000, guid: 13e292e425d7cf14fb057815b9ddd86e, type: 3}
 --- !u!1 &979415268 stripped
 GameObject:
@@ -91584,103 +91590,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 979415267}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &979415271
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979415268}
-  m_Enabled: 0
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 4244183987004584110, guid: de3953411d017f9409027d068cd3aa5e,
-    type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4c26eb641fed3e042828c5f7230a4f61, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 0.5
-  MaxDistance: 4
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1001 &980183161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96791,8 +96700,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressDepth: 0.02
-  pressTime: 0.2
-  returnTime: 0.2
+  pressTime: 0.15
+  returnTime: 0.15
   pressingDirection: {x: 0, y: -1, z: 0}
 --- !u!114 &1055020965
 MonoBehaviour:
@@ -96819,7 +96728,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4244183987004584110, guid: de3953411d017f9409027d068cd3aa5e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: cbdde14ff95a4d7478a069afb4470eea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 09a3c4a4de882b74a8bbf689a79dcd79, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -104593,111 +104502,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cce4d8667f2436a479759f07084d8ff4, type: 3}
---- !u!1 &1120904263
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1120904264}
-  - component: {fileID: 1120904267}
-  - component: {fileID: 1120904266}
-  - component: {fileID: 1120904265}
-  m_Layer: 0
-  m_Name: Cube (3)
-  m_TagString: Character2_Button
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1120904264
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120904263}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.5028444, y: 0.50284445, z: 0.49713928, w: 0.49713942}
-  m_LocalPosition: {x: 0.0009846002, y: 1.7298498, z: 20.580595}
-  m_LocalScale: {x: 0.030457892, y: 0.18361993, z: 0.19767596}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1780678978}
-  m_LocalEulerAnglesHint: {x: 0, y: 90.654, z: 90}
---- !u!65 &1120904265
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120904263}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1120904266
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120904263}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: d847adc730f46454486e7283a6aa165a, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1120904267
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120904263}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1121807409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105758,6 +105562,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 1154760292}
   emissionMultiplier: 2
   audiosource: {fileID: 395909613}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &1155395618 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4842045664879360496, guid: bb636b2cb5b48b2419f378153a43e5c7,
@@ -106248,6 +106053,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 1162265271}
   emissionMultiplier: 2
   audiosource: {fileID: 826637434}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &1163525611 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3943874219462671507, guid: 7d474b00fc389b047b337ecc5dec2b58,
@@ -107303,6 +107109,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 1185796305}
   emissionMultiplier: 2
   audiosource: {fileID: 1260952543}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &1186716021 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8583420553471467511, guid: 938ca171084b251408df30266d645eae,
@@ -114598,6 +114405,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 1222577679}
   emissionMultiplier: 2
   audiosource: {fileID: 441152632}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &1224978497
 GameObject:
   m_ObjectHideFlags: 0
@@ -129543,6 +129351,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 1300912536}
   emissionMultiplier: 2
   audiosource: {fileID: 1356628125}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1001 &1301265176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150805,6 +150614,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 1400656767}
   emissionMultiplier: 2
   audiosource: {fileID: 459809248}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &1401156818 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8086516789514560030, guid: 9a1df29e01865be409fd2a1ab63cd262,
@@ -151092,6 +150902,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 1402549012}
   emissionMultiplier: 2
   audiosource: {fileID: 1230172493}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &1403927627
 GameObject:
   m_ObjectHideFlags: 0
@@ -158091,6 +157902,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 1455801115}
   emissionMultiplier: 2
   audiosource: {fileID: 999609100}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &1456025615
 GameObject:
   m_ObjectHideFlags: 0
@@ -158255,8 +158067,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressDepth: 0.02
-  pressTime: 0.2
-  returnTime: 0.2
+  pressTime: 0.15
+  returnTime: 0.15
   pressingDirection: {x: 0, y: -1, z: 0}
 --- !u!82 &1456025624
 AudioSource:
@@ -158269,7 +158081,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4244183987004584110, guid: de3953411d017f9409027d068cd3aa5e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: cbdde14ff95a4d7478a069afb4470eea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 09a3c4a4de882b74a8bbf689a79dcd79, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -159455,6 +159267,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 1490798050}
   emissionMultiplier: 2
   audiosource: {fileID: 236034339}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &1490971609
 GameObject:
   m_ObjectHideFlags: 0
@@ -159963,111 +159776,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.2, z: 0}
---- !u!1 &1497205974
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1497205975}
-  - component: {fileID: 1497205978}
-  - component: {fileID: 1497205977}
-  - component: {fileID: 1497205976}
-  m_Layer: 0
-  m_Name: Cube (2)
-  m_TagString: Character1_Button
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1497205975
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497205974}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.5028444, y: 0.50284445, z: 0.49713928, w: 0.49713942}
-  m_LocalPosition: {x: -0.386, y: 1.7298498, z: 20.585}
-  m_LocalScale: {x: 0.030457892, y: 0.18361993, z: 0.19767596}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1780678978}
-  m_LocalEulerAnglesHint: {x: 0, y: 90.654, z: 90}
---- !u!65 &1497205976
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497205974}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1497205977
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497205974}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 12faa954337a6a44396bb25309570218, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1497205978
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497205974}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1497660213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -163471,6 +163179,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 1558426031}
   emissionMultiplier: 2
   audiosource: {fileID: 1032287890}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1001 &1559139278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167214,111 +166923,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1611765126}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1612648586
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1612648587}
-  - component: {fileID: 1612648590}
-  - component: {fileID: 1612648589}
-  - component: {fileID: 1612648588}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Character3_Button
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1612648587
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612648586}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.5028444, y: 0.50284445, z: 0.49713928, w: 0.49713942}
-  m_LocalPosition: {x: 0.39494628, y: 1.7298498, z: 20.576082}
-  m_LocalScale: {x: 0.030457892, y: 0.18361993, z: 0.19767596}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1780678978}
-  m_LocalEulerAnglesHint: {x: 0, y: 90.654, z: 90}
---- !u!65 &1612648588
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612648586}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1612648589
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612648586}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 00cff10704ba40642b9e1b7e627dba7d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1612648590
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612648586}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1612958782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -172285,6 +171889,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 1701792783}
   emissionMultiplier: 2
   audiosource: {fileID: 282428659}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &1702758841 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 474087254138630587, guid: a93f80d252523a14d9206681c7713ce8,
@@ -175030,10 +174635,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1607302483}
-  - {fileID: 1497205975}
-  - {fileID: 1120904264}
-  - {fileID: 1612648587}
-  - {fileID: 1896286986}
   - {fileID: 723075149}
   - {fileID: 1055020959}
   - {fileID: 2108502719}
@@ -175911,8 +175512,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressDepth: 0.02
-  pressTime: 0.2
-  returnTime: 0.2
+  pressTime: 0.15
+  returnTime: 0.15
   pressingDirection: {x: 0, y: -1, z: 0}
 --- !u!82 &1784771660
 AudioSource:
@@ -175925,7 +175526,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4244183987004584110, guid: de3953411d017f9409027d068cd3aa5e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: cbdde14ff95a4d7478a069afb4470eea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 09a3c4a4de882b74a8bbf689a79dcd79, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -187289,8 +186890,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressDepth: 0.02
-  pressTime: 0.2
-  returnTime: 0.2
+  pressTime: 0.15
+  returnTime: 0.15
   pressingDirection: {x: 0, y: 0, z: 1}
 --- !u!82 &1892286343
 AudioSource:
@@ -187303,7 +186904,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4244183987004584110, guid: de3953411d017f9409027d068cd3aa5e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: cbdde14ff95a4d7478a069afb4470eea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 09a3c4a4de882b74a8bbf689a79dcd79, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.7
   m_Pitch: 1
@@ -187410,111 +187011,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020000009, y: 0.02000001, z: 0.004646076}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1896286985
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1896286986}
-  - component: {fileID: 1896286989}
-  - component: {fileID: 1896286988}
-  - component: {fileID: 1896286987}
-  m_Layer: 0
-  m_Name: Cube (1)
-  m_TagString: Character4_Button
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1896286986
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896286985}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.5028444, y: 0.50284445, z: 0.49713928, w: 0.49713942}
-  m_LocalPosition: {x: 0.75693095, y: 1.7298498, z: 20.571959}
-  m_LocalScale: {x: 0.030457892, y: 0.18361993, z: 0.19767596}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1780678978}
-  m_LocalEulerAnglesHint: {x: 0, y: 90.654, z: 90}
---- !u!65 &1896286987
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896286985}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1896286988
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896286985}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 09531e42bd8b11f4d8e1a2d20c6fa2e1, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1896286989
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896286985}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1898250966
 GameObject:
   m_ObjectHideFlags: 0
@@ -200167,7 +199663,7 @@ MonoBehaviour:
   lever: {fileID: 6738450968550171297}
   audiosource: {fileID: 2082011448}
   audioClips:
-  - {fileID: 8300000, guid: 85122ddc9039fcc46b0e19ad166cd2b8, type: 3}
+  - {fileID: 8300000, guid: a7dcee82785fbad46b182ba236dfa619, type: 3}
   - {fileID: 8300000, guid: 2d2abd841c4dc774c9d8d878b929f5d9, type: 3}
   puzzleAlreadySolved: 0
   interiorLantern:
@@ -202175,6 +201671,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 1994834534}
   emissionMultiplier: 2
   audiosource: {fileID: 205264829}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &1997199920
 GameObject:
   m_ObjectHideFlags: 0
@@ -210798,6 +210295,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 2072886807}
   emissionMultiplier: 2
   audiosource: {fileID: 581437250}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1 &2076326914
 GameObject:
   m_ObjectHideFlags: 0
@@ -210959,7 +210457,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4244183987004584110, guid: de3953411d017f9409027d068cd3aa5e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4c26eb641fed3e042828c5f7230a4f61, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d9e876950df2cf2418d3b12feb56d942, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -212734,8 +212232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressDepth: 0.02
-  pressTime: 0.2
-  returnTime: 0.2
+  pressTime: 0.15
+  returnTime: 0.15
   pressingDirection: {x: 0, y: -1, z: 0}
 --- !u!114 &2108502725
 MonoBehaviour:
@@ -212762,7 +212260,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4244183987004584110, guid: de3953411d017f9409027d068cd3aa5e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: cbdde14ff95a4d7478a069afb4470eea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 09a3c4a4de882b74a8bbf689a79dcd79, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -218510,6 +218008,7 @@ MonoBehaviour:
   emissiveRenderer: {fileID: 2119794684}
   emissionMultiplier: 2
   audiosource: {fileID: 1388412104}
+  emissionColorYellow: {r: 0.7058824, g: 0.54509807, b: 0.14901961, a: 1}
 --- !u!1001 &2121224713
 PrefabInstance:
   m_ObjectHideFlags: 0

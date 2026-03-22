@@ -11,22 +11,35 @@ public class exteriorLanternsController : MonoBehaviour
     Coroutine currentRoutine;
     public float emissionMultiplier = 2f;
     public AudioSource audiosource;
+    Renderer rend;
+    MaterialPropertyBlock block;
+    public Color emissionColorYellow = Color.yellow;
 
     private void Awake()
     {
         if (pointLight == null)
             pointLight = GetComponentInChildren<Light>();
+
+        //Transform child = transform.Find("Cube.026");
+        //rend = child.GetComponent<Renderer>();
+
+        block = new MaterialPropertyBlock();
     }
 
     void Start()
     {
         pointLight.intensity = 0f;
         UpdateEmission(0f);
+        emissiveRenderer.GetPropertyBlock(block);
+        block.SetColor("_EmissionColor", Color.black);
+        emissiveRenderer.SetPropertyBlock(block);
+
     }
 
     public void TurnOn()
     {
         audiosource.Play();
+        block.SetColor("_EmissionColor", emissionColorYellow);
         StartFade(maxIntensity);
     }
 
@@ -69,9 +82,15 @@ public class exteriorLanternsController : MonoBehaviour
     {
         if (emissiveRenderer != null)
         {
-            Color baseColor = pointLight.color;
-            Color emission = baseColor * lightIntensity * emissionMultiplier;
-            emissiveRenderer.material.SetColor("_EmissionColor", emission);
+            //Color baseColor = pointLight.color;
+            //Color emission = baseColor * lightIntensity * emissionMultiplier;
+            //emissiveRenderer.material.SetColor("_EmissionColor", emission);
+            emissiveRenderer.GetPropertyBlock(block);
+
+            Color emission = emissionColorYellow * lightIntensity * emissionMultiplier;
+            block.SetColor("_EmissionColor", emission);
+
+            emissiveRenderer.SetPropertyBlock(block);
         }
     }
 }
