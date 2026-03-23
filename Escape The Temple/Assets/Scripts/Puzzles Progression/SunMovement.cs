@@ -6,6 +6,7 @@ public class SunMovement : MonoBehaviour
 {
     public Light directionalLight;
     public Material skyboxMaterial;
+    public ParticleSystem stars;
 
     public int totalPuzzles = 10;
     private int progressionIndex = 0;
@@ -92,6 +93,7 @@ public class SunMovement : MonoBehaviour
         }
         else
         {
+            stars.gameObject.SetActive(true);
             ApplySun(
                 Mathf.Lerp(sunsetAngle, nightAngle, nightT),
                 Mathf.Lerp(sunsetIntensity, nightIntensity, nightT),
@@ -130,77 +132,5 @@ public class SunMovement : MonoBehaviour
         //skyboxMaterial.SetColor("_SkyTint", skyColor);
         skyboxMaterial.SetColor("_GroundColor", groundColor);
     }
-
-
-    //public Light directionalLight;
-
-    //public int totalPuzzles = 10;
-    //private int progressionIndex = 0;
-
-    //public float startAngle = 80f;
-    //public float endAngle = 20f;
-
-    //public float startIntensity = 0.5f;
-    //public float sunSetIntensity = 1f;
-    //public float nightIntensity = 0.5f;
-
-    //public Color startColor = Color.white;
-    //public Color sunSetColor = new Color(1f, 0.82f, 0.14f);
-    //public Color nightColor = new Color(0.2f, 0.3f, 0.5f);
-
-    //public Color dayAmbient = new Color(0.7f, 0.7f, 0.7f);
-    //public Color nightAmbient = new Color(0.1f, 0.1f, 0.15f);
-
-    //public int nightIndex = 7;
-
-    //private void Update()
-    //{
-    //    if(Input.GetKeyDown(KeyCode.Y))
-    //    {
-    //        sunProgression();
-    //    }
-    //}
-
-    //public void sunProgression()
-    //{
-    //    Debug.Log("SUN MOVED");
-    //    if (progressionIndex >= totalPuzzles)
-    //        return;
-
-    //    progressionIndex++;
-
-    //    //float t = (float)progressionIndex / totalPuzzles;
-    //    float t = (float)progressionIndex / totalPuzzles;
-
-    //    float dayT = Mathf.Clamp01(t / ((float)nightIndex / totalPuzzles));
-    //    float nightT = Mathf.Clamp01((t - ((float)nightIndex / totalPuzzles)) / (1f - ((float)nightIndex / totalPuzzles)));
-
-    //    float angle = Mathf.Lerp(startAngle, endAngle, t);
-    //    directionalLight.transform.rotation = Quaternion.Euler(angle, 0f, 0f);
-
-    //    if (progressionIndex < nightIndex)
-    //    {
-    //        directionalLight.intensity = Mathf.Lerp(startIntensity, sunSetIntensity, dayT);
-    //        directionalLight.color = Color.Lerp(startColor, sunSetColor, dayT);
-    //        //RenderSettings.ambientLight = Color.Lerp(dayAmbient, sunSetColor * 0.5f, dayT);
-    //    }
-    //    else
-    //    {
-    //        directionalLight.intensity = Mathf.Lerp(sunSetIntensity, nightIntensity, nightT);
-    //        directionalLight.color = Color.Lerp(sunSetColor, nightColor, nightT);
-    //        RenderSettings.ambientLight = Color.Lerp(sunSetColor * 0.5f, nightAmbient, nightT);
-    //    }
-    //    //if(progressionIndex < nightIndex)
-    //    //{
-    //    //    directionalLight.intensity = Mathf.Lerp(startIntensity, sunSetIntensity, t * 2);
-    //    //    directionalLight.color = Color.Lerp(startColor, sunSetColor, t * 2);
-    //    //}
-    //    //else
-    //    //{
-    //    //    directionalLight.intensity = Mathf.Lerp(sunSetIntensity, nightIntensity, t * 2);
-    //    //    directionalLight.color = Color.Lerp(sunSetColor, nightColor, t * 2);
-    //    //}
-
-    //}
 }
 
