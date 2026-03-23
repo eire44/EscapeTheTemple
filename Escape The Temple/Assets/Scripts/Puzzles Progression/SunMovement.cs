@@ -7,6 +7,9 @@ public class SunMovement : MonoBehaviour
     public Light directionalLight;
     public Material skyboxMaterial;
     public ParticleSystem stars;
+    public AudioSource[] dayNatureSounds;
+    public AudioSource[] nightNatureSounds;
+    bool soundsChanged = false;
 
     public int totalPuzzles = 10;
     private int progressionIndex = 0;
@@ -94,6 +97,19 @@ public class SunMovement : MonoBehaviour
         else
         {
             stars.gameObject.SetActive(true);
+            if(!soundsChanged)
+            {
+                soundsChanged = true;
+                foreach (AudioSource item in dayNatureSounds)
+                {
+                    StartCoroutine(FadeOut(item, 2f));
+                }
+                foreach (AudioSource item in nightNatureSounds)
+                {
+                    StartCoroutine(FadeIn(item, 2f));
+                }
+            }
+
             ApplySun(
                 Mathf.Lerp(sunsetAngle, nightAngle, nightT),
                 Mathf.Lerp(sunsetIntensity, nightIntensity, nightT),
@@ -131,6 +147,34 @@ public class SunMovement : MonoBehaviour
 
         //skyboxMaterial.SetColor("_SkyTint", skyColor);
         skyboxMaterial.SetColor("_GroundColor", groundColor);
+    }
+
+    public IEnumerator FadeIn(AudioSource audioSource, float duration)
+    {
+        audioSource.volume = 0;
+        audioSource.Play();
+
+        while (audioSource.volume < 1)
+        {
+            audioSource.volume += Time.deltaTime / duration;
+            yield return null;
+        }
+
+        audioSource.volume = 1;
+    }
+
+    public IEnumerator FadeOut(AudioSource audioSource, float duration)
+    {
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / duration;
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.volume = startVolume;
     }
 }
 

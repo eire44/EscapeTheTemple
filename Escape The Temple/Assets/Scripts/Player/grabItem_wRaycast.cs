@@ -161,7 +161,7 @@ public class grabItem_wRaycast : MonoBehaviour
                                     }
                                     else if (hitLayer == 14)
                                     {
-                                        currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 180f);
+                                        //currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 180f);
                                         keyPieceHolder_Controller kPieceHolder = hit.transform.GetComponent<keyPieceHolder_Controller>();
                                         kPieceHolder.placeKeyPiece(currentGrabbedItem);
                                     }
@@ -208,7 +208,7 @@ public class grabItem_wRaycast : MonoBehaviour
                                     }
                                     else if (hitLayer == 14)
                                     {
-                                        currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 180f);
+                                        //currentGrabbedItem.transform.localRotation = Quaternion.Euler(-90f, 0f, 180f);
                                         keyPieceHolder_Controller kPieceHolder = hit.transform.GetComponent<keyPieceHolder_Controller>();
                                         kPieceHolder.placeKeyPiece(currentGrabbedItem);
                                     }
