@@ -7,6 +7,8 @@ public class SunMovement : MonoBehaviour
     public Light directionalLight;
     public Material skyboxMaterial;
     public ParticleSystem stars;
+    public ParticleSystem fireflies1;
+    public ParticleSystem fireflies2;
     public AudioSource[] dayNatureSounds;
     public AudioSource[] nightNatureSounds;
     bool soundsChanged = false;
@@ -64,7 +66,11 @@ public class SunMovement : MonoBehaviour
         if (progressionIndex >= totalPuzzles)
             return;
 
-        progressionIndex++;
+        if (progressionIndex == 8)
+            fireflies1.gameObject.SetActive(true);
+
+        if (progressionIndex == 9)
+            fireflies2.gameObject.SetActive(true);
 
         float t = (float)progressionIndex / totalPuzzles;
 
@@ -73,7 +79,7 @@ public class SunMovement : MonoBehaviour
         float dayT = Mathf.Clamp01(t / sunsetT);
         float nightT = Mathf.Clamp01((t - sunsetT) / (1f - sunsetT));
 
-        if (progressionIndex  < 3)
+        if (progressionIndex  < 2)
         {
             ApplySun(
                 Mathf.Lerp(startAngle, sunsetAngle, dayT),
@@ -81,7 +87,7 @@ public class SunMovement : MonoBehaviour
                 directionalLight.color
             );
         }
-        else if(progressionIndex >= 3 && progressionIndex <= sunsetIndex)
+        else if(progressionIndex >= 2 && progressionIndex <= sunsetIndex)
         {
             ApplySun(
                 Mathf.Lerp(startAngle, sunsetAngle, dayT),
@@ -121,6 +127,8 @@ public class SunMovement : MonoBehaviour
 
             UpdateSkyboxSunsetToNight(nightT);
         }
+
+        progressionIndex++;
     }
 
     void ApplySun(float angle, float intensity, Color color)
