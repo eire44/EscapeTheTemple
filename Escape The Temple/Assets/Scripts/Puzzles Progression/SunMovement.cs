@@ -12,33 +12,34 @@ public class SunMovement : MonoBehaviour
 
     [Header("Etapas")]
     public int sunsetIndex = 6;
-    public int nightIndex = 10;
+    //public int nightIndex = 10;
 
-    [Header("Rotación")]
+    [Header("Rotation")]
     public float startAngle = 80f;
     public float sunsetAngle = 20f;
     public float nightAngle = 0f;
 
-    [Header("Intensidad")]
+    [Header("Directional Light Intensity")]
     public float startIntensity = 0.5f;
     public float sunsetIntensity = 1.5f;
     public float nightIntensity = 0f;
 
-    [Header("Color luz")]
-    public Color startColor = new Color(1f, 0.95f, 0.8f);
-    public Color sunsetColor = new Color(1f, 0.6f, 0.2f);
-    public Color nightColor = new Color(0.2f, 0.3f, 0.5f);
+    [Header("Directional Light Color")]
+    Color startColor = new Color(0.9547169f, 0.9149585f, 0.7691776f);
+    Color sunsetColor = new Color(1f, 0.7882353f, 0f);
+    Color nightColor = new Color(0f, 0f, 0f);
 
-    [Header("Ambient")]
-    public Color dayAmbient = new Color(0.7f, 0.7f, 0.7f);
-    public Color sunsetAmbient = new Color(0.4f, 0.3f, 0.25f);
-    public Color nightAmbient = new Color(0.1f, 0.1f, 0.15f);
+    [Header("Ambient Color")]
+    Color dayAmbient = new Color(0.6150587f, 0.6553221f, 0.735849f);
+    Color sunsetAmbient = new Color(0.53f, 0.53f, 0.53f);
+    Color nightAmbient = new Color(0.2980392f, 0.2980392f, 0.2980392f);
 
 
-    public Color daySkyColor = new Color(1f, 0.5f, 0.2f);
-    public Color dayGroundColor = new Color(0.6f, 0.3f, 0.2f);
-    public Color sunsetSkyColor = new Color(1f, 0.5f, 0.2f);
-    public Color sunsetGroundColor = new Color(0.6f, 0.3f, 0.2f);
+    [Header("Procedural Skybox")]
+    //public Color daySkyColor = new Color(1f, 0.5f, 0.2f);
+    //public Color dayGroundColor = new Color(0.6f, 0.3f, 0.2f);
+    //public Color sunsetSkyColor = new Color(1f, 0.5f, 0.2f);
+    Color sunsetGroundColor = new Color(0.3689999f, 0.349f, 0.3409999f);
 
     private void Start()
     {
@@ -113,21 +114,21 @@ public class SunMovement : MonoBehaviour
     void UpdateSkyboxDayToSunset(float t)
     {
         skyboxMaterial.SetFloat("_SunSize", Mathf.Lerp(0.04f, 0.06f, t));
-        skyboxMaterial.SetFloat("_AtmosphereThickness", Mathf.Lerp(1f, 1.5f, t));
+        skyboxMaterial.SetFloat("_AtmosphereThickness", Mathf.Lerp(1f, 1.94f, t));
 
 
-        skyboxMaterial.SetColor("_SkyTint", Color.Lerp(daySkyColor, sunsetSkyColor, t));
-        skyboxMaterial.SetColor("_GroundColor", Color.Lerp(dayGroundColor, sunsetGroundColor, t));
+        //skyboxMaterial.SetColor("_SkyTint", Color.Lerp(daySkyColor, sunsetSkyColor, t));
+        //skyboxMaterial.SetColor("_GroundColor", Color.Lerp(dayGroundColor, sunsetGroundColor, t));
     }
     void UpdateSkyboxSunsetToNight(float t)
     {
-        skyboxMaterial.SetFloat("_Exposure", Mathf.Lerp(1.41f, 0.1f, t));
+        skyboxMaterial.SetFloat("_Exposure", Mathf.Lerp(1.41f, 0.01f, t));
 
         //Color skyColor = Color.Lerp(sunsetSkyColor, Color.black, t);
-        //Color groundColor = Color.Lerp(sunsetGroundColor, Color.black, t);
+        Color groundColor = Color.Lerp(sunsetGroundColor, Color.black, t);
 
         //skyboxMaterial.SetColor("_SkyTint", skyColor);
-        //skyboxMaterial.SetColor("_GroundColor", groundColor);
+        skyboxMaterial.SetColor("_GroundColor", groundColor);
     }
 
 
