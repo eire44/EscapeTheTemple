@@ -47,7 +47,7 @@ public class ESP_AudioClueController : MonoBehaviour
     {
         if (cached) return;
 
-        mixer.GetFloat("SFXbolume", out originalSFX);
+        mixer.GetFloat("SFXvolume", out originalSFX);
         mixer.GetFloat("MusicVolume", out originalMusic);
 
         cached = true;

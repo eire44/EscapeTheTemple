@@ -6,6 +6,7 @@ public class candlesPuzzleSolution : MonoBehaviour
 {
     public List<GameObject> llamas = new List<GameObject>();
     [HideInInspector] public bool candlesPuzzleSolved = false;
+    public int puzzleIndex = 0;
     bool flagHideText = true;
     public GameObject room2_Door;
     public exteriorLanternsController[] lanternsRoom1;
@@ -15,8 +16,7 @@ public class candlesPuzzleSolution : MonoBehaviour
 
     private void Start()
     {
-        FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(lanternsRoom1, false);
-        FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(interiorLanternRoom1);
+        GameManager.instance.turnOn_ExteriorLanterns(lanternsRoom1, false);
     }
 
     void Update()
@@ -34,7 +34,8 @@ public class candlesPuzzleSolution : MonoBehaviour
                 }
                 unlockRoom2();
                 flagHideText = false;
-                FindObjectOfType<SunMovement>().sunProgression();
+                GameManager.instance.callForSunMovement(puzzleIndex);
+                FindObjectOfType<txtControls>().showTabInstructions();
             }
             
         }
@@ -43,8 +44,7 @@ public class candlesPuzzleSolution : MonoBehaviour
     void unlockRoom2()
     {
         room2_Door.GetComponent<fadeRoomDoor>().StartFade();
-        FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(lanternsRoom2, false);
-        FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLanternRoom1);
-        FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(interiorLanternRoom2);
+        GameManager.instance.turnOn_ExteriorLanterns(lanternsRoom2, false);
+        GameManager.instance.turnOn_InteriorLanterns(interiorLanternRoom1);
     }
 }

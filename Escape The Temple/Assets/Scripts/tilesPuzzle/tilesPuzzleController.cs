@@ -11,6 +11,7 @@ public class tilesPuzzleController : MonoBehaviour
     int[] currentOrder = { 0, 0, 0, 0, 0, 0 };
     int tileIndex = 0;
     [HideInInspector] public bool tilesPuzzleSolved = false;
+    public int puzzleIndex = 6;
 
     public interiorLanternsController[] interiorLantern;
     public interiorLanternsController[] interiorLanternBell;
@@ -52,10 +53,9 @@ public class tilesPuzzleController : MonoBehaviour
         }
         FindObjectOfType<LTP_bellPattern>().startBellSoundsPattern();
         FindObjectOfType<LTP_BellSwing>().StartRinging();
-        FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(lanternsRoomBell, false);
-        FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
-        FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(interiorLanternBell);
-        FindObjectOfType<SunMovement>().sunProgression();
+        GameManager.instance.turnOn_ExteriorLanterns(lanternsRoomBell, false);
+        GameManager.instance.turnOn_InteriorLanterns(interiorLantern);
+        GameManager.instance.callForSunMovement(puzzleIndex);
     }
 
     void checkOrder ()
@@ -77,7 +77,6 @@ public class tilesPuzzleController : MonoBehaviour
     {
         foreach (var tile in FindObjectsOfType<tilesController>())
         {
-            Debug.Log("OFF");
             tile.pattern.gameObject.SetActive(false);
         }
     }

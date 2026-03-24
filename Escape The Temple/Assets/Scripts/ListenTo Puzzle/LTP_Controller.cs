@@ -9,6 +9,7 @@ public class LTP_Controller : MonoBehaviour
     int soundIndex = 0;
     Dictionary<AudioClip, AudioClip> soundPairs = new Dictionary<AudioClip, AudioClip>();
     [HideInInspector] public bool LTPpuzzleSolved = false;
+    public int puzzleIndex = 7;
     public GameObject room4_Door;
 
 
@@ -30,22 +31,18 @@ public class LTP_Controller : MonoBehaviour
             if (soundPairs[clip] == FindObjectOfType<LTP_bellPattern>().bellsSequence[soundIndex])
             {
                 soundIndex++;
-                Debug.Log("BIEN");
             }
             else
             {
                 soundIndex = 0;
-                Debug.Log("MAL");
             }
-            Debug.Log("INDICE: " + soundIndex);
 
             if (soundIndex >= FindObjectOfType<LTP_bellPattern>().bellsSequence.Count)
             {
                 StartCoroutine(FindObjectOfType<ESP_AudioClueController>().RestoreAudio());
-                FindObjectOfType<SunMovement>().sunProgression();
-                FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(lanternsRoomRoom4, false);
-                FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
-                FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(interiorLanternRoom4);
+                GameManager.instance.callForSunMovement(puzzleIndex);
+                GameManager.instance.turnOn_ExteriorLanterns(lanternsRoomRoom4, false);
+                GameManager.instance.turnOn_InteriorLanterns(interiorLantern);
                 room4_Door.GetComponent<fadeRoomDoor>().StartFade();
                 FindObjectOfType<LTP_BellSwing>().StopRinging();
                 FindObjectOfType<LTP_bellPattern>().audioSource.enabled = false;

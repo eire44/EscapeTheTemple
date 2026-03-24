@@ -5,6 +5,7 @@ using UnityEngine;
 public class incensePuzzleSolution : MonoBehaviour
 {
     [HideInInspector] public bool incensePuzzleSolved = false;
+    public int puzzleIndex = 5;
 
     public interiorLanternsController[] interiorLantern;
     public interiorLanternsController[] interiorLanternTiles;
@@ -28,11 +29,9 @@ public class incensePuzzleSolution : MonoBehaviour
         if (checkIncenseConfiguration())
         {
             incensePuzzleSolved = true;
-            //FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(lanternsRoomTiles, false);
-            StartCoroutine(FindObjectOfType<puzzleProgressionController>().turnOn_TilesLanterns(lanternsRoomTiles, false));
-            FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
-            FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(interiorLanternTiles);
-            FindObjectOfType<SunMovement>().sunProgression();
+            StartCoroutine(GameManager.instance.turnOn_TilesLanterns(lanternsRoomTiles, false));
+            GameManager.instance.turnOn_InteriorLanterns(interiorLantern);
+            GameManager.instance.callForSunMovement(puzzleIndex);
             FindObjectOfType<grabItem_wRaycast>().dropOnTheGround();
             foreach (IP_HerbController herb in FindObjectsOfType<IP_HerbController>())
             {

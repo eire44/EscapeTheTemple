@@ -32,6 +32,7 @@ public class ESP_Controller : MonoBehaviour
     [HideInInspector] public bool enablePuzzle = false;
 
     [HideInInspector] public bool puzzleAlreadySolved = false;
+    public int puzzleIndex = 9;
     public interiorLanternsController[] interiorLantern;
 
     // Start is called before the first frame update
@@ -198,14 +199,12 @@ public class ESP_Controller : MonoBehaviour
             }
 
         }
-
-        Debug.Log("JUEGO TERMINADO");
         puzzleAlreadySolved = true;
 
         enablePuzzle = false;
-        FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(FindObjectOfType<SP_Controller>().lanternsExitGame, true);
-        FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
-        FindObjectOfType<SunMovement>().sunProgression();
+        GameManager.instance.turnOn_ExteriorLanterns(FindObjectOfType<SP_Controller>().lanternsExitGame, true);
+        GameManager.instance.turnOn_InteriorLanterns(interiorLantern);
+        GameManager.instance.callForSunMovement(puzzleIndex);
         FindObjectOfType<ESP_AudioClueController>().audioClue.Stop();
         FindObjectOfType<endGame>().enablePortal();
     }

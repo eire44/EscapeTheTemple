@@ -17,6 +17,7 @@ public class ABL_PuzzleController : MonoBehaviour
     float side1_Weight = 0f;
 
     bool puzzleSolved = false;
+    public int puzzleIndex = 4;
 
     List<placeableObjectController> objects = new List<placeableObjectController>();
     Quaternion initialRotation;
@@ -154,10 +155,9 @@ public class ABL_PuzzleController : MonoBehaviour
                 item.gameObject.layer = 0;
             }
             unlockRoom3();
-            FindObjectOfType<puzzleProgressionController>().turnOn_ExteriorLanterns(lanternsRoomRoom3, false);
-            FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
-            FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(interiorLanternRoom3);
-            FindObjectOfType<SunMovement>().sunProgression();
+            GameManager.instance.turnOn_ExteriorLanterns(lanternsRoomRoom3, false);
+            GameManager.instance.turnOn_InteriorLanterns(interiorLantern);
+            GameManager.instance.callForSunMovement(puzzleIndex);
         }
         
     }
@@ -168,7 +168,6 @@ public class ABL_PuzzleController : MonoBehaviour
         {
             for (int i = 0; i < objects.Count; i++)
             {
-                Debug.Log(objects[i].name + " is placed " + objects[i].placed);
                 if (objects[i].placed == false)
                 {
                     return false;

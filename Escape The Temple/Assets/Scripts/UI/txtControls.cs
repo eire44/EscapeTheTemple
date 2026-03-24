@@ -36,6 +36,28 @@ public class txtControls : MonoBehaviour
             allowFadeOut = false;
             FadeOut();
         }
+        else if (allowFadeOut && txtControlsIndex == 2 && Input.GetKeyDown(KeyCode.Tab))
+        {
+            allowFadeOut = false;
+            FadeOut();
+        }
+    }
+
+    public void showTabInstructions()
+    {
+        if (currentFade != null)
+            StopCoroutine(currentFade);
+
+        txtControlsIndex = 2;
+
+        tmp.text = txtControlsRows[txtControlsIndex];
+
+        Color color = tmp.color;
+        tmp.color = new Color(color.r, color.g, color.b, 0f);
+
+        allowFadeOut = false;
+
+        FadeIn();
     }
 
 
@@ -75,14 +97,23 @@ public class txtControls : MonoBehaviour
         {
             txtControlsIndex++;
 
-            if (txtControlsIndex < txtControlsRows.Length)
+            if (txtControlsIndex < txtControlsRows.Length - 1)
             {
                 tmp.text = txtControlsRows[txtControlsIndex];
                 FadeIn();
             }
             else
             {
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
+                if (txtControlsIndex >= txtControlsRows.Length)
+                {
+                    gameObject.SetActive(false);
+                }
+                else
+                {
+                    tmp.color = new Color(color.r, color.g, color.b, 0);
+                }
+                
             }
         } 
         else

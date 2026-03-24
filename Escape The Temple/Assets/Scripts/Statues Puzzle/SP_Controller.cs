@@ -14,6 +14,8 @@ public class SP_Controller : MonoBehaviour
     public AudioClip[] audioClips;
 
     [HideInInspector] public bool puzzleAlreadySolved = false;
+    public int puzzleIndex = 8;
+
     public interiorLanternsController[] interiorLantern;
     public interiorLanternsController[] puzzle10Lantern;
     public exteriorLanternsController[] lanternsExitGame;
@@ -162,8 +164,7 @@ public class SP_Controller : MonoBehaviour
             item.GetComponent<fadeIn_PuzzlePieces>().StartFade();
         }
         puzzleAlreadySolved = true;
-        FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
-        FindObjectOfType<puzzleProgressionController>().flicker_InteriorLanterns(puzzle10Lantern);
-        FindObjectOfType<SunMovement>().sunProgression();
+        GameManager.instance.turnOn_InteriorLanterns(interiorLantern);
+        GameManager.instance.callForSunMovement(puzzleIndex);
     }
 }

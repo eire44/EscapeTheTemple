@@ -11,6 +11,7 @@ public class LC_PuzzleController : MonoBehaviour
     public GameObject fadeOutPiece;
     public GameObject fadeInKeyPiece;
     [HideInInspector] public bool puzzleAlreadySolved = false;
+    public int puzzleIndex = 1;
     public interiorLanternsController[] interiorLantern;
 
     private void Start()
@@ -30,22 +31,25 @@ public class LC_PuzzleController : MonoBehaviour
             }
         }
 
-        foreach (var item in FindObjectsOfType<LC_PiecesController>())
+        if(!puzzleAlreadySolved)
         {
-            item.gameObject.layer = LayerMask.NameToLayer("Default");
-            item.GetComponent<LC_PiecesController>().enabled = false;
-            item.GetComponent<Rigidbody>().isKinematic = true;
-            item.GetComponent<Rigidbody>().useGravity = false;
-        }
+            foreach (var item in FindObjectsOfType<LC_PiecesController>())
+            {
+                item.gameObject.layer = LayerMask.NameToLayer("Default");
+                item.GetComponent<LC_PiecesController>().enabled = false;
+                item.GetComponent<Rigidbody>().isKinematic = true;
+                item.GetComponent<Rigidbody>().useGravity = false;
+            }
 
-        //fadeOutPiece.GetComponent<BoxCollider>().isTrigger = true;
-        //fadeOutPiece.GetComponent<fadeRoomDoor>().StartFade();
-        puzzleAlreadySolved = true;
-        fadeOutPiece.SetActive(false);
-        fadeInKeyPiece.SetActive(true);
-        fadeInKeyPiece.GetComponent<fadeIn_PuzzlePieces>().StartFade();
-        FindObjectOfType<puzzleProgressionController>().checkIfRoom2Completed();
-        FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern);
-        FindObjectOfType<SunMovement>().sunProgression();
+            //fadeOutPiece.GetComponent<BoxCollider>().isTrigger = true;
+            //fadeOutPiece.GetComponent<fadeRoomDoor>().StartFade();
+            puzzleAlreadySolved = true;
+            fadeOutPiece.SetActive(false);
+            fadeInKeyPiece.SetActive(true);
+            fadeInKeyPiece.GetComponent<fadeIn_PuzzlePieces>().StartFade();
+            GameManager.instance.checkIfRoom2Completed();
+            GameManager.instance.turnOn_InteriorLanterns(interiorLantern);
+            GameManager.instance.callForSunMovement(puzzleIndex);
+        }
     }
 }

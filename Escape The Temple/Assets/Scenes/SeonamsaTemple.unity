@@ -3571,6 +3571,7 @@ MonoBehaviour:
   newDirection: 0
   enablePuzzle: 0
   puzzleAlreadySolved: 0
+  puzzleIndex: 9
   interiorLantern:
   - {fileID: 1329395847}
 --- !u!114 &51254408
@@ -11595,6 +11596,7 @@ MonoBehaviour:
   - drumSound: {fileID: 8300000, guid: 24fddf09398a5f341b16518df230bd92, type: 3}
     bellSound: {fileID: 8300000, guid: 8b0aa80118adfb64ab84aa655156a8e7, type: 3}
   LTPpuzzleSolved: 0
+  puzzleIndex: 7
   room4_Door: {fileID: 2022817467}
   interiorLantern:
   - {fileID: 192309571}
@@ -86284,6 +86286,7 @@ MonoBehaviour:
   - {fileID: 783695844}
   - {fileID: 596426371}
   candlesPuzzleSolved: 0
+  puzzleIndex: 0
   room2_Door: {fileID: 877256407}
   lanternsRoom1:
   - {fileID: 674956055}
@@ -89497,7 +89500,7 @@ GameObject:
   - component: {fileID: 923546882}
   - component: {fileID: 923546883}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94701,6 +94704,7 @@ MonoBehaviour:
   plate0: {fileID: 7630122445373016233}
   maxTiltAngle: 15
   tiltSpeed: 3
+  puzzleIndex: 4
   interiorLantern:
   - {fileID: 1726207809}
   interiorLanternRoom3:
@@ -112463,16 +112467,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 1685533464}
   lessons:
-  - 1_ There are people who have attained enlightenment.
-  - 2_  Life involves suffering. Nothing is completely and permanently satisfying.
-  - 3_ Wanting what we don't have and clinging to what we have is the root of unhappiness.
-  - 4_ It is possible to stop suffering; in fact, it has already been achieved.
-  - 5_ To free oneself from suffering, one must avoid extremes and live in balance.
-  - 6_ Burning herbs facilitates concentration and meditation.
-  - 7_Meditation clears away inner darkness, revealing the path.
-  - 8_ One must learn to listen in order to learn from the environment.
-  - 9_ Buddha taught others out of compassion how to untie themselves from suffering.
-  - 10_ Each person is part of a whole, like currents within a single river.
+  - _ There are people who have attained enlightenment.
+  - _  Life involves suffering. Nothing is completely and permanently satisfying.
+  - _ Wanting what we don't have and clinging to what we have is the root of unhappiness.
+  - _ It is possible to stop suffering; in fact, it has already been achieved.
+  - _ To free oneself from suffering, one must avoid extremes and live in balance.
+  - _ Burning herbs facilitates concentration and meditation.
+  - _Meditation clears away inner darkness, revealing the path.
+  - _ One must learn to listen in order to learn from the environment.
+  - _ Buddha taught others out of compassion how to untie themselves from suffering.
+  - _ Each person is part of a whole, like currents within a single river.
   speed: 50
   journalCanvas: {fileID: 701195945}
   pauseMenu: {fileID: 982604114}
@@ -127010,10 +127014,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1242197583}
+  - component: {fileID: 1242197588}
   - component: {fileID: 1242197584}
   - component: {fileID: 1242197585}
   - component: {fileID: 1242197586}
-  - component: {fileID: 1242197587}
   m_Layer: 0
   m_Name: PuzzlesController
   m_TagString: Untagged
@@ -127049,6 +127053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   incensePuzzleSolved: 0
+  puzzleIndex: 5
   interiorLantern:
   - {fileID: 1188586270}
   interiorLanternTiles:
@@ -127079,6 +127084,7 @@ MonoBehaviour:
   - {fileID: 1677793476}
   - {fileID: 2051838681}
   tilesPuzzleSolved: 0
+  puzzleIndex: 6
   interiorLantern:
   - {fileID: 1997199924}
   interiorLanternBell:
@@ -127109,7 +127115,7 @@ MonoBehaviour:
   - {fileID: 1419963524}
   - {fileID: 612938376}
   puzzle5_Architecture: {fileID: 1397418833}
---- !u!114 &1242197587
+--- !u!114 &1242197588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127122,6 +127128,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicController: {fileID: 2142609478}
+  sunMovement: {fileID: 1883761528}
+  journalController: {fileID: 1172359926}
+  stars: {fileID: 410886968}
+  fireflies1: {fileID: 1520730991}
+  fireflies2: {fileID: 1317558730}
+  dayNatureSounds:
+  - {fileID: 1374537869}
+  - {fileID: 163012735}
+  - {fileID: 3806519}
+  nightNatureSounds:
+  - {fileID: 307757279}
+  - {fileID: 870325112}
+  butterflies:
+  - {fileID: 364086361}
+  - {fileID: 1493640646}
+  - {fileID: 1999458226}
+  totalPuzzles: 10
+  progressionIndex: 0
 --- !u!1001 &1242345948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -170649,6 +170673,7 @@ MonoBehaviour:
   - 'E to grab/
 
     interact'
+  - "Tab to open \nJournal"
   fadeDuration: 1
 --- !u!1001 &1491787414
 PrefabInstance:
@@ -181863,6 +181888,7 @@ MonoBehaviour:
   fadeOutPiece: {fileID: 420738621}
   fadeInKeyPiece: {fileID: 1215681083}
   puzzleAlreadySolved: 0
+  puzzleIndex: 1
   interiorLantern:
   - {fileID: 23351216}
 --- !u!1001 &1593896286
@@ -186805,6 +186831,7 @@ MonoBehaviour:
   fourthText: {fileID: 698891676}
   keyPiece: {fileID: 885438431}
   puzzleAlreadySolved: 0
+  puzzleIndex: 2
   interiorLantern1:
   - {fileID: 1538987495}
   interiorLantern2:
@@ -191626,6 +191653,7 @@ MonoBehaviour:
   - {fileID: 2059786683}
   duracionApagadoFuego: 1.5
   puzzleAlreadySolved: 0
+  puzzleIndex: 3
   interiorLantern:
   - {fileID: 1018713797}
   interiorLanternABL:
@@ -198351,22 +198379,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionalLight: {fileID: 410087040}
   skyboxMaterial: {fileID: 2100000, guid: 7a5281ba9ce059b46a0179447d06542a, type: 2}
-  stars: {fileID: 410886968}
-  fireflies1: {fileID: 1520730991}
-  fireflies2: {fileID: 1317558730}
-  dayNatureSounds:
-  - {fileID: 1374537869}
-  - {fileID: 163012735}
-  - {fileID: 3806519}
-  nightNatureSounds:
-  - {fileID: 307757279}
-  - {fileID: 870325112}
-  butterflies:
-  - {fileID: 364086361}
-  - {fileID: 1493640646}
-  - {fileID: 1999458226}
-  totalPuzzles: 10
-  progressionIndex: 0
   sunsetIndex: 5
   startAngle: 80
   sunsetAngle: 20
@@ -216439,6 +216451,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a7dcee82785fbad46b182ba236dfa619, type: 3}
   - {fileID: 8300000, guid: 2d2abd841c4dc774c9d8d878b929f5d9, type: 3}
   puzzleAlreadySolved: 0
+  puzzleIndex: 8
   interiorLantern:
   - {fileID: 314606978}
   puzzle10Lantern:

@@ -19,6 +19,8 @@ public class stagesController : MonoBehaviour
     public GameObject fourthText;
     public GameObject keyPiece;
     [HideInInspector] public bool puzzleAlreadySolved = false;
+    public int puzzleIndex = 2;
+
     public interiorLanternsController[] interiorLantern1;
     public interiorLanternsController[] interiorLantern2;
     public interiorLanternsController[] interiorLantern3;
@@ -49,14 +51,14 @@ public class stagesController : MonoBehaviour
         {
             if (currentRowIndex == 0)
             {
-                FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern1);
+                FindObjectOfType<GameManager>().turnOn_InteriorLanterns(interiorLantern1);
             } else if (currentRowIndex == 1)
             {
-                FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern2);
+                FindObjectOfType<GameManager>().turnOn_InteriorLanterns(interiorLantern2);
             } else if (currentRowIndex == 2)
             {
                 puzzleAlreadySolved = true;
-                FindObjectOfType<puzzleProgressionController>().turnOn_InteriorLanterns(interiorLantern3);
+                FindObjectOfType<GameManager>().turnOn_InteriorLanterns(interiorLantern3);
             }
             currentRowIndex++;
             
@@ -81,8 +83,8 @@ public class stagesController : MonoBehaviour
             fourthText.SetActive(false);
             keyPiece.SetActive(true);
             keyPiece.GetComponent<fadeIn_PuzzlePieces>().StartFade();
-            FindObjectOfType<puzzleProgressionController>().checkIfRoom2Completed();
-            FindObjectOfType<SunMovement>().sunProgression();
+            GameManager.instance.checkIfRoom2Completed();
+            GameManager.instance.callForSunMovement(puzzleIndex);
             return;
         }
 

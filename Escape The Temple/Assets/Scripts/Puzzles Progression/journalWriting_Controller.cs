@@ -28,10 +28,10 @@ public class journalWriting_Controller : MonoBehaviour
         }
     }
 
-    public void sumLessonsText(int lessonIndex) //que el indice corresponda al indice del puzzle, realizar en GameManager
+    public void sumLessonsText(int lessonIndex, string numberOfLesson) //que el indice corresponda al indice del puzzle, realizar en GameManager
     {
         writingLesson_Audio.Play();
-        lessonsText += lessons[lessonIndex] + "\n";
+        lessonsText += numberOfLesson + lessons[lessonIndex] + "\n";
     }
 
     void openJournal()

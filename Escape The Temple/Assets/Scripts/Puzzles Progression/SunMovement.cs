@@ -6,18 +6,8 @@ public class SunMovement : MonoBehaviour
 {
     public Light directionalLight;
     public Material skyboxMaterial;
-    public ParticleSystem stars;
-    public ParticleSystem fireflies1;
-    public ParticleSystem fireflies2;
-    public AudioSource[] dayNatureSounds;
-    public AudioSource[] nightNatureSounds;
-    public GameObject[] butterflies;
-    bool soundsChanged = false;
 
-    public int totalPuzzles = 10;
-    [HideInInspector] public int progressionIndex = 0;
-
-    [Header("Etapas")]
+    [Header("Stages")]
     public int sunsetIndex = 6;
     //public int nightIndex = 10;
 
@@ -54,34 +44,8 @@ public class SunMovement : MonoBehaviour
         RenderSettings.skybox = skyboxMaterial;
     }
 
-    void Update()
+    public void sunProgression(int progressionIndex, int totalPuzzles)
     {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            sunProgression();
-        }
-    }
-
-    public void sunProgression()
-    {
-        if (progressionIndex >= totalPuzzles)
-            return;
-
-        FindObjectOfType<journalWriting_Controller>().sumLessonsText(progressionIndex);
-
-        if (progressionIndex == 8)
-        {
-            fireflies1.gameObject.SetActive(true);
-            foreach (GameObject item in butterflies)
-            {
-                item.SetActive(false);
-            }
-        }
-            
-
-        if (progressionIndex == 9)
-            fireflies2.gameObject.SetActive(true);
-
         float t = (float)progressionIndex / totalPuzzles;
 
         float sunsetT = (float)sunsetIndex / totalPuzzles;
@@ -112,19 +76,7 @@ public class SunMovement : MonoBehaviour
         }
         else
         {
-            stars.gameObject.SetActive(true);
-            if(!soundsChanged)
-            {
-                soundsChanged = true;
-                foreach (AudioSource item in dayNatureSounds)
-                {
-                    StartCoroutine(FadeOut(item, 2f));
-                }
-                foreach (AudioSource item in nightNatureSounds)
-                {
-                    StartCoroutine(FadeIn(item, 2f));
-                }
-            }
+            
 
             ApplySun(
                 Mathf.Lerp(sunsetAngle, nightAngle, nightT),
@@ -137,8 +89,6 @@ public class SunMovement : MonoBehaviour
 
             UpdateSkyboxSunsetToNight(nightT);
         }
-
-        progressionIndex++;
     }
 
     void ApplySun(float angle, float intensity, Color color)
