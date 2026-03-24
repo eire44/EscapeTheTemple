@@ -112196,9 +112196,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 1685533464}
   lessons:
-  - 1_ primera lesson
-  - 2_ segunda lesson
-  - y asi sigue
+  - 1_ There are people who have attained enlightenment.
+  - 2_  Life involves suffering. Nothing is completely and permanently satisfying.
+  - 3_ Wanting what we don't have and clinging to what we have is the root of unhappiness.
+  - 4_ It is possible to stop suffering; in fact, it has already been achieved.
+  - 5_ To free oneself from suffering, one must avoid extremes and live in balance.
+  - 6_ Burning herbs facilitates concentration and meditation.
+  - 7_Meditation clears away inner darkness, revealing the path.
+  - 8_ One must learn to listen in order to learn from the environment.
+  - 9_ Buddha taught others out of compassion how to untie themselves from suffering.
+  - 10_ Each person is part of a whole, like currents within a single river.
   speed: 50
   journalCanvas: {fileID: 701195945}
   pauseMenu: {fileID: 982604114}
