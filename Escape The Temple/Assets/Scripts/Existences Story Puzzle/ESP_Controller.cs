@@ -186,10 +186,14 @@ public class ESP_Controller : MonoBehaviour
             }
             foreach (var obj in item.GetComponent<ESP_AreasController>().collidedCharacters)
             {
-                if(!obj.CompareTag(item.GetComponent<ESP_AreasController>().correctCharacterTag))
+                ESP_ScreenPiecesController sp = obj.GetComponent<ESP_ScreenPiecesController>();
+                if (sp != null)
                 {
-                    Debug.Log("necesita: " + item.GetComponent<ESP_AreasController>().correctCharacterTag + " y tiene: " + obj.tag);
-                    return;
+                    if (sp.index != item.GetComponent<ESP_AreasController>().correctCharacterIndex)
+                    {
+                        Debug.Log("necesita: " + item.GetComponent<ESP_AreasController>().correctCharacterIndex + " y tiene: " + sp.index);
+                        return;
+                    }
                 }
             }
 

@@ -5,6 +5,7 @@ using static ESP_Controller;
 
 public class ESP_AreasController : MonoBehaviour
 {
+    public int correctCharacterIndex;
     public string correctCharacterTag; //EN VEZ DE COMPARAR EL TAG, PONER UN INDEX A LOS PERSONAJES
     [HideInInspector] public HashSet<GameObject> collidedCharacters = new HashSet<GameObject>();
 

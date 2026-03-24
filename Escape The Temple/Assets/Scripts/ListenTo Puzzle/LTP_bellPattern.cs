@@ -27,11 +27,11 @@ public class LTP_bellPattern : MonoBehaviour
             bellsSequence.Add(randomClip);
             Debug.Log(randomClip.name);
         }
-        Debug.Log("CANT DE SONIDOS: " + bellsSequence.Count);
     }
 
     public void startBellSoundsPattern()
     {
+        StartCoroutine(FindObjectOfType<ESP_AudioClueController>().DuckAudio(7f, 19f));
         StartCoroutine(PlaySequences());
     }
 

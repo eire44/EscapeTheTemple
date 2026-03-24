@@ -54,11 +54,11 @@ public class ESP_AudioClueController : MonoBehaviour
     }
 
 
-    public IEnumerator DuckAudio()
+    public IEnumerator DuckAudio(float decreaseSFX = 10f, float decreaseMusic = 25f)
     {
         CacheVolumes();
-        yield return StartCoroutine(FadeMixer("SFXvolume", originalSFX - 10f));
-        yield return StartCoroutine(FadeMixer("MusicVolume", originalMusic - 25f));
+        yield return StartCoroutine(FadeMixer("SFXvolume", originalSFX - decreaseSFX));
+        yield return StartCoroutine(FadeMixer("MusicVolume", originalMusic - decreaseMusic));
     }
 
     public IEnumerator RestoreAudio()
