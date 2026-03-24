@@ -8,6 +8,7 @@ public class pauseMenu : MonoBehaviour
 {
     public GameObject menuDePausa;
     public GameObject cursor;
+    public GameObject journal;
     bool pausaActiva = false;
 
     public AudioClip audioClip;
@@ -34,6 +35,7 @@ public class pauseMenu : MonoBehaviour
                     FindObjectOfType<ESP_AudioClueController>().audioClue.Pause();
                 }
                 cleanUI(false);
+                journal.SetActive(false);
                 Time.timeScale = 0.0f;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
@@ -73,7 +75,7 @@ public class pauseMenu : MonoBehaviour
         #endif
     }
 
-    void cleanUI(bool show)
+    public void cleanUI(bool show)
     {
         if(show)
         {

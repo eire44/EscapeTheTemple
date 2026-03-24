@@ -11,10 +11,11 @@ public class SunMovement : MonoBehaviour
     public ParticleSystem fireflies2;
     public AudioSource[] dayNatureSounds;
     public AudioSource[] nightNatureSounds;
+    public GameObject[] butterflies;
     bool soundsChanged = false;
 
     public int totalPuzzles = 10;
-    private int progressionIndex = 0;
+    [HideInInspector] public int progressionIndex = 0;
 
     [Header("Etapas")]
     public int sunsetIndex = 6;
@@ -66,8 +67,17 @@ public class SunMovement : MonoBehaviour
         if (progressionIndex >= totalPuzzles)
             return;
 
+        FindObjectOfType<journalWriting_Controller>().sumLessonsText(progressionIndex);
+
         if (progressionIndex == 8)
+        {
             fireflies1.gameObject.SetActive(true);
+            foreach (GameObject item in butterflies)
+            {
+                item.SetActive(false);
+            }
+        }
+            
 
         if (progressionIndex == 9)
             fireflies2.gameObject.SetActive(true);
@@ -164,7 +174,7 @@ public class SunMovement : MonoBehaviour
 
         while (audioSource.volume < 1)
         {
-            audioSource.volume += Time.deltaTime / duration;
+            audioSource.volume += Time.unscaledDeltaTime / duration;
             yield return null;
         }
 
@@ -177,7 +187,7 @@ public class SunMovement : MonoBehaviour
 
         while (audioSource.volume > 0)
         {
-            audioSource.volume -= startVolume * Time.deltaTime / duration;
+            audioSource.volume -= startVolume * Time.unscaledDeltaTime / duration;
             yield return null;
         }
 
