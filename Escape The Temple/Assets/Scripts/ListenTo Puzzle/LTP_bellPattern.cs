@@ -35,7 +35,7 @@ public class LTP_bellPattern : MonoBehaviour
         StartCoroutine(PlaySequences());
     }
 
-    IEnumerator PlaySequences()
+    public IEnumerator PlaySequences()
     {
         //if (!FindObjectOfType<LTP_Controller>().LTPpuzzleSolved)
         //{

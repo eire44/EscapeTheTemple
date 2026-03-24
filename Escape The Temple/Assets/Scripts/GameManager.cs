@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
         journalController.sumLessonsText(puzzleIndex, (progressionIndex + 1).ToString());
 
-        if (progressionIndex == 8)
+        if (progressionIndex == 7)
         {
             fireflies1.gameObject.SetActive(true);
             foreach (GameObject item in butterflies)
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (progressionIndex == 9)
+        if (progressionIndex == 8)
             fireflies2.gameObject.SetActive(true);
 
         if(progressionIndex > sunMovement.sunsetIndex)

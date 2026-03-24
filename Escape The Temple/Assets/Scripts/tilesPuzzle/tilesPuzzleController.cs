@@ -33,29 +33,33 @@ public class tilesPuzzleController : MonoBehaviour
 
     void PuzzleSolved()
     {
-        tilesPuzzleSolved = true;
-        foreach (Transform bush in bushes)
+        if(!tilesPuzzleSolved)
         {
-            bush.GetComponent<TP_bushesAudio>().bushSound();
-            foreach (Transform child in bush)
+            tilesPuzzleSolved = true;
+            foreach (Transform bush in bushes)
             {
-                fadeRoomDoor fader = child.GetComponent<fadeRoomDoor>();
-                if (fader != null)
+                bush.GetComponent<TP_bushesAudio>().bushSound();
+                foreach (Transform child in bush)
                 {
-                    fader.StartFade();
+                    fadeRoomDoor fader = child.GetComponent<fadeRoomDoor>();
+                    if (fader != null)
+                    {
+                        fader.StartFade();
+                    }
+                }
+                Collider col = bush.GetComponent<Collider>();
+                if (col != null)
+                {
+                    col.enabled = false;
                 }
             }
-            Collider col = bush.GetComponent<Collider>();
-            if (col != null)
-            {
-                col.enabled = false;
-            }
+
+            FindObjectOfType<LTP_bellPattern>().startBellSoundsPattern();
+            FindObjectOfType<LTP_BellSwing>().StartRinging();
+            GameManager.instance.turnOn_ExteriorLanterns(lanternsRoomBell, false);
+            GameManager.instance.turnOn_InteriorLanterns(interiorLantern);
+            GameManager.instance.callForSunMovement(puzzleIndex);
         }
-        FindObjectOfType<LTP_bellPattern>().startBellSoundsPattern();
-        FindObjectOfType<LTP_BellSwing>().StartRinging();
-        GameManager.instance.turnOn_ExteriorLanterns(lanternsRoomBell, false);
-        GameManager.instance.turnOn_InteriorLanterns(interiorLantern);
-        GameManager.instance.callForSunMovement(puzzleIndex);
     }
 
     void checkOrder ()
