@@ -154,6 +154,14 @@ public class ABL_PuzzleController : MonoBehaviour
             {
                 item.gameObject.layer = 0;
             }
+            foreach (Transform item in plate0)
+            {
+                item.gameObject.layer = 0;
+            }
+            foreach (Transform item in plate1)
+            {
+                item.gameObject.layer = 0;
+            }
             unlockRoom3();
             GameManager.instance.turnOn_ExteriorLanterns(lanternsRoomRoom3, false);
             GameManager.instance.turnOn_InteriorLanterns(interiorLantern);

@@ -13,7 +13,7 @@ public class LTP_bellPattern : MonoBehaviour
     [HideInInspector] public List<AudioClip> bellsSequence = new List<AudioClip>();
     public float delayBetweenSounds = 0.5f;
     public float silenceBetweenSequences = 3f;
-
+    public bool playBellSounds = true;
     [HideInInspector] public AudioSource audioSource;
 
     void Start()
@@ -39,10 +39,13 @@ public class LTP_bellPattern : MonoBehaviour
     {
         //if (!FindObjectOfType<LTP_Controller>().LTPpuzzleSolved)
         //{
-            while (true)
+            while (playBellSounds)
             {
                 foreach (AudioClip clip in bellsSequence)
                 {
+                    if (!playBellSounds || audioSource == null || !audioSource.enabled)
+                        yield break;
+
                     audioSource.PlayOneShot(clip);
                     //audioSource.clip = clip;
                     //audioSource.Play();

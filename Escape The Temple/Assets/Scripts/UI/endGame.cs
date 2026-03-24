@@ -26,7 +26,7 @@ public class endGame : MonoBehaviour
     {
         portalRenderer.material.SetColor("_ColorA", colorA); 
         portalRenderer.material.SetColor("_ColorB", Color.white);
-        portalAudioSource.PlayOneShot(portalUnlocked_AudioClip);
+        //portalAudioSource.PlayOneShot(portalUnlocked_AudioClip);
         portalCollider.isTrigger = true;
         changePamphlets();
     }

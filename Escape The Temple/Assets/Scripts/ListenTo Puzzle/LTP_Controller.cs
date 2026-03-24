@@ -39,7 +39,8 @@ public class LTP_Controller : MonoBehaviour
 
             if (soundIndex >= FindObjectOfType<LTP_bellPattern>().bellsSequence.Count)
             {
-                StopCoroutine(FindObjectOfType<LTP_bellPattern>().PlaySequences());
+                //StopCoroutine(FindObjectOfType<LTP_bellPattern>().PlaySequences());
+                FindObjectOfType<LTP_bellPattern>().playBellSounds = false;
                 StartCoroutine(FindObjectOfType<ESP_AudioClueController>().RestoreAudio());
                 GameManager.instance.callForSunMovement(puzzleIndex);
                 GameManager.instance.turnOn_ExteriorLanterns(lanternsRoomRoom4, false);

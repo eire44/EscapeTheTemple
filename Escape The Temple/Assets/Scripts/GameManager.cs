@@ -68,9 +68,9 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        progressionIndex++;
         sunMovement.sunProgression(progressionIndex, totalPuzzles);
 
-        progressionIndex++;
     }
 
     public void turnOn_ExteriorLanterns(exteriorLanternsController[] extLanterns, bool ending)
