@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.3509, g: 0.3509, b: 0.3509, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -122935,6 +122935,7 @@ MonoBehaviour:
   musicController: {fileID: 2142609478}
   sunMovement: {fileID: 1883761528}
   journalController: {fileID: 1172359926}
+  fogController: {fileID: 0}
   stars: {fileID: 410886968}
   fireflies1: {fileID: 1520730991}
   fireflies2: {fileID: 1317558730}
@@ -194800,6 +194801,7 @@ GameObject:
   - component: {fileID: 1883761526}
   - component: {fileID: 1883761527}
   - component: {fileID: 1883761528}
+  - component: {fileID: 1883761529}
   m_Layer: 4
   m_Name: Ambiance Controller
   m_TagString: Untagged
@@ -194866,6 +194868,20 @@ MonoBehaviour:
   startIntensity: 0.5
   sunsetIntensity: 0.5
   nightIntensity: 0.5
+--- !u!114 &1883761529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883761525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd0ab34f2f575884c9ef1119ea8f890e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startFog: 0.01
+  endFog: 0.001
 --- !u!1 &1883796738
 GameObject:
   m_ObjectHideFlags: 0

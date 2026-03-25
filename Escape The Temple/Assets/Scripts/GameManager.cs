@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public musicManager musicController;
     public SunMovement sunMovement;
     public journalWriting_Controller journalController;
+    public fogController fogController;
 
     [Header("Nature Elements")]
     public ParticleSystem stars;
@@ -36,8 +37,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("SUN MOVED");
         journalController = FindObjectOfType<journalWriting_Controller>();
         sunMovement = FindObjectOfType<SunMovement>();
+        fogController = FindObjectOfType<fogController>();
 
         journalController.sumLessonsText(puzzleIndex, (progressionIndex + 1).ToString());
+        fogController.ReduceFogStep(progressionIndex, totalPuzzles);
 
         if (progressionIndex == 7)
         {

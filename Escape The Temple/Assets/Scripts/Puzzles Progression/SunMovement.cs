@@ -76,8 +76,6 @@ public class SunMovement : MonoBehaviour
         }
         else
         {
-            
-
             ApplySun(
                 Mathf.Lerp(sunsetAngle, nightAngle, nightT),
                 Mathf.Lerp(sunsetIntensity, nightIntensity, nightT),
