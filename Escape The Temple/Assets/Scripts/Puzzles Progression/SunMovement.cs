@@ -98,7 +98,7 @@ public class SunMovement : MonoBehaviour
     void UpdateSkyboxDayToSunset(float t)
     {
         skyboxMaterial.SetFloat("_SunSize", Mathf.Lerp(0.04f, 0.06f, t));
-        skyboxMaterial.SetFloat("_AtmosphereThickness", Mathf.Lerp(1f, 1.94f, t));
+        skyboxMaterial.SetFloat("_AtmosphereThickness", Mathf.Lerp(1f, 2.1f, t));
 
 
         //skyboxMaterial.SetColor("_SkyTint", Color.Lerp(daySkyColor, sunsetSkyColor, t));
