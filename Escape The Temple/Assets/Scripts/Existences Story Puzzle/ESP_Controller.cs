@@ -152,23 +152,23 @@ public class ESP_Controller : MonoBehaviour
 
         if (newDirection == directions.Up)
         {
-            newPosition_CurrentCharacter.y += 0.3f;
-            newPosition_AffectedCharacter.y -= 0.3f;
+            newPosition_CurrentCharacter.y += 0.2f;
+            newPosition_AffectedCharacter.y -= 0.2f;
         }
         else if (newDirection == directions.Down)
         {
-            newPosition_CurrentCharacter.y -= 0.3f;
-            newPosition_AffectedCharacter.y += 0.3f;
+            newPosition_CurrentCharacter.y -= 0.2f;
+            newPosition_AffectedCharacter.y += 0.2f;
         }
         else if (newDirection == directions.Left)
         {
-            newPosition_CurrentCharacter.x -= 0.3f;
-            newPosition_AffectedCharacter.x += 0.3f;
+            newPosition_CurrentCharacter.x -= 0.2f;
+            newPosition_AffectedCharacter.x += 0.2f;
         }
         else if (newDirection == directions.Right)
         {
-            newPosition_CurrentCharacter.x += 0.3f;
-            newPosition_AffectedCharacter.x -= 0.3f;
+            newPosition_CurrentCharacter.x += 0.2f;
+            newPosition_AffectedCharacter.x -= 0.2f;
         }
 
         FindObjectOfType<ESP_PiecesMovement>().movePieces(newPosition_CurrentCharacter, charactersCorrelation[currentCharacter], affectedCharacter, newPosition_AffectedCharacter);
