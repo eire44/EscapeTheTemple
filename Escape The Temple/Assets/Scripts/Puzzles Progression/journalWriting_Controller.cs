@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class journalWriting_Controller : MonoBehaviour
 {
@@ -16,6 +17,12 @@ public class journalWriting_Controller : MonoBehaviour
     public AudioSource showingLesson_Audio;
     int previousCharCount = 0;
     Coroutine fadeCoroutine;
+    Volume blurVolume;
+
+    private void Start()
+    {
+        blurVolume = GameObject.Find("Global Volume").GetComponent<Volume>();
+    }
 
     private void Update()
     {
@@ -45,7 +52,8 @@ public class journalWriting_Controller : MonoBehaviour
                 FindObjectOfType<ESP_AudioClueController>().audioClue.Pause();
             }
             FindObjectOfType<pauseMenu>().cleanUI(false);
-            Time.timeScale = 0.0f;
+            Time.timeScale = 0f;
+            blurVolume.weight = 1f;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
 
@@ -57,7 +65,8 @@ public class journalWriting_Controller : MonoBehaviour
             FindObjectOfType<ESP_AudioClueController>().audioClue.UnPause();
 
             FindObjectOfType<pauseMenu>().cleanUI(true);
-            Time.timeScale = 1.0f;
+            Time.timeScale = 1f;
+            blurVolume.weight = 0f;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
