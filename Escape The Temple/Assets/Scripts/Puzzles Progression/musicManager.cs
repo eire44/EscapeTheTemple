@@ -14,14 +14,23 @@ public class musicManager : MonoBehaviour
 
     void LoadAudioSettings()
     {
-        float music = PlayerPrefs.GetFloat("Music_Volume", 0.75f);
+        float music = PlayerPrefs.GetFloat("Music_Volume", 1f);
         float sfx = PlayerPrefs.GetFloat("SFX_Volume", 1f);
         float sensitivity = PlayerPrefs.GetFloat("Sensitivity", 100f);
 
+
+        music = Mathf.Clamp(music, 0.0001f, 1f);
+        sfx = Mathf.Clamp(sfx, 0.0001f, 1f);
+
+        float musicCurved = music * music;
+        float sfxCurved = sfx * sfx;
+
+        audioMixer.SetFloat("MusicVolume", Mathf.Log10(musicCurved) * 20);
+        audioMixer.SetFloat("SFXvolume", Mathf.Log10(sfxCurved) * 20);
         //float dbVolume = Mathf.Log10(music) * 20;
-        audioMixer.SetFloat("MusicVolume", Mathf.Log10(Mathf.Max(0.0001f, music)) * 40);
+        //////audioMixer.SetFloat("MusicVolume", Mathf.Log10(Mathf.Max(0.0001f, music)) * 40);
         //float dbVolumeSFX = Mathf.Log10(sfx) * 20;
-        audioMixer.SetFloat("SFXvolume", Mathf.Log10(Mathf.Max(0.0001f, sfx)) * 40);
+        //////audioMixer.SetFloat("SFXvolume", Mathf.Log10(Mathf.Max(0.0001f, sfx)) * 40);
         //audioMixer.SetFloat("MusicVolume", Mathf.Log10(Mathf.Max(0.0001f, music)) * 20);
         //audioMixer.SetFloat("SFXvolume", Mathf.Log10(Mathf.Max(0.0001f, sfx)) * 20);
     }
