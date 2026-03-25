@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
-public class musicManager : MonoBehaviour
+public class audioManager : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public AudioSource[] musicSources;
+
+    public Slider musicSlider;
+    public Slider sfxSlider;
+    public Slider sensitivitySlider;
     void Start()
     {
         LoadAudioSettings();
@@ -27,12 +32,11 @@ public class musicManager : MonoBehaviour
 
         audioMixer.SetFloat("MusicVolume", Mathf.Log10(musicCurved) * 20);
         audioMixer.SetFloat("SFXvolume", Mathf.Log10(sfxCurved) * 20);
-        //float dbVolume = Mathf.Log10(music) * 20;
-        //////audioMixer.SetFloat("MusicVolume", Mathf.Log10(Mathf.Max(0.0001f, music)) * 40);
-        //float dbVolumeSFX = Mathf.Log10(sfx) * 20;
-        //////audioMixer.SetFloat("SFXvolume", Mathf.Log10(Mathf.Max(0.0001f, sfx)) * 40);
-        //audioMixer.SetFloat("MusicVolume", Mathf.Log10(Mathf.Max(0.0001f, music)) * 20);
-        //audioMixer.SetFloat("SFXvolume", Mathf.Log10(Mathf.Max(0.0001f, sfx)) * 20);
+
+
+        musicSlider.value = music;
+        sfxSlider.value = sfx;
+        sensitivitySlider.value = sensitivity;
     }
     public void changeMusic(bool ending)
     {
@@ -55,5 +59,29 @@ public class musicManager : MonoBehaviour
                 musicSources[0].Play();
             }
         }
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        float curved = volume * volume;
+
+        float safeVolume = Mathf.Clamp(curved, 0.0001f, 1f);
+        //float safeVolume = Mathf.Clamp(volume, 0.0001f, 1f);
+        audioMixer.SetFloat("SFXvolume", Mathf.Log10(safeVolume) * 20);
+        PlayerPrefs.SetFloat("SFX_Volume", volume);
+    }
+
+    public void SetSensitivity(float sensitivity)
+    {
+        PlayerPrefs.SetFloat("Sensitivity", sensitivity);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        float curved = volume * volume;
+
+        float safeVolume = Mathf.Clamp(curved, 0.0001f, 1f);
+        audioMixer.SetFloat("MusicVolume", Mathf.Log10(safeVolume) * 20);
+        PlayerPrefs.SetFloat("Music_Volume", volume);
     }
 }

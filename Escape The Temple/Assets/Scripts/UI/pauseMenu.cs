@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class pauseMenu : MonoBehaviour
@@ -15,18 +16,20 @@ public class pauseMenu : MonoBehaviour
 
     public AudioClip audioClip;
     AudioSource audiosource;
+    Volume blurVolume;
     // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         audiosource = GetComponent<AudioSource>();
+        blurVolume = GameObject.Find("Global Volume").GetComponent<Volume>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) && !optionsMenu.activeInHierarchy)
         {
             pausaActiva = !pausaActiva;
             menuDePausa.SetActive(pausaActiva);
@@ -39,6 +42,7 @@ public class pauseMenu : MonoBehaviour
                 cleanUI(false);
                 journal.SetActive(false);
                 Time.timeScale = 0.0f;
+                blurVolume.weight = 1f;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
             } else
@@ -47,6 +51,7 @@ public class pauseMenu : MonoBehaviour
                 
                 cleanUI(true);
                 Time.timeScale = 1.0f;
+                blurVolume.weight = 0f;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
             }

@@ -106275,8 +106275,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: optionsController, Assembly-CSharp
+      - m_Target: {fileID: 2142609478}
+        m_TargetAssemblyTypeName: musicManager, Assembly-CSharp
         m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:
@@ -123782,7 +123782,7 @@ MonoBehaviour:
   musicController: {fileID: 2142609478}
   sunMovement: {fileID: 1883761528}
   journalController: {fileID: 1172359926}
-  fogController: {fileID: 0}
+  fogController: {fileID: 1883761529}
   stars: {fileID: 410886968}
   fireflies1: {fileID: 1520730991}
   fireflies2: {fileID: 1317558730}
@@ -192426,7 +192426,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 0c8a21a499983064aaf2ecd05b038491, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -192435,7 +192435,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 2
+  MaxDistance: 1.5
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -195652,9 +195652,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: optionsController, Assembly-CSharp
-        m_MethodName: SetMusicVolume
+      - m_Target: {fileID: 2142609478}
+        m_TargetAssemblyTypeName: musicManager, Assembly-CSharp
+        m_MethodName: SetSFXVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -225975,9 +225975,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: optionsController, Assembly-CSharp
-        m_MethodName: SetMusicVolume
+      - m_Target: {fileID: 2142609478}
+        m_TargetAssemblyTypeName: musicManager, Assembly-CSharp
+        m_MethodName: SetSensitivity
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -233971,7 +233971,7 @@ GameObject:
   - component: {fileID: 2142609477}
   - component: {fileID: 2142609478}
   m_Layer: 0
-  m_Name: MusicManager
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234012,6 +234012,9 @@ MonoBehaviour:
   - {fileID: 314235285}
   - {fileID: 114512506}
   - {fileID: 1043232524}
+  musicSlider: {fileID: 1111212723}
+  sfxSlider: {fileID: 1874504574}
+  sensitivitySlider: {fileID: 2094397152}
 --- !u!114 &46305788831695592
 MonoBehaviour:
   m_ObjectHideFlags: 0

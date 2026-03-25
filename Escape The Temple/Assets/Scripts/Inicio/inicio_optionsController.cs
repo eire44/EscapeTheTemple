@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-public class optionsController : MonoBehaviour
+public class inicio_optionsController : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public Slider musicSlider;

@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public musicManager musicController;
+    public audioManager musicController;
     public SunMovement sunMovement;
     public journalWriting_Controller journalController;
     public fogController fogController;
