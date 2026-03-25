@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 public class pauseMenu : MonoBehaviour
 {
     public GameObject menuDePausa;
+    public GameObject optionsMenu;
     public GameObject cursor;
     public GameObject journal;
     bool pausaActiva = false;
+    bool showOptionsMenu = false;
 
     public AudioClip audioClip;
     AudioSource audiosource;
@@ -48,6 +50,20 @@ public class pauseMenu : MonoBehaviour
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
             }
+        }
+    }
+
+    public void openOptionsMenu()
+    {
+        showOptionsMenu = !showOptionsMenu;
+        audiosource.PlayOneShot(audioClip);
+        if(showOptionsMenu)
+        {
+            optionsMenu.SetActive(true);
+        }
+        else
+        {
+            optionsMenu.SetActive(false);
         }
     }
 
