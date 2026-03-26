@@ -36204,9 +36204,9 @@ MonoBehaviour:
     endTime: 6
   - text: The fire that burns for no one, therefore it can warm anyone,
     startTime: 6
-    endTime: 12.1
+    endTime: 12.05
   - text: And the human trying to find their inner light,
-    startTime: 12.1
+    startTime: 12.05
     endTime: 17
   - text: Are all part of the same garden, visitors and gardeners.
     startTime: 17
@@ -36243,8 +36243,8 @@ MonoBehaviour:
   forwardDistance: 5
   upwardDistance: 17
   finalBackDistance: 0.1
-  durationForward: 4
-  durationUp: 8
+  durationForward: 5
+  durationUp: 10
   durationBack: 0.5
   rotationOffset: {x: -90, y: 0, z: 0}
 --- !u!1 &453381744
