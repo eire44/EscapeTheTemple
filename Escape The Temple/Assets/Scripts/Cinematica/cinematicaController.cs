@@ -1,0 +1,58 @@
+using System.Collections;
+using System.Collections.Generic;
+using Cinemachine;
+using UnityEngine;
+
+public class cinematicaController : MonoBehaviour
+{
+    public bool cinematicaPlaying = false;
+    public Camera mainCamera;
+    public cameraSpot[] cameraSpots;
+    int spotIndex = 0;
+    public Mov_Controller controller;
+    public grabItem_wRaycast grabItem_WRaycast;
+    public InteractiveItems_Controller interactiveItems;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            cinematicaPlaying = true;
+            controller.enabled = false;
+            grabItem_WRaycast.enabled = false;
+            interactiveItems.enabled = false;
+            nextSpot();
+        }
+    }
+
+    public void nextSpot()
+    {
+        mainCamera.transform.position = cameraSpots[spotIndex].transform.position;
+        mainCamera.transform.rotation = cameraSpots[spotIndex].transform.rotation;
+        StartCoroutine(slowMovement(cameraSpots[spotIndex]));
+    }
+
+    IEnumerator slowMovement(cameraSpot spot)
+    {
+        Vector3 startPos = mainCamera.transform.position;
+
+        Vector3 newPos = startPos + spot.transform.TransformDirection(spot.pressingDirection) * spot.movLength;
+        //Vector3 newPos = startPos + spot.pressingDirection * spot.movLength;
+        float t = 0;
+
+        while (t < spot.movDuration)
+        {
+            mainCamera.transform.position = Vector3.Lerp(startPos, newPos, t / spot.movDuration);
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+        mainCamera.transform.position = newPos;
+        spotIndex++;
+
+        if (spotIndex < cameraSpots.Length)
+        {
+            nextSpot();
+        }
+    }
+}
