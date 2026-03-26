@@ -8,7 +8,8 @@ public class portalDetection : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            FindObjectOfType<endGame>().goBackToMenu();
+            //FindObjectOfType<endGame>().goBackToMenu();
+            FindObjectOfType<cinematicaController>().startKinematics();
         }
     }
 }

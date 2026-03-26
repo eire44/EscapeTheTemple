@@ -192,4 +192,20 @@ public class burningLiesController : MonoBehaviour
             fuegos[i].Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
     }
+
+    public void EncenderFuegoInstantaneo()
+    {
+        audioSource.volume = 1f;
+
+        for (int i = 0; i < fuegos.Length; i++)
+        {
+            if (fuegos[i] == null) continue;
+
+            var emission = fuegos[i].emission;
+
+            emission.rateOverTime = ratesOriginales[i];
+
+            fuegos[i].Play();
+        }
+    }
 }

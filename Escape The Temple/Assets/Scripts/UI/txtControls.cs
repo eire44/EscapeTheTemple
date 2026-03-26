@@ -97,7 +97,7 @@ public class txtControls : MonoBehaviour
         {
             txtControlsIndex++;
 
-            if (txtControlsIndex < txtControlsRows.Length - 1)
+            if (txtControlsIndex < txtControlsRows.Length - 2)
             {
                 tmp.text = txtControlsRows[txtControlsIndex];
                 FadeIn();

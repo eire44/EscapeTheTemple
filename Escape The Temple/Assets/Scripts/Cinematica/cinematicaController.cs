@@ -24,23 +24,30 @@ public class cinematicaController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            cinematicaPlaying = true;
-            controller.enabled = false;
-            grabItem_WRaycast.enabled = false;
-            interactiveItems.enabled = false; 
-            StartCoroutine(FindObjectOfType<ESP_AudioClueController>().DuckAudio());
-            FindObjectOfType<txtControls>().showTabInstructions(3);
-            captions.audioSource.Play();
-            nextSpot();
+            startKinematics();
         }
 
         if (cinematicaPlaying)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                Time.timeScale = 1.0f;
                 SceneManager.LoadScene("Inicio");
             }
         }
+    }
+
+    public void startKinematics()
+    {
+        cinematicaPlaying = true;
+        controller.enabled = false;
+        grabItem_WRaycast.enabled = false;
+        interactiveItems.enabled = false;
+        StartCoroutine(FindObjectOfType<ESP_AudioClueController>().DuckAudio());
+        FindObjectOfType<txtControls>().showTabInstructions(3);
+        FindObjectOfType<burningLiesController>().EncenderFuegoInstantaneo();
+        captions.audioSource.Play();
+        nextSpot();
     }
 
     public void nextSpot()
@@ -75,6 +82,7 @@ public class cinematicaController : MonoBehaviour
         else
         {
             //fade in de firma
+            Time.timeScale = 1.0f;
             SceneManager.LoadScene("Inicio");
         }
     }

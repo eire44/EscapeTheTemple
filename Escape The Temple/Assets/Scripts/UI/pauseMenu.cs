@@ -17,6 +17,8 @@ public class pauseMenu : MonoBehaviour
     public AudioClip audioClip;
     AudioSource audiosource;
     Volume blurVolume;
+
+    cinematicaController cinematicaController;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +26,13 @@ public class pauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         audiosource = GetComponent<AudioSource>();
         blurVolume = GameObject.Find("Global Volume").GetComponent<Volume>();
+        cinematicaController = FindObjectOfType<cinematicaController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) && !optionsMenu.activeInHierarchy)
+        if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) && !optionsMenu.activeInHierarchy && !cinematicaController.cinematicaPlaying)
         {
             pausaActiva = !pausaActiva;
             menuDePausa.SetActive(pausaActiva);
