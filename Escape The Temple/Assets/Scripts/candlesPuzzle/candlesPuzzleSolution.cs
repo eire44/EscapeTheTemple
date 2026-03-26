@@ -35,7 +35,7 @@ public class candlesPuzzleSolution : MonoBehaviour
                 unlockRoom2();
                 flagHideText = false;
                 GameManager.instance.callForSunMovement(puzzleIndex);
-                FindObjectOfType<txtControls>().showTabInstructions();
+                FindObjectOfType<txtControls>().showTabInstructions(2);
             }
             
         }

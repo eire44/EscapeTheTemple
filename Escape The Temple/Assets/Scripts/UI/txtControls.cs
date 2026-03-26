@@ -43,12 +43,12 @@ public class txtControls : MonoBehaviour
         }
     }
 
-    public void showTabInstructions()
+    public void showTabInstructions(int index)
     {
         if (currentFade != null)
             StopCoroutine(currentFade);
 
-        txtControlsIndex = 2;
+        txtControlsIndex = index;
 
         tmp.text = txtControlsRows[txtControlsIndex];
 

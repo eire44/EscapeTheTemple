@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class cinematicaController : MonoBehaviour
 {
@@ -26,9 +27,19 @@ public class cinematicaController : MonoBehaviour
             cinematicaPlaying = true;
             controller.enabled = false;
             grabItem_WRaycast.enabled = false;
-            interactiveItems.enabled = false;
+            interactiveItems.enabled = false; 
+            StartCoroutine(FindObjectOfType<ESP_AudioClueController>().DuckAudio());
+            FindObjectOfType<txtControls>().showTabInstructions(3);
             captions.audioSource.Play();
             nextSpot();
+        }
+
+        if (cinematicaPlaying)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene("Inicio");
+            }
         }
     }
 
@@ -60,6 +71,11 @@ public class cinematicaController : MonoBehaviour
         if (spotIndex < cameraSpots.Length)
         {
             nextSpot();
+        }
+        else
+        {
+            //fade in de firma
+            SceneManager.LoadScene("Inicio");
         }
     }
 }
