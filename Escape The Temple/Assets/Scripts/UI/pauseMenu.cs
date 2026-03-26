@@ -32,6 +32,11 @@ public class pauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape) && optionsMenu.activeInHierarchy)
+        {
+            openOptionsMenu();
+        }
+
         if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) && !optionsMenu.activeInHierarchy && !cinematicaController.cinematicaPlaying)
         {
             pausaActiva = !pausaActiva;

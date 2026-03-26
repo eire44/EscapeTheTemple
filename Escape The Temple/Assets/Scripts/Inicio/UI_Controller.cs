@@ -35,15 +35,6 @@ public class UI_Controller : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Salir();
-        }
-    }
-
     public void Salir()
     {
         audioSource_Click.Play();
