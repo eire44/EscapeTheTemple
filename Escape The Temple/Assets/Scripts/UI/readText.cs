@@ -32,14 +32,14 @@ public class readText : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("ShortClue"))
             {
                 ShortTextClue text = hit.collider.gameObject.GetComponent<ShortTextClue>();
-                if (text != null && !FindObjectOfType<ESP_CaptionsController>().audioSource.isPlaying)
+                if (text != null && !FindObjectOfType<ESP_CaptionsController>().audioSource.isPlaying && !FindObjectOfType<captionsController>().audioSource.isPlaying)
                 {
                     mostrarTexto(text.textClue);
                 }
             }
             else
             {
-                if(!FindObjectOfType<ESP_AudioClueController>().audioClue.isPlaying)
+                if(!FindObjectOfType<ESP_AudioClueController>().audioClue.isPlaying && !FindObjectOfType<captionsController>().audioSource.isPlaying)
                 {
                     textoTranscripcion.gameObject.SetActive(false);
                 }
@@ -61,7 +61,7 @@ public class readText : MonoBehaviour
         }
         else
         {
-            if (!FindObjectOfType<ESP_AudioClueController>().audioClue.isPlaying)
+            if (!FindObjectOfType<ESP_AudioClueController>().audioClue.isPlaying && !FindObjectOfType<captionsController>().audioSource.isPlaying)
             {
                 textoTranscripcion.gameObject.SetActive(false);
             }

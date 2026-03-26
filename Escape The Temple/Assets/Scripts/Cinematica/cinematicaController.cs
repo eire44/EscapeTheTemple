@@ -12,6 +12,12 @@ public class cinematicaController : MonoBehaviour
     public Mov_Controller controller;
     public grabItem_wRaycast grabItem_WRaycast;
     public InteractiveItems_Controller interactiveItems;
+    captionsController captions;
+
+    private void Start()
+    {
+        captions = gameObject.GetComponent<captionsController>();
+    }
 
     private void Update()
     {
@@ -21,6 +27,7 @@ public class cinematicaController : MonoBehaviour
             controller.enabled = false;
             grabItem_WRaycast.enabled = false;
             interactiveItems.enabled = false;
+            captions.audioSource.Play();
             nextSpot();
         }
     }
