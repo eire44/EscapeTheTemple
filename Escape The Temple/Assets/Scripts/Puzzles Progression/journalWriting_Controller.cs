@@ -18,17 +18,19 @@ public class journalWriting_Controller : MonoBehaviour
     int previousCharCount = 0;
     Coroutine fadeCoroutine;
     Volume blurVolume;
+    cinematicaController cinematicaController;
 
     private void Start()
     {
         blurVolume = GameObject.Find("Global Volume").GetComponent<Volume>();
+        cinematicaController = FindObjectOfType<cinematicaController>();
     }
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Tab))
         {
-            if(!pauseMenu.activeInHierarchy)
+            if(!pauseMenu.activeInHierarchy && !cinematicaController.cinematicaPlaying)
             {
                 openJournal();
             }
