@@ -12,9 +12,11 @@ public class audioManager : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
     public Slider sensitivitySlider;
+    public Mov_Controller movController;
     void Start()
     {
         LoadAudioSettings();
+        movController = FindObjectOfType<Mov_Controller>();
     }
 
     void LoadAudioSettings()
@@ -74,6 +76,7 @@ public class audioManager : MonoBehaviour
     public void SetSensitivity(float sensitivity)
     {
         PlayerPrefs.SetFloat("Sensitivity", sensitivity);
+        movController.mouseSensitivity = sensitivity;
     }
 
     public void SetMusicVolume(float volume)

@@ -34588,7 +34588,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d6c762b855e86d04c87437ff764ca224,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.755
+      value: -0.762
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d6c762b855e86d04c87437ff764ca224,
         type: 3}
@@ -36432,8 +36432,8 @@ MonoBehaviour:
   forwardDistance: 4
   upwardDistance: 17
   finalBackDistance: 0.01
-  durationForward: 4
-  durationUp: 7
+  durationForward: 2
+  durationUp: 5
   durationBack: 0.5
   rotationOffset: {x: -90, y: 0, z: 0}
   gameTitle: {fileID: 209024311}
@@ -89526,7 +89526,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d6c762b855e86d04c87437ff764ca224,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.78881466
+      value: 0.745
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d6c762b855e86d04c87437ff764ca224,
         type: 3}
@@ -98597,8 +98597,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 0.2, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.3509308, y: 0.2, z: 0.2}
+  m_Center: {x: 0.14858651, y: 0, z: 0}
 --- !u!114 &1043936906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111021,6 +111021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 8
   gravity: -9.81
+  mouseSensitivity: 100
   cameraTransform: {fileID: 330585546}
   crouchHeight: 1
   standHeight: 1.8
@@ -226873,10 +226874,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 551032776}
   m_HandleRect: {fileID: 761202928}
   m_Direction: 0
-  m_MinValue: 0.01
-  m_MaxValue: 1
+  m_MinValue: 50
+  m_MaxValue: 450
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -234920,6 +234921,7 @@ MonoBehaviour:
   musicSlider: {fileID: 1111212723}
   sfxSlider: {fileID: 1874504574}
   sensitivitySlider: {fileID: 2094397152}
+  movController: {fileID: 1193756323}
 --- !u!114 &46305788831695592
 MonoBehaviour:
   m_ObjectHideFlags: 0

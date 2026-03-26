@@ -56,8 +56,6 @@ public class journalWriting_Controller : MonoBehaviour
             FindObjectOfType<pauseMenu>().cleanUI(false);
             Time.timeScale = 0f;
             blurVolume.weight = 1f;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
 
             writeLesson();
         }
@@ -69,8 +67,6 @@ public class journalWriting_Controller : MonoBehaviour
             FindObjectOfType<pauseMenu>().cleanUI(true);
             Time.timeScale = 1f;
             blurVolume.weight = 0f;
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 

@@ -7,7 +7,7 @@ public class Mov_Controller : MonoBehaviour
     public float moveSpeed = 5f;
     public float gravity = -9.81f;
 
-    float mouseSensitivity = 100f;
+    [HideInInspector] public float mouseSensitivity = 100f;
     public Transform cameraTransform;
 
     private float xRotation = 0f;
