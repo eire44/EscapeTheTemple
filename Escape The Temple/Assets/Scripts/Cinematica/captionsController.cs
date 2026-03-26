@@ -33,7 +33,7 @@ public class captionsController : MonoBehaviour
             return;
 
         float time = audioSource.time;
-        Debug.Log(time);
+        
         if (time >= subtitles[currentIndex].startTime)
         {
             subtitleText.text = subtitles[currentIndex].text;

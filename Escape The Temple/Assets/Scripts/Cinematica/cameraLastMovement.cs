@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class cameraLastMovement : MonoBehaviour
@@ -23,6 +24,9 @@ public class cameraLastMovement : MonoBehaviour
     int phase = 0;
 
     bool playing = false;
+
+    public TMP_Text gameTitle;
+    public TMP_Text madeBy;
 
     public void StartMotion()
     {
@@ -59,7 +63,10 @@ public class cameraLastMovement : MonoBehaviour
             if (t >= 1f)
             {
                 t = 1f;
-                NextPhase();
+                NextPhase(); 
+                
+                gameTitle.GetComponent<fadeTitle>().FadeIn(gameTitle);
+                madeBy.GetComponent<fadeTitle>().FadeIn(madeBy);
             }
 
             Vector3 move = camera.forward * forwardDistance + Vector3.up * upwardDistance;

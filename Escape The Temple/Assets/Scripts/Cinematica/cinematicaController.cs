@@ -53,7 +53,7 @@ public class cinematicaController : MonoBehaviour
         interactiveItems.enabled = false;
         FindObjectOfType<burningLiesController>().EncenderFuegoInstantaneo();
 
-        yield return blinkController.PlayBlink();
+        yield return blinkController.PlayBlink(false);
 
         StartCoroutine(FindObjectOfType<ESP_AudioClueController>().DuckAudio());
         FindObjectOfType<txtControls>().showTabInstructions(3);
@@ -94,9 +94,12 @@ public class cinematicaController : MonoBehaviour
         else
         {
             cameraLastMovement.StartMotion();
-            //fade in de firma
-            //Time.timeScale = 1.0f;
-            //SceneManager.LoadScene("Inicio");
         }
+    }
+
+    public void goBackToMenu()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("Inicio");
     }
 }

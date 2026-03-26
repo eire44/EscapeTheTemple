@@ -15,13 +15,13 @@ public class blinkController : MonoBehaviour
     {
         cinematicaController = FindObjectOfType<cinematicaController>();
     }
-    public IEnumerator PlayBlink()
+    public IEnumerator PlayBlink(bool endKinematics)
     {
         //StartCoroutine(BlinkCoroutine());
-        yield return StartCoroutine(BlinkCoroutine());
+        yield return StartCoroutine(BlinkCoroutine(endKinematics));
     }
 
-    IEnumerator BlinkCoroutine()
+    IEnumerator BlinkCoroutine(bool endKinematics)
     {
         fadeImage.gameObject.SetActive(true);
 
@@ -36,23 +36,30 @@ public class blinkController : MonoBehaviour
 
         SetAlpha(1);
 
-        cinematicaController.mainCamera.transform.position = cinematicaController.cameraSpots[cinematicaController.spotIndex].transform.position;
-        cinematicaController.mainCamera.transform.rotation = cinematicaController.cameraSpots[cinematicaController.spotIndex].transform.rotation;
 
-        yield return new WaitForSeconds(holdTime);
-
-
-        t = 0;
-        while (t < fadeInTime)
+        if(endKinematics)
         {
-            t += Time.deltaTime;
-            float alpha = Mathf.Lerp(1, 0, t / fadeInTime);
-            SetAlpha(alpha);
-            yield return null;
+            cinematicaController.goBackToMenu();
         }
+        else
+        {
+            cinematicaController.mainCamera.transform.position = cinematicaController.cameraSpots[cinematicaController.spotIndex].transform.position;
+            cinematicaController.mainCamera.transform.rotation = cinematicaController.cameraSpots[cinematicaController.spotIndex].transform.rotation;
 
-        SetAlpha(0);
-        fadeImage.gameObject.SetActive(false);
+            yield return new WaitForSeconds(holdTime);
+
+            t = 0;
+            while (t < fadeInTime)
+            {
+                t += Time.deltaTime;
+                float alpha = Mathf.Lerp(1, 0, t / fadeInTime);
+                SetAlpha(alpha);
+                yield return null;
+            }
+
+            SetAlpha(0);
+            fadeImage.gameObject.SetActive(false);
+        }
     }
 
     void SetAlpha(float a)
