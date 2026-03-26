@@ -19,11 +19,14 @@ public class BLP_resetPhrasesPosition : MonoBehaviour
 
     public AudioClip audioClip;
     AudioSource audiosource;
+
+    Rigidbody rb;
     private void Start()
     {
         endPoint = transform.position;
         endRotation = transform.rotation;
         audiosource = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -37,18 +40,23 @@ public class BLP_resetPhrasesPosition : MonoBehaviour
             {
                 t = 1f;
                 reseting = false;
+                rb.isKinematic = false;
             }
 
             Vector3 pos = Vector3.Lerp(startPoint, endPoint, t);
             pos.y += Mathf.Sin(t * Mathf.PI) * height;
-            transform.position = pos;
+            //transform.position = pos;
 
-            transform.rotation = Quaternion.Slerp(startRotation, endRotation, t);
+            //transform.rotation = Quaternion.Slerp(startRotation, endRotation, t);
+            rb.MovePosition(pos);
+            rb.MoveRotation(Quaternion.Slerp(startRotation, endRotation, t));
         }
     }
 
     public void resetPosition()
     {
+        rb.isKinematic = true;
+
         startPoint = transform.position;
         startRotation = transform.rotation;
 

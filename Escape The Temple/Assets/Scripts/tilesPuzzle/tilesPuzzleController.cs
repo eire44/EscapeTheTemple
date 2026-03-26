@@ -17,6 +17,9 @@ public class tilesPuzzleController : MonoBehaviour
     public interiorLanternsController[] interiorLanternBell;
     public exteriorLanternsController[] lanternsRoomBell;
 
+    public LTP_bellPattern lTP_BellPattern;
+    public LTP_BellSwing lTP_BellSwing;
+
     public void addPattern(int tileNumber)
     {
         currentOrder[tileIndex] = tileNumber;
@@ -54,8 +57,8 @@ public class tilesPuzzleController : MonoBehaviour
                 }
             }
 
-            FindObjectOfType<LTP_bellPattern>().startBellSoundsPattern();
-            FindObjectOfType<LTP_BellSwing>().StartRinging();
+            lTP_BellPattern.startBellSoundsPattern();
+            lTP_BellSwing.StartRinging();
             GameManager.instance.turnOn_ExteriorLanterns(lanternsRoomBell, false);
             GameManager.instance.turnOn_InteriorLanterns(interiorLantern);
             GameManager.instance.callForSunMovement(puzzleIndex);

@@ -124279,6 +124279,8 @@ MonoBehaviour:
   - {fileID: 817913265}
   - {fileID: 508536878}
   - {fileID: 2072886811}
+  lTP_BellPattern: {fileID: 2085437892}
+  lTP_BellSwing: {fileID: 2085437897}
 --- !u!114 &1242197586
 MonoBehaviour:
   m_ObjectHideFlags: 0
