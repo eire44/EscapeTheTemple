@@ -9,15 +9,17 @@ public class cinematicaController : MonoBehaviour
     public bool cinematicaPlaying = false;
     public Camera mainCamera;
     public cameraSpot[] cameraSpots;
-    int spotIndex = 0;
+    [HideInInspector] public int spotIndex = 0;
     public Mov_Controller controller;
     public grabItem_wRaycast grabItem_WRaycast;
     public InteractiveItems_Controller interactiveItems;
     captionsController captions;
+    blinkController blinkController;
 
     private void Start()
     {
         captions = gameObject.GetComponent<captionsController>();
+        blinkController = gameObject.GetComponent<blinkController>();
     }
 
     private void Update()
@@ -36,17 +38,25 @@ public class cinematicaController : MonoBehaviour
             }
         }
     }
-
     public void startKinematics()
+    {
+        StartCoroutine(StartKinematicsCoroutine());
+    }
+
+    IEnumerator StartKinematicsCoroutine()
     {
         cinematicaPlaying = true;
         controller.enabled = false;
         grabItem_WRaycast.enabled = false;
         interactiveItems.enabled = false;
+        FindObjectOfType<burningLiesController>().EncenderFuegoInstantaneo();
+
+        yield return blinkController.PlayBlink();
+
         StartCoroutine(FindObjectOfType<ESP_AudioClueController>().DuckAudio());
         FindObjectOfType<txtControls>().showTabInstructions(3);
-        FindObjectOfType<burningLiesController>().EncenderFuegoInstantaneo();
         captions.audioSource.Play();
+
         nextSpot();
     }
 
