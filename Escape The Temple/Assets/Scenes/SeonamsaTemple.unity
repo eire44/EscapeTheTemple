@@ -68306,7 +68306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ae94cc5f92cee4b97b97133da9b54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 2
+  fadeDuration: 1
 --- !u!65 &716740379
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -124281,6 +124281,10 @@ MonoBehaviour:
   - {fileID: 2072886811}
   lTP_BellPattern: {fileID: 2085437892}
   lTP_BellSwing: {fileID: 2085437897}
+  bushColliders:
+  - {fileID: 1253365199925617289}
+  - {fileID: 1677793478}
+  - {fileID: 2051838683}
 --- !u!114 &1242197586
 MonoBehaviour:
   m_ObjectHideFlags: 0

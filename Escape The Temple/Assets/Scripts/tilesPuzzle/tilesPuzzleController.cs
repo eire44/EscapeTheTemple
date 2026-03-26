@@ -19,6 +19,7 @@ public class tilesPuzzleController : MonoBehaviour
 
     public LTP_bellPattern lTP_BellPattern;
     public LTP_BellSwing lTP_BellSwing;
+    public Collider[] bushColliders;
 
     public void addPattern(int tileNumber)
     {
@@ -31,6 +32,61 @@ public class tilesPuzzleController : MonoBehaviour
         else
         {
             checkOrder();
+        }
+    }
+
+    IEnumerator SolvePuzzleRoutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        GameManager.instance.turnOn_ExteriorLanterns(lanternsRoomBell, false);
+        yield return new WaitForSeconds(0.5f);
+
+        GameManager.instance.turnOn_InteriorLanterns(interiorLantern);
+        yield return new WaitForSeconds(0.5f);
+
+        GameManager.instance.callForSunMovement(puzzleIndex);
+    }
+
+    IEnumerator ringBell()
+    {
+        yield return new WaitForSeconds(1f);
+        lTP_BellPattern.startBellSoundsPattern();
+
+        yield return new WaitForSeconds(2f);
+
+        lTP_BellSwing.StartRinging();
+    }
+
+    IEnumerator openBushes()
+    {
+        tilesPuzzleSolved = true;
+
+
+        foreach (Collider bushCol in bushColliders)
+        {
+            if (bushCol != null)
+                bushCol.enabled = false;
+
+            yield return null;
+        }
+
+        foreach (Transform bush in bushes)
+        {
+            bush.GetComponent<TP_bushesAudio>()?.bushSound();
+
+            foreach (Transform child in bush)
+            {
+                fadeRoomDoor fader = child.GetComponent<fadeRoomDoor>();
+                if (fader != null)
+                    fader.StartFade();
+            }
+
+            //Collider col = bush.GetComponent<Collider>();
+            //if (col != null)
+            //    col.enabled = false;
+
+            yield return null;
         }
     }
 
@@ -77,7 +133,23 @@ public class tilesPuzzleController : MonoBehaviour
             }
         }
 
-        PuzzleSolved();
+        //PuzzleSolved();
+        //StartCoroutine(SolvePuzzleRoutine()); 
+
+        //StartCoroutine(openBushes());
+        StartCoroutine(SolveSequence());
+    }
+    IEnumerator SolveSequence()
+    {
+        yield return StartCoroutine(openBushes());
+
+        yield return new WaitForSeconds(1f);
+
+        yield return StartCoroutine(SolvePuzzleRoutine());
+
+        yield return new WaitForSeconds(1f);
+
+        yield return StartCoroutine(ringBell());
     }
 
     void turnTilesOff()

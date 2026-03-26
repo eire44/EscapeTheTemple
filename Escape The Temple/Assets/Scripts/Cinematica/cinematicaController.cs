@@ -26,10 +26,10 @@ public class cinematicaController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            startKinematics();
-        }
+        //if (Input.GetKeyDown(KeyCode.Y))
+        //{
+        //    startKinematics();
+        //}
 
         if (cinematicaPlaying)
         {
