@@ -15,11 +15,13 @@ public class cinematicaController : MonoBehaviour
     public InteractiveItems_Controller interactiveItems;
     captionsController captions;
     blinkController blinkController;
+    cameraLastMovement cameraLastMovement;
 
     private void Start()
     {
         captions = gameObject.GetComponent<captionsController>();
         blinkController = gameObject.GetComponent<blinkController>();
+        cameraLastMovement = gameObject.GetComponent<cameraLastMovement>();
     }
 
     private void Update()
@@ -91,9 +93,10 @@ public class cinematicaController : MonoBehaviour
         }
         else
         {
+            cameraLastMovement.StartMotion();
             //fade in de firma
-            Time.timeScale = 1.0f;
-            SceneManager.LoadScene("Inicio");
+            //Time.timeScale = 1.0f;
+            //SceneManager.LoadScene("Inicio");
         }
     }
 }
